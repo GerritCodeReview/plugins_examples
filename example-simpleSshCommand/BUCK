@@ -1,0 +1,30 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-simpleSshCommand',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: cookbook',
+    'Gerrit-SshModule: com.googlesource.gerrit.plugins.examples.simplesshcommand.SshModule',
+    'Implementation-Title: Cookbook plugin',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_test(
+  name = 'examples_tests',
+  srcs = glob(['src/test/java/**/*IT.java']),
+  labels = ['example-simpleSshCommand'],
+  deps = GERRIT_PLUGIN_API + GERRIT_TESTS + [
+    ':example-simpleSshCommand__plugin',
+  ],
+)
+
+# TODO(davido): is this needed?
+# requires for bucklets/tools/eclipse/project.py to work
+# not sure, if this does something useful in standalone context
+java_library(
+  name = 'classpath',
+  deps = [':example-simpleSshCommand__plugin'],
+)
