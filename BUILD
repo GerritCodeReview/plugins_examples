@@ -3,6 +3,7 @@ genrule(
     srcs = [
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
+        "//example-topMenu",
     ],
     outs = ["all.zip"],
     cmd = " && ".join([
