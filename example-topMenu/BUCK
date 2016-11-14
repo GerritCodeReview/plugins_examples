@@ -1,0 +1,21 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-topMenu',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-topMenu',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.topmenu.Module',
+    'Implementation-Title: Example TopMenu',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+# TODO(davido): is this needed?
+# requires for bucklets/tools/eclipse/project.py to work
+# not sure, if this does something useful in standalone context
+java_library(
+  name = 'classpath',
+  deps = [':example-topMenu__plugin'],
+)
