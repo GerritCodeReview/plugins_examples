@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f0a51083_e4573a42",
+        "filename": "example-simpleSshCommand/BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-11-14T23:10:52Z",
+      "side": 1,
+      "message": "Should be updated.",
+      "range": {
+        "startLine": 8,
+        "startChar": 24,
+        "endLine": 8,
+        "endChar": 32
+      },
+      "revId": "03dfeb02ae1bab53021c96215fedaf663083763e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0a51083_84644629",
+        "filename": "example-simpleSshCommand/BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-11-14T23:10:52Z",
+      "side": 1,
+      "message": "Should be updated.",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 10,
+        "endChar": 42
+      },
+      "revId": "03dfeb02ae1bab53021c96215fedaf663083763e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b031d818_2233ce28",
+        "filename": "example-simpleSshCommand/BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-11-14T23:10:52Z",
+      "side": 1,
+      "message": "Looks like we don\u0027t need this since this plugin doesn\u0027t have tests?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "03dfeb02ae1bab53021c96215fedaf663083763e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b031d818_422ed2c0",
+        "filename": "example-simpleSshCommand/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-11-14T23:10:52Z",
+      "side": 1,
+      "message": "Needs to be updated.",
+      "range": {
+        "startLine": 41,
+        "startChar": 33,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "03dfeb02ae1bab53021c96215fedaf663083763e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b031d818_e261e617",
+        "filename": "example-simpleSshCommand/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2016-11-14T23:10:52Z",
+      "side": 1,
+      "message": "Needs to be updated.",
+      "range": {
+        "startLine": 47,
+        "startChar": 36,
+        "endLine": 47,
+        "endChar": 51
+      },
+      "revId": "03dfeb02ae1bab53021c96215fedaf663083763e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
