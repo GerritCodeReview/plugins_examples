@@ -1,0 +1,18 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-validationListenerRefOperation',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-validationListenerRefOperation',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.validationlistenerrefoperation.Module',
+    'Implementation-Title: Example Validation Listener RefOperation',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-validationListenerRefOperation__plugin'],
+)

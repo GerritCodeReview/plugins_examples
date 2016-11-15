@@ -1,0 +1,18 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-validationListenerUpload',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-validationListenerUpload',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.validationlistenerupload.Module',
+    'Implementation-Title: Example Validation Listener Upload',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-validationListenerUpload__plugin'],
+)
