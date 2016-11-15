@@ -14,6 +14,7 @@ genrule(
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
+        "//example-usageDataLogger",
         "//example-validationListenerAssignee",
         "//example-validationListenerCommit",
         "//example-validationListenerHashtag",
