@@ -1,6 +1,7 @@
 genrule(
     name = "all",
     srcs = [
+        "//example-consoleMetricReporter",
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
