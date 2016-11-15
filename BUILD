@@ -4,6 +4,7 @@ genrule(
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
+        "//example-usageDataLogger",
         "//example-webLinkBranch",
         "//example-webLinkFileHistory",
         "//example-webLinkPatchSet",
