@@ -10,6 +10,7 @@ genrule(
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
+        "//example-usageDataLogger",
     ],
     outs = ["all.zip"],
     cmd = " && ".join([
