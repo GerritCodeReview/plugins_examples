@@ -5,6 +5,7 @@ genrule(
         "//example-changeHasOperator",
         "//example-changeOperator",
         "//example-commitValidator",
+        "//example-consoleMetricReporter",
         "//example-deployedOnIncludedInExtension",
         "//example-restApiGetRevision",
         "//example-restApiPostProject",
