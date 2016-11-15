@@ -1,0 +1,16 @@
+[alias]
+  example-usageDataLogger = //:example-usageDataLogger
+  plugin = //:example-usageDataLogger
+
+[java]
+  src_roots = java, resources
+  source_level = 8
+  target_level = 8
+
+[project]
+  ignore = .git
+
+[cache]
+  mode = dir
+  dir = buck-out/cache
+
