@@ -7,6 +7,7 @@ genrule(
         "//example-restApiGetRevision",
         "//example-restApiPostProject",
         "//example-restApiPostRevision",
+        "//example-servlet",
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
