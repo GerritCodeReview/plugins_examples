@@ -4,6 +4,7 @@ genrule(
         "//example-changeOperator",
         "//example-restApiGetRevision",
         "//example-restApiPostProject",
+        "//example-restApiPostRevision",
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
