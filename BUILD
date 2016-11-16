@@ -2,6 +2,7 @@ genrule(
     name = "all",
     srcs = [
         "//example-adminSshCommand",
+        "//example-changeHasOperator",
         "//example-changeOperator",
         "//example-commitValidator",
         "//example-deployedOnIncludedInExtension",

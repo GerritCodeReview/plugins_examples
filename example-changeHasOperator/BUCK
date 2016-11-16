@@ -1,0 +1,18 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-changeHasOperator',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-changeHasOperator',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.changehasoperator.Module',
+    'Implementation-Title: Example Change Has Operator',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-changeHasOperator__plugin'],
+)
