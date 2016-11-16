@@ -1,0 +1,21 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-servlet',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-servlet',
+    'Gerrit-SshModule: com.googlesource.gerrit.plugins.examples.servlet.SshModule',
+    'Implementation-Title: Example Simple Ssh Command',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+# TODO(davido): is this needed?
+# requires for bucklets/tools/eclipse/project.py to work
+# not sure, if this does something useful in standalone context
+java_library(
+  name = 'classpath',
+  deps = [':example-servlet__plugin'],
+)
