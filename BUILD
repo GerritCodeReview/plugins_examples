@@ -2,6 +2,7 @@ genrule(
     name = "all",
     srcs = [
         "//example-changeOperator",
+        "//example-restApiGetRevision",
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
