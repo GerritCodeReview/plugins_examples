@@ -3,6 +3,7 @@ genrule(
     srcs = [
         "//example-changeOperator",
         "//example-restApiGetRevision",
+        "//example-restApiPostProject",
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
