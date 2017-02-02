@@ -1,7 +1,41 @@
-Build
-=====
+Bazel Build
+===========
 
-This plugin is built with Buck.
+This plugin can be built with Bazel
+
+
+Build standalone
+----------------
+
+To build all the example plugins, issue the following command:
+
+
+  bazel build :all
+
+
+The output for all the example plugins is created in
+
+
+  bazel-genfiles/all.zip
+
+
+To build a specific example plugin, issue the following command:
+
+
+  bazel build example-<example>
+
+
+The output for the example is created in
+
+
+  bazel-genfiles/example-<example>/example-<example>.jar
+
+
+
+Buck Build
+==========
+
+This plugin can be built with Buck.
 
 Two build modes are supported: Standalone and in Gerrit tree. Standalone
 build mode is recommended, as this mode doesn't require local Gerrit
