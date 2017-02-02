@@ -1,0 +1,7 @@
+git_repository(
+  name = "com_github_davido_bazlets",
+  remote = "https://github.com/davido/bazlets.git",
+  commit = "46dd9828c5859db0eb3577fce8a043dcef40275e",
+)
+load("@com_github_davido_bazlets//:gerrit_api.bzl", "gerrit_api")
+
