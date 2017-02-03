@@ -34,6 +34,24 @@
       "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81c2d778_a3378478",
+        "filename": "example-sshCommandAlias/BUCK",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2017-02-03T21:12:26Z",
+      "side": 1,
+      "message": "\u003e I think there is value in keeping Buck (and Maven) in the examples for users that are on older versions of Gerrit, at least until bazel is in a stable release?\n\nI added Dave to this discussion. I\u0027m curious about his opinion on that, but I would tend to disagree on that. Bazel is our official build tool, and I would avoid to officially support anything else on master.",
+      "parentUuid": "f27629ad_3fbf80a7",
+      "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
