@@ -52,6 +52,24 @@
       "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "013e2589_566b88e7",
+        "filename": "example-sshCommandAlias/BUCK",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-02-03T21:29:49Z",
+      "side": 1,
+      "message": "I don\u0027t think you can equate a plugin\u0027s master branch with gerrit\u0027s master branch.  I think this example plugin will have value for many past versions of gerrit, it is not meant to just service the tip of gerrit master.  What is your primary concern?  Are you concerned that this will be a maintenance problem, and that you will need to support buck on master?  I think that if we support buck here, it would be with the understanding that this is only be intended for use with older gerrit versions where buck works, and that this does not mean that we would be expected to support buck in general.  Is your concern that we just shouldn\u0027t be providing examples of how to use buck, and that people might copy the buck configs into their new plugins?",
+      "parentUuid": "81c2d778_a3378478",
+      "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
