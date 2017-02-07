@@ -70,6 +70,24 @@
       "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e7b4449_282468dd",
+        "filename": "example-sshCommandAlias/BUCK",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2017-02-07T07:20:36Z",
+      "side": 1,
+      "message": "To be fair, this change and most of the rest of the series, was done in November when buck was still around.\n\nMaybe leave this here for now so that these plugins work with stable-2.13, and then once these changes are merged create a stable-2.13 branch?  Then on master add support for bazel?",
+      "parentUuid": "013e2589_566b88e7",
+      "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
