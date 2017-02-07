@@ -88,6 +88,47 @@
       "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33d59f40_de9f780d",
+        "filename": "example-sshCommandAlias/BUCK",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-02-07T16:03:22Z",
+      "side": 1,
+      "message": "I would like to aim to shutdown the cookbook plugin soon.  To do that, I want to be considerate and ensure that we support what we did for that plugin so that there is no reason to not be able to shut that plugin down!  Keeping buck support for the examples extracted from there feels like the right thing to do to further that objective.  I think creating a stable-2.13 branch once we have achieved that might make a lot of sense (if we feel that is needed).\n\nI also think that if we merge new code here, it should at least be expected to support bazel, so this change supports both.  Any buck support on new examples is just a bonus until we branch.  But I would expect new examples to only have to support bazel.",
+      "parentUuid": "8e7b4449_282468dd",
+      "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e89a448a_cb2a0bd8",
+        "filename": "example-sshCommandAlias/BUCK",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-02-07T16:03:22Z",
+      "side": 1,
+      "message": "If this is needed, remove the Todo, if not, remove the code.",
+      "range": {
+        "startLine": 15,
+        "startChar": 7,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "8aa4605fef42e8b251ddc980ec6f8dfb1d80c8a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
