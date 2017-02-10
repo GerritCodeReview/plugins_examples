@@ -11,10 +11,7 @@
 # and the output will be discarded.
 
 function rev() {
-  cd $1; git describe --always --match "v[0-9].*" --dirty
+  git describe --always --match "v[0-9].*" --dirty
 }
 
-for p in example-* ; do
-  test -d "$p" || continue
-  ./$p/tools/workspace-status.sh
-done
+echo STABLE_BUILD_EXAMPLE-SIMPLESSHCOMMAND_LABEL $(rev)

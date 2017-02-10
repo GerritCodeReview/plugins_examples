@@ -19,16 +19,28 @@ The output for all the example plugins is created in
   bazel-genfiles/all.zip
 
 
-To build a specific example plugin, issue the following command:
+To build a specific example plugin, issue one of the following commands:
 
 
   bazel build example-<example>
 
+  OR
 
-The output for the example is created in
+  cd example-<example> && bazel build example-<example>
+
+
+If the build command is run from the top-level example directory,
+the output for the example is created in
 
 
   bazel-genfiles/example-<example>/example-<example>.jar
+
+
+If the build command is run from inside a specific example directory,
+the output for the example is created in
+
+
+  example-<example>/bazel-genfiles/example-<example>.jar
 
 
 
