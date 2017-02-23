@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4592b767_a1a6b49e",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-02-23T23:57:32Z",
+      "side": 1,
+      "message": "Should be pushed to parent change.",
+      "range": {
+        "startLine": 5,
+        "startChar": 19,
+        "endLine": 5,
+        "endChar": 34
+      },
+      "revId": "498bc17083ed0945904550ef8ec63562f55147ca",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c57c4fe2_47d09739",
+        "filename": "example-topMenu/BUCK",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-02-23T23:57:32Z",
+      "side": 1,
+      "message": "Remove the comment since we determined it is useful.  Remove in all examples.",
+      "range": {
+        "startLine": 15,
+        "startChar": 7,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "498bc17083ed0945904550ef8ec63562f55147ca",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
