@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51c67129_27ad1510",
+        "filename": "example-restApiPostRevision/src/main/resources/Documentation/cmd-print.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-03-08T23:47:57Z",
+      "side": 1,
+      "message": "Not for this change?",
+      "revId": "eb000d518a7361da1f54e125cfce45baa13e2525",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
