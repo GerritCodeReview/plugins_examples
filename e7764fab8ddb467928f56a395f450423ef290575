@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5198216d_3a2c8a8d",
+        "filename": "example-restApiGetRevision/src/main/resources/Documentation/rest-api-hello-revision.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-03-08T21:57:25Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "e7764fab8ddb467928f56a395f450423ef290575",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f6409e0_699daaf4",
+        "filename": "example-restApiGetRevision/src/main/resources/Documentation/rest-api-hello-revision.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-03-08T21:57:25Z",
+      "side": 1,
+      "message": "Needs \"~greetings\"?",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 64
+      },
+      "revId": "e7764fab8ddb467928f56a395f450423ef290575",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
