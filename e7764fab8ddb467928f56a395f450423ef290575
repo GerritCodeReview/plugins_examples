@@ -93,6 +93,30 @@
       "revId": "e7764fab8ddb467928f56a395f450423ef290575",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22f62586_b39dda99",
+        "filename": "example-restApiGetRevision/src/main/resources/Documentation/rest-api-hello-revision.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-03-08T22:30:28Z",
+      "side": 1,
+      "message": "Did it perhaps do something useful in markdown?",
+      "parentUuid": "bd7168bb_f52dbbf6",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 64
+      },
+      "revId": "e7764fab8ddb467928f56a395f450423ef290575",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
