@@ -16,6 +16,24 @@
       "revId": "eb000d518a7361da1f54e125cfce45baa13e2525",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d982f2bb_ad3a139e",
+        "filename": "example-restApiPostRevision/src/main/resources/Documentation/cmd-print.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1033742
+      },
+      "writtenOn": "2017-03-09T00:17:28Z",
+      "side": 1,
+      "message": "Correct, removed",
+      "parentUuid": "51c67129_27ad1510",
+      "revId": "eb000d518a7361da1f54e125cfce45baa13e2525",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
