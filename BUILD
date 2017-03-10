@@ -1,6 +1,7 @@
 genrule(
     name = "all",
     srcs = [
+        "//example-adminSshCommand",
         "//example-changeOperator",
         "//example-restApiGetRevision",
         "//example-restApiPostProject",
