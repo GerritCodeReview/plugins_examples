@@ -2,6 +2,7 @@ genrule(
     name = "all",
     srcs = [
         "//example-changeOperator",
+        "//example-commitValidator",
         "//example-restApiGetRevision",
         "//example-restApiPostProject",
         "//example-restApiPostRevision",
