@@ -10,6 +10,10 @@ genrule(
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
         "//example-topMenu",
+        "//example-webLinkBranch",
+        "//example-webLinkFileHistory",
+        "//example-webLinkPatchSet",
+        "//example-webLinkProject",
     ],
     outs = ["all.zip"],
     cmd = " && ".join([
