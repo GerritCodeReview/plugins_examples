@@ -6,6 +6,7 @@ genrule(
         "//example-changeOperator",
         "//example-commitValidator",
         "//example-deployedOnIncludedInExtension",
+        "//example-denyUpload",
         "//example-restApiGetRevision",
         "//example-restApiPostProject",
         "//example-restApiPostRevision",
