@@ -16,6 +16,24 @@
       "revId": "c41bc57717eb8901ee3098eba4cfa9e76f51af58",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1780edc0_bf74d594",
+        "filename": "example-assigneeValidator/bucklets",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1033742
+      },
+      "writtenOn": "2017-03-15T20:15:41Z",
+      "side": 1,
+      "message": "Correct, removed",
+      "parentUuid": "02cc4997_5c47104b",
+      "revId": "c41bc57717eb8901ee3098eba4cfa9e76f51af58",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
