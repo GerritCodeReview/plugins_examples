@@ -4,6 +4,7 @@ genrule(
         "//example-adminSshCommand",
         "//example-changeOperator",
         "//example-commitValidator",
+        "//example-denyUpload",
         "//example-restApiGetRevision",
         "//example-restApiPostProject",
         "//example-restApiPostRevision",
