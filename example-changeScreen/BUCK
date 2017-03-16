@@ -1,0 +1,18 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-changeScreen',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-changeScreen',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.changescreen.Module',
+    'Implementation-Title: Example Change Screen',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-changeScreen__plugin'],
+)
