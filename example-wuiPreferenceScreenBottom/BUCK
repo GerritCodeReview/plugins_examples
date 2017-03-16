@@ -1,0 +1,21 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+MODULE = "com.googlesource.gerrit.plugins.examples.wuipreferencescreenbottom.HelloForm"
+
+gerrit_plugin(
+  name = 'example-wuiPreferenceScreenBottom',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  gwt_module = MODULE,
+  manifest_entries = [
+    'Gerrit-PluginName: example-wuiPreferenceScreenBottom',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.wuipreferencescreenbottom.Module',
+    'Implementation-Title: Example Preference Screen Panel Bottom',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-wuiPreferenceScreenBottom__plugin'],
+)

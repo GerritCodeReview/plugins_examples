@@ -26,6 +26,13 @@ genrule(
         "//example-webLinkFileHistory",
         "//example-webLinkPatchSet",
         "//example-webLinkProject",
+        "//example-wuiChangeScreenBelowChangeInfoBlock",
+        "//example-wuiChangeScreenHeader",
+        "//example-wuiChangeScreenHeaderRightOfButtons",
+        "//example-wuiChangeScreenHeaderRightOfPopDowns",
+        "//example-wuiPreferenceScreenBottom",
+        "//example-wuiProfileExtension",
+        "//example-wuiSettingsScreen",
     ],
     outs = ["all.zip"],
     cmd = " && ".join([

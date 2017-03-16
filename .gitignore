@@ -1,5 +1,6 @@
 bazel-bin
-bazel-examples
+bazel-example*
 bazel-genfiles
 bazel-out
 bazel-testlogs
+*.idea
