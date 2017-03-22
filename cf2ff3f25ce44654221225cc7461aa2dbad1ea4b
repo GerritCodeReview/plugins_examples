@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f501a6ad_b9e9816a",
+        "filename": "example-changeHasOperator/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1033742
+      },
+      "writtenOn": "2017-03-22T16:27:38Z",
+      "side": 1,
+      "message": "Can be removed?",
+      "revId": "cf2ff3f25ce44654221225cc7461aa2dbad1ea4b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
