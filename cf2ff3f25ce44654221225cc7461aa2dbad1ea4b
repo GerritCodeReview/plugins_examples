@@ -16,6 +16,24 @@
       "revId": "cf2ff3f25ce44654221225cc7461aa2dbad1ea4b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "075399e0_ff7eff26",
+        "filename": "example-changeHasOperator/BUCK",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-03-22T18:11:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f501a6ad_b9e9816a",
+      "revId": "cf2ff3f25ce44654221225cc7461aa2dbad1ea4b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
