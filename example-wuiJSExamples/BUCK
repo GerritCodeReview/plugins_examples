@@ -1,0 +1,18 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-wuiJSExamples',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-wuiJSExamples',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.wuijsexamples.Module',
+    'Implementation-Title: Example JavaScript Extensions',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-wuiJSExamples__plugin'],
+)
