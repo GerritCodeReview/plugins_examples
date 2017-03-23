@@ -1,0 +1,21 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+MODULE = "com.googlesource.gerrit.plugins.examples.wuiindexscreen.HelloForm"
+
+gerrit_plugin(
+  name = 'example-wuiIndexScreen',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  gwt_module = MODULE,
+  manifest_entries = [
+    'Gerrit-PluginName: example-wuiIndexScreen',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.wuiindexscreen.Module',
+    'Implementation-Title: Example Index Screen Extension',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-wuiIndexScreen__plugin'],
+)
