@@ -33,6 +33,7 @@ genrule(
         "//example-wuiChangeScreenHeader",
         "//example-wuiChangeScreenHeaderRightOfButtons",
         "//example-wuiChangeScreenHeaderRightOfPopDowns",
+        "//example-wuiChangeScreenNew",
         "//example-wuiPreferenceScreenBottom",
         "//example-wuiProfileExtensionBottom",
         "//example-wuiSettingsScreen",
