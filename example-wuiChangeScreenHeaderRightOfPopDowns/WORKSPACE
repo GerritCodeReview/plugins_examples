@@ -3,7 +3,7 @@ workspace(name = "wuiChangeScreenHeaderRightOfPopDowns")
 load("//:bazlets.bzl", "load_bazlets")
 
 load_bazlets(
-    commit = "cb66cc0c8e11fcdc848c4606f1f1ef3354649155",
+    commit = "1affa0acc6e730f8959c28a2098b562d11a90f91",
     #    local_path = "/home/<user>/projects/bazlets",
 )
 
