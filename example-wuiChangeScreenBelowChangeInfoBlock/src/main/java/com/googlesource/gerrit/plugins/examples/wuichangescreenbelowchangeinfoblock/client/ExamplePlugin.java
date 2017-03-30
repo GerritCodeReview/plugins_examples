@@ -33,6 +33,10 @@ public class ExamplePlugin extends PluginEntryPoint {
     Plugin.get()
         .panel(
             GerritUiExtensionPoint.CHANGE_SCREEN_BELOW_CHANGE_INFO_BLOCK,
-            new ExampleChangeScreenExtension.Factory());
+            new ExampleChangeScreenExtension.Factory(), "first");
+    Plugin.get()
+        .panel(
+            GerritUiExtensionPoint.CHANGE_SCREEN_BELOW_CHANGE_INFO_BLOCK,
+            new ExampleChangeScreenExtensionTwo.Factory(), "second");
   }
 }

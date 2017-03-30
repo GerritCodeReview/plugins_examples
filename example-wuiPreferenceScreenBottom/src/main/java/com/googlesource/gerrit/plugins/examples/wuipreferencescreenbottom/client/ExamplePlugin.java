@@ -33,6 +33,7 @@ public class ExamplePlugin extends PluginEntryPoint {
     Plugin.get()
         .panel(
             GerritUiExtensionPoint.PREFERENCES_SCREEN_BOTTOM,
-            new ChangeScreenPreferencePanel.Factory());
+            new ChangeScreenPreferencePanel.Factory(),
+            "change_screen_preferences");
   }
 }

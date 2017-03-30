@@ -32,6 +32,7 @@ public class ExamplePlugin extends PluginEntryPoint {
   public void onPluginLoad() {
     Plugin.get()
         .panel(
-            GerritUiExtensionPoint.CHANGE_SCREEN_HEADER, new ChangeScreenStatusExtension.Factory());
+            GerritUiExtensionPoint.CHANGE_SCREEN_HEADER,
+            new ChangeScreenStatusExtension.Factory(), "status");
   }
 }

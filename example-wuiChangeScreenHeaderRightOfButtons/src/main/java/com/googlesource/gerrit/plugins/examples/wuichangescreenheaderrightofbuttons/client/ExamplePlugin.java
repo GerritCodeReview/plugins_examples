@@ -46,6 +46,6 @@ public class ExamplePlugin extends PluginEntryPoint {
                     });
                 panel.setWidget(b);
               }
-            });
+            }, "library_compliance");
   }
 }
