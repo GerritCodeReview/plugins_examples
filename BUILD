@@ -31,7 +31,7 @@ genrule(
         "//example-wuiChangeScreenHeaderRightOfButtons",
         "//example-wuiChangeScreenHeaderRightOfPopDowns",
         "//example-wuiPreferenceScreenBottom",
-        "//example-wuiProfileExtension",
+        "//example-wuiProfileExtensionBottom",
         "//example-wuiSettingsScreen",
     ],
     outs = ["all.zip"],
