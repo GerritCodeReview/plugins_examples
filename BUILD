@@ -12,6 +12,7 @@ genrule(
         "//example-restApiPostRevision",
         "//example-servlet",
         "//example-simpleSshCommand",
+        "//example-sshAndRestCommandOptionBeanParseListener",
         "//example-sshCommandAlias",
         "//example-topMenu",
         "//example-usageDataLogger",
