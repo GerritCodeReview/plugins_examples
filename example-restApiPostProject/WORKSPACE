@@ -3,7 +3,7 @@ workspace(name = "restApiPostProject")
 load("//:bazlets.bzl", "load_bazlets")
 
 load_bazlets(
-    commit = "0f87babe07a555425d829c6e7951e296e9e24579",
+    commit = "1affa0acc6e730f8959c28a2098b562d11a90f91",
     #    local_path = "/home/<user>/projects/bazlets",
 )
 
