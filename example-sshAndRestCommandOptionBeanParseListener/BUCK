@@ -1,0 +1,19 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-sshAndRestCommandOptionBeanParseListener',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-sshAndRestCommandOptionBeanParseListener',
+    'Gerrit-HttpModule: com.googlesource.gerrit.plugins.examples.sshandrestcommandoption.HttpModule',
+    'Gerrit-SshModule: com.googlesource.gerrit.plugins.examples.sshandrestcommandoption.SshModule',
+    'Implementation-Title: Example Simple SSH and REST Command Option Bean Parse Listener',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-sshAndRestCommandOptionBeanParseListener__plugin'],
+)
