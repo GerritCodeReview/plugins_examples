@@ -13,6 +13,7 @@ genrule(
         "//example-servlet",
         "//example-simpleSshCommand",
         "//example-sshCommandAlias",
+        "//example-sshCommandOptionBeanParseListener",
         "//example-topMenu",
         "//example-usageDataLogger",
         "//example-validationListenerAssignee",
