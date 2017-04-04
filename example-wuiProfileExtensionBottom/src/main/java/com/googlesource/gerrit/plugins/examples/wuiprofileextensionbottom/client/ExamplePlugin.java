@@ -32,6 +32,7 @@ public class ExamplePlugin extends PluginEntryPoint {
   public void onPluginLoad() {
     Plugin.get()
         .panel(
-            GerritUiExtensionPoint.PROFILE_SCREEN_BOTTOM, new ExampleProfileExtension.Factory());
+            GerritUiExtensionPoint.PROFILE_SCREEN_BOTTOM,
+	    new ExampleProfileExtension.Factory(), "account_info");
   }
 }
