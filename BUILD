@@ -4,6 +4,7 @@ genrule(
         "//example-adminSshCommand",
         "//example-changeHasOperator",
         "//example-changeOperator",
+        "//example-changeQueryAttributes",
         "//example-commitValidator",
         "//example-consoleMetricReporter",
         "//example-deployedOnIncludedInExtension",
