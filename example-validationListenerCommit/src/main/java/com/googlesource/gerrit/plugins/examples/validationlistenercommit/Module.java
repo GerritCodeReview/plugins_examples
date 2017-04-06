@@ -21,7 +21,6 @@ import com.google.inject.AbstractModule;
 public class Module extends AbstractModule {
   @Override
   protected void configure() {
-    DynamicSet.bind(binder(), CommitValidationListener.class)
-        .to(CommitValidator.class);
+    DynamicSet.bind(binder(), CommitValidationListener.class).to(CommitValidator.class);
   }
 }

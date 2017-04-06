@@ -23,8 +23,7 @@ import com.google.gerrit.server.query.change.ChangeQueryBuilder;
 import com.google.inject.Singleton;
 
 @Singleton
-public class SampleOperator
-    implements ChangeQueryBuilder.ChangeOperatorFactory {
+public class SampleOperator implements ChangeQueryBuilder.ChangeOperatorFactory {
   public static class MyPredicate extends ChangeOperatorPredicate {
     private final Change.Id id;
 

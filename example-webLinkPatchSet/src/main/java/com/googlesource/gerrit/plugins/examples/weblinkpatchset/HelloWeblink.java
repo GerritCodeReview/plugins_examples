@@ -19,15 +19,14 @@ import com.google.gerrit.extensions.webui.PatchSetWebLink;
 
 public class HelloWeblink implements PatchSetWebLink {
   private String name = "HelloLink";
-  private String placeHolderUrlProject =
-      "http://my.hellolink.com/project=%s";
-  private String placeHolderUrlProjectCommit =
-      placeHolderUrlProject + "/commit=%s";
+  private String placeHolderUrlProject = "http://my.hellolink.com/project=%s";
+  private String placeHolderUrlProjectCommit = placeHolderUrlProject + "/commit=%s";
   private String myImageUrl = "http://placehold.it/16x16.gif";
 
   @Override
   public WebLinkInfo getPatchSetWebLink(String projectName, String commit) {
-    return new WebLinkInfo(name,
+    return new WebLinkInfo(
+        name,
         myImageUrl,
         String.format(placeHolderUrlProjectCommit, projectName, commit),
         Target.BLANK);

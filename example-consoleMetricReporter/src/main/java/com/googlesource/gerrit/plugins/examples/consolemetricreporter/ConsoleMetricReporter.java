@@ -13,36 +13,33 @@
 // limitations under the License.
 package com.googlesource.gerrit.plugins.examples.consolemetricreporter;
 
+import com.codahale.metrics.ConsoleReporter;
+import com.codahale.metrics.MetricRegistry;
 import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.events.LifecycleListener;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
-import com.codahale.metrics.ConsoleReporter;
-import com.codahale.metrics.MetricRegistry;
-
+import java.util.concurrent.TimeUnit;
 import org.eclipse.jgit.lib.Config;
 
-import java.util.concurrent.TimeUnit;
-
 /**
- * Demonstration of how to add a new Dropwizard  Metrics Reporter using
- * Gerrit's plug-in API.
+ * Demonstration of how to add a new Dropwizard Metrics Reporter using Gerrit's plug-in API.
  *
- * @see <a href="https://dropwizard.github.io/metrics/3.1.0/getting-started/#reporting-via-jmx">here</a>
- * @see <a href="https://dropwizard.github.io/metrics/3.1.0/getting-started/#reporting-via-http">here</a>
- * @see <a href="https://dropwizard.github.io/metrics/3.1.0/getting-started/#other-reporting">here</a>
- *
- * Also shows how to fetch plug-in specific configuration values.
- * <@see com.google.gerrit.server.config.PluginConfigFactory>
- *
- * Enable by adding the file etc/example-consoleMetricReporter.config:
- *
+ * @see <a
+ *     href="https://dropwizard.github.io/metrics/3.1.0/getting-started/#reporting-via-jmx">here</a>
+ * @see <a
+ *     href="https://dropwizard.github.io/metrics/3.1.0/getting-started/#reporting-via-http">here</a>
+ * @see <a
+ *     href="https://dropwizard.github.io/metrics/3.1.0/getting-started/#other-reporting">here</a>
+ *     <p>Also shows how to fetch plug-in specific configuration values. <@see
+ *     com.google.gerrit.server.config.PluginConfigFactory>
+ *     <p>Enable by adding the file etc/example-consoleMetricReporter.config:
+ *     <pre>
  *  [console-metrics]
  *      enabled = true
- *
+ * </pre>
  */
 @Listen
 @Singleton
@@ -51,17 +48,18 @@ public class ConsoleMetricReporter implements LifecycleListener {
   private boolean enabled;
 
   @Inject
-  public ConsoleMetricReporter(MetricRegistry registry,
-      PluginConfigFactory configFactory,
-      @PluginName String pluginName) {
+  public ConsoleMetricReporter(
+      MetricRegistry registry, PluginConfigFactory configFactory, @PluginName String pluginName) {
     Config config = configFactory.getGlobalPluginConfig(pluginName);
     enabled = config.getBoolean("console-metrics", "enabled", false);
     if (!enabled) {
       return;
     }
     this.consoleReporter =
-        ConsoleReporter.forRegistry(registry).convertRatesTo(TimeUnit.SECONDS)
-            .convertDurationsTo(TimeUnit.MILLISECONDS).build();
+        ConsoleReporter.forRegistry(registry)
+            .convertRatesTo(TimeUnit.SECONDS)
+            .convertDurationsTo(TimeUnit.MILLISECONDS)
+            .build();
   }
 
   @Override

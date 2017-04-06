@@ -19,27 +19,22 @@ import com.google.gerrit.extensions.api.projects.ProjectApi;
 import com.google.gerrit.extensions.events.NewProjectCreatedListener;
 import com.google.gerrit.extensions.restapi.RestApiException;
 import com.google.inject.Inject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ProjectCreatedListener implements NewProjectCreatedListener {
-  private static final Logger log =
-      LoggerFactory.getLogger(ProjectCreatedListener.class);
+  private static final Logger log = LoggerFactory.getLogger(ProjectCreatedListener.class);
 
-  @Inject
-  protected GerritApi gApi;
+  @Inject protected GerritApi gApi;
 
   @Override
   public void onNewProjectCreated(Event event) {
     String name = event.getProjectName();
     try {
       ProjectApi api = gApi.projects().name(name);
-      log.info(String.format(
-          "New project: '%s', Parent: '%s'", name, api.get().parent));
+      log.info(String.format("New project: '%s', Parent: '%s'", name, api.get().parent));
     } catch (RestApiException e) {
-      log.error(String.format(
-          "Failed to get info for new project %s", name), e);
+      log.error(String.format("Failed to get info for new project %s", name), e);
     }
   }
 }

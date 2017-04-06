@@ -17,7 +17,6 @@ package com.googlesource.gerrit.plugins.examples.validationlistenerhashtag;
 import com.google.gerrit.reviewdb.client.Change;
 import com.google.gerrit.server.validators.HashtagValidationListener;
 import com.google.gerrit.server.validators.ValidationException;
-
 import java.util.Set;
 
 public class HashtagValidator implements HashtagValidationListener {
@@ -29,7 +28,8 @@ public class HashtagValidator implements HashtagValidationListener {
       if (toAdd.size() > 0) {
         for (String hashtag : toAdd) {
           if (!hashtag.startsWith("example-validationListenerHashtag-")) {
-            throw new ValidationException("Invalid example-validationListenerHashtag hashtag: " + hashtag);
+            throw new ValidationException(
+                "Invalid example-validationListenerHashtag hashtag: " + hashtag);
           }
         }
       }

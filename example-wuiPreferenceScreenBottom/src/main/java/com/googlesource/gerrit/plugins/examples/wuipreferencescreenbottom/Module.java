@@ -16,9 +16,7 @@ package com.googlesource.gerrit.plugins.examples.wuipreferencescreenbottom;
 
 import com.google.gerrit.extensions.registration.DynamicSet;
 import com.google.gerrit.extensions.webui.GwtPlugin;
-import com.google.gerrit.extensions.webui.JavaScriptPlugin;
 import com.google.gerrit.extensions.webui.WebUiPlugin;
-import com.google.gerrit.server.plugins.ServerPluginProvider;
 import com.google.inject.AbstractModule;
 
 public class Module extends AbstractModule {

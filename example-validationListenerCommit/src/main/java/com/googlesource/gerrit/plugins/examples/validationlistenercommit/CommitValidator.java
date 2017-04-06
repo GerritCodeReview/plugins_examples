@@ -19,19 +19,17 @@ import com.google.gerrit.server.events.CommitReceivedEvent;
 import com.google.gerrit.server.git.validators.CommitValidationException;
 import com.google.gerrit.server.git.validators.CommitValidationListener;
 import com.google.gerrit.server.git.validators.CommitValidationMessage;
-
 import java.util.List;
 
 public class CommitValidator implements CommitValidationListener {
   @Override
-  public List<CommitValidationMessage> onCommitReceived(
-      CommitReceivedEvent receiveEvent) throws CommitValidationException {
-    if ("plugins/example-validationListenerCommit".equals(receiveEvent.project.getName()) &&
-        !receiveEvent.commit.getShortMessage().startsWith("Cookbook: ")) {
-      CommitValidationMessage m = new CommitValidationMessage(
-          "Subject should begin with 'Cookbook: '", true);
-      throw new CommitValidationException(
-          "Invalid commit message", ImmutableList.of(m));
+  public List<CommitValidationMessage> onCommitReceived(CommitReceivedEvent receiveEvent)
+      throws CommitValidationException {
+    if ("plugins/example-validationListenerCommit".equals(receiveEvent.project.getName())
+        && !receiveEvent.commit.getShortMessage().startsWith("Cookbook: ")) {
+      CommitValidationMessage m =
+          new CommitValidationMessage("Subject should begin with 'Cookbook: '", true);
+      throw new CommitValidationException("Invalid commit message", ImmutableList.of(m));
     }
     return ImmutableList.of();
   }

@@ -21,7 +21,6 @@ import com.google.inject.AbstractModule;
 public class Module extends AbstractModule {
   @Override
   protected void configure() {
-    DynamicSet.bind(binder(), UploadValidationListener.class)
-        .to(DenyUploadExample.class);
+    DynamicSet.bind(binder(), UploadValidationListener.class).to(DenyUploadExample.class);
   }
 }

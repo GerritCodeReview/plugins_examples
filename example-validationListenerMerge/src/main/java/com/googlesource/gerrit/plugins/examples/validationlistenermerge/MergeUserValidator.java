@@ -22,7 +22,6 @@ import com.google.gerrit.server.git.validators.MergeValidationException;
 import com.google.gerrit.server.git.validators.MergeValidationListener;
 import com.google.gerrit.server.project.ProjectState;
 import com.google.inject.Singleton;
-
 import org.eclipse.jgit.lib.Repository;
 
 // Because we have a dedicated Module, we need to bind to the set
@@ -33,17 +32,19 @@ import org.eclipse.jgit.lib.Repository;
 @Singleton
 public class MergeUserValidator implements MergeValidationListener {
 
-  /**
-   * Reject all merges if the submitter is not an administrator
-   */
+  /** Reject all merges if the submitter is not an administrator */
   @Override
-  public void onPreMerge(Repository repo, CodeReviewCommit commit,
-      ProjectState destProject, Branch.NameKey destBranch,
-      PatchSet.Id patchSetId, IdentifiedUser caller)
-          throws MergeValidationException {
+  public void onPreMerge(
+      Repository repo,
+      CodeReviewCommit commit,
+      ProjectState destProject,
+      Branch.NameKey destBranch,
+      PatchSet.Id patchSetId,
+      IdentifiedUser caller)
+      throws MergeValidationException {
     if (!caller.getCapabilities().canAdministrateServer()) {
-      throw new MergeValidationException("Submitter " + caller.getNameEmail()
-          + " is not a site administrator");
+      throw new MergeValidationException(
+          "Submitter " + caller.getNameEmail() + " is not a site administrator");
     }
   }
 }

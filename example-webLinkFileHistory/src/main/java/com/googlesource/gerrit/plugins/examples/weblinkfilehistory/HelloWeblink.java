@@ -19,19 +19,17 @@ import com.google.gerrit.extensions.webui.FileHistoryWebLink;
 
 public class HelloWeblink implements FileHistoryWebLink {
   private String name = "HelloLink";
-  private String placeHolderUrlProject =
-      "http://my.hellolink.com/project=%s";
+  private String placeHolderUrlProject = "http://my.hellolink.com/project=%s";
   private String placeHolderUrlProjectRevisionFileName =
       placeHolderUrlProject + "-revision=%s-file=%s";
   private String myImageUrl = "http://placehold.it/16x16.gif";
 
   @Override
-  public WebLinkInfo getFileHistoryWebLink(String projectName, String revision,
-      String fileName) {
-    return new WebLinkInfo(name,
+  public WebLinkInfo getFileHistoryWebLink(String projectName, String revision, String fileName) {
+    return new WebLinkInfo(
+        name,
         myImageUrl,
-        String.format(placeHolderUrlProjectRevisionFileName, projectName,
-            revision, fileName),
+        String.format(placeHolderUrlProjectRevisionFileName, projectName, revision, fileName),
         Target.BLANK);
   }
 }

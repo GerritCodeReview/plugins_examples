@@ -23,31 +23,28 @@ import com.google.gerrit.server.validators.AssigneeValidationListener;
 import com.google.gerrit.server.validators.ValidationException;
 import com.google.gwtorm.server.OrmException;
 import com.google.inject.Inject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AssigneeValidator implements AssigneeValidationListener {
-  private static final Logger log =
-      LoggerFactory.getLogger(AssigneeValidationListener.class);
+  private static final Logger log = LoggerFactory.getLogger(AssigneeValidationListener.class);
 
   private static int MAX_ASSIGNED_CHANGES = 5;
 
-  @Inject
-  ChangeQueryBuilder queryBuilder;
+  @Inject ChangeQueryBuilder queryBuilder;
 
-  @Inject
-  ChangeQueryProcessor queryProcessor;
+  @Inject ChangeQueryProcessor queryProcessor;
 
   @Override
-  public void validateAssignee(Change change, Account assignee)
-      throws ValidationException {
+  public void validateAssignee(Change change, Account assignee) throws ValidationException {
     try {
       if (queryProcessor
-          .query(queryBuilder.assignee(assignee.getPreferredEmail())).entities()
-          .size() > MAX_ASSIGNED_CHANGES) {
-        throw new ValidationException("Cannot assign user to more than "
-            + MAX_ASSIGNED_CHANGES + " changes");
+              .query(queryBuilder.assignee(assignee.getPreferredEmail()))
+              .entities()
+              .size()
+          > MAX_ASSIGNED_CHANGES) {
+        throw new ValidationException(
+            "Cannot assign user to more than " + MAX_ASSIGNED_CHANGES + " changes");
       }
     } catch (OrmException | QueryParseException e) {
       log.error("Failed to validate assignee for change " + change.getId(), e);

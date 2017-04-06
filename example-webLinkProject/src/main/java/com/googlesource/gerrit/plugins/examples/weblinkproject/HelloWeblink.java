@@ -15,22 +15,16 @@
 package com.googlesource.gerrit.plugins.examples.weblinkproject;
 
 import com.google.gerrit.extensions.common.WebLinkInfo;
-import com.google.gerrit.extensions.webui.BranchWebLink;
-import com.google.gerrit.extensions.webui.FileHistoryWebLink;
-import com.google.gerrit.extensions.webui.PatchSetWebLink;
 import com.google.gerrit.extensions.webui.ProjectWebLink;
 
 public class HelloWeblink implements ProjectWebLink {
   private String name = "HelloLink";
-  private String placeHolderUrlProject =
-      "http://my.hellolink.com/project=%s";
+  private String placeHolderUrlProject = "http://my.hellolink.com/project=%s";
   private String myImageUrl = "http://placehold.it/16x16.gif";
 
   @Override
   public WebLinkInfo getProjectWeblink(String projectName) {
-    return new WebLinkInfo(name,
-        myImageUrl,
-        String.format(placeHolderUrlProject, projectName),
-        Target.BLANK);
+    return new WebLinkInfo(
+        name, myImageUrl, String.format(placeHolderUrlProject, projectName), Target.BLANK);
   }
 }

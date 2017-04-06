@@ -24,8 +24,9 @@ import com.google.gerrit.server.change.RevisionResource;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-class HelloRevisionAction implements UiAction<RevisionResource>,
-    RestModifyView<RevisionResource, HelloRevisionAction.Input> {
+class HelloRevisionAction
+    implements UiAction<RevisionResource>,
+        RestModifyView<RevisionResource, HelloRevisionAction.Input> {
 
   private Provider<CurrentUser> user;
 
@@ -41,10 +42,9 @@ class HelloRevisionAction implements UiAction<RevisionResource>,
 
   @Override
   public String apply(RevisionResource rev, Input input) {
-    final String greeting = input.french
-        ? "Bonjour"
-        : "Hello";
-    return String.format("%s %s from change %s, patch set %d!",
+    final String greeting = input.french ? "Bonjour" : "Hello";
+    return String.format(
+        "%s %s from change %s, patch set %d!",
         greeting,
         Strings.isNullOrEmpty(input.message)
             ? MoreObjects.firstNonNull(user.get().getUserName(), "world")
@@ -54,8 +54,7 @@ class HelloRevisionAction implements UiAction<RevisionResource>,
   }
 
   @Override
-  public Description getDescription(
-      RevisionResource resource) {
+  public Description getDescription(RevisionResource resource) {
     return new Description()
         .setLabel("Say hello")
         .setTitle("Say hello in different languages")

@@ -20,25 +20,20 @@ import com.google.gerrit.server.events.RefReceivedEvent;
 import com.google.gerrit.server.git.validators.RefOperationValidationListener;
 import com.google.gerrit.server.git.validators.ValidationMessage;
 import com.google.gerrit.server.validators.ValidationException;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class RefOperationValidationExample implements
-    RefOperationValidationListener {
+public class RefOperationValidationExample implements RefOperationValidationListener {
 
   @Override
-  public List<ValidationMessage> onRefOperation(RefReceivedEvent event)
-      throws ValidationException {
+  public List<ValidationMessage> onRefOperation(RefReceivedEvent event) throws ValidationException {
     ArrayList<ValidationMessage> messages = Lists.newArrayList();
-    if (event.command.getRefName()
-        .startsWith(RefNames.REFS_HEADS + "protected-")
+    if (event.command.getRefName().startsWith(RefNames.REFS_HEADS + "protected-")
         && !event.user.getCapabilities().canAdministrateServer()) {
-      throw new ValidationException(String.format(
-          "Operation %s on %s branch in project %s is not valid!",
-          event.command.getType(),
-          event.command.getRefName(),
-          event.project.getName()));
+      throw new ValidationException(
+          String.format(
+              "Operation %s on %s branch in project %s is not valid!",
+              event.command.getType(), event.command.getRefName(), event.project.getName()));
     }
     return messages;
   }

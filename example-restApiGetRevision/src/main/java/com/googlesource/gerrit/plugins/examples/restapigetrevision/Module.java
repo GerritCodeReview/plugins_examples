@@ -22,11 +22,12 @@ import com.google.inject.AbstractModule;
 public class Module extends AbstractModule {
   @Override
   protected void configure() {
-    install(new RestApiModule() {
-      @Override
-      protected void configure() {
-        get(REVISION_KIND, "greetings").to(Greetings.class);
-      }
-    });
+    install(
+        new RestApiModule() {
+          @Override
+          protected void configure() {
+            get(REVISION_KIND, "greetings").to(Greetings.class);
+          }
+        });
   }
 }

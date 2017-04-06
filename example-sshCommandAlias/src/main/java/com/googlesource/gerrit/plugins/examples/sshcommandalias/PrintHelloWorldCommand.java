@@ -16,7 +16,6 @@ package com.googlesource.gerrit.plugins.examples.sshcommandalias;
 
 import com.google.gerrit.sshd.CommandMetaData;
 import com.google.gerrit.sshd.SshCommand;
-
 import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.Option;
 

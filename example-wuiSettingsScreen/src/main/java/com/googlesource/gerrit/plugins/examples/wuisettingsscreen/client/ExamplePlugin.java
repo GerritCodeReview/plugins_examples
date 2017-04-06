@@ -14,16 +14,10 @@
 
 package com.googlesource.gerrit.plugins.examples.wuisettingsscreen.client;
 
-import com.google.gerrit.client.GerritUiExtensionPoint;
 import com.google.gerrit.client.Resources;
 import com.google.gerrit.plugin.client.Plugin;
 import com.google.gerrit.plugin.client.PluginEntryPoint;
-import com.google.gerrit.plugin.client.extension.Panel;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Button;
 
 public class ExamplePlugin extends PluginEntryPoint {
   public static final Resources RESOURCES = GWT.create(Resources.class);

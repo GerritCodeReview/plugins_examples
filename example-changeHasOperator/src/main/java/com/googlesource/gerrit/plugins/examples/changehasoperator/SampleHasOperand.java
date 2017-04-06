@@ -22,8 +22,7 @@ import com.google.gerrit.server.query.change.ChangeQueryBuilder;
 import com.google.inject.Singleton;
 
 @Singleton
-public class SampleHasOperand
-    implements ChangeQueryBuilder.ChangeHasOperandFactory {
+public class SampleHasOperand implements ChangeQueryBuilder.ChangeHasOperandFactory {
   public static class MyOddPredicate extends ChangeOperatorPredicate {
 
     MyOddPredicate() {
@@ -42,8 +41,7 @@ public class SampleHasOperand
   }
 
   @Override
-  public Predicate<ChangeData> create(ChangeQueryBuilder builder)
-      throws QueryParseException {
+  public Predicate<ChangeData> create(ChangeQueryBuilder builder) throws QueryParseException {
     return new MyOddPredicate();
   }
 }

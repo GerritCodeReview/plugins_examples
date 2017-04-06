@@ -19,7 +19,6 @@ import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.client.MenuItem;
 import com.google.gerrit.extensions.webui.TopMenu;
 import com.google.inject.Inject;
-
 import java.util.List;
 
 public class HelloTopMenu implements TopMenu {
@@ -33,12 +32,15 @@ public class HelloTopMenu implements TopMenu {
     menuItems.add(new MenuItem("Documentation", baseUrl));
     menuEntries = Lists.newArrayListWithCapacity(2);
     menuEntries.add(new MenuEntry("Cookbook", menuItems));
-    menuEntries.add(new MenuEntry("Projects", Lists.newArrayList(
-        new MenuItem("Browse Repositories", "https://gerrit.googlesource.com/"))));
+    menuEntries.add(
+        new MenuEntry(
+            "Projects",
+            Lists.newArrayList(
+                new MenuItem("Browse Repositories", "https://gerrit.googlesource.com/"))));
   }
 
   @Override
   public List<MenuEntry> getEntries() {
-      return menuEntries;
+    return menuEntries;
   }
 }

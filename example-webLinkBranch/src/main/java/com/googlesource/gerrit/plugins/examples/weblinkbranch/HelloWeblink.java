@@ -19,13 +19,13 @@ import com.google.gerrit.extensions.webui.BranchWebLink;
 
 public class HelloWeblink implements BranchWebLink {
   private String name = "HelloLink";
-  private String placeHolderUrlProjectBranch =
-      "http://my.hellolink.com/project=%s-branch=%s";
+  private String placeHolderUrlProjectBranch = "http://my.hellolink.com/project=%s-branch=%s";
   private String myImageUrl = "http://placehold.it/16x16.gif";
 
   @Override
   public WebLinkInfo getBranchWebLink(String projectName, String branchName) {
-    return new WebLinkInfo(name,
+    return new WebLinkInfo(
+        name,
         myImageUrl,
         String.format(placeHolderUrlProjectBranch, projectName, branchName),
         Target.BLANK);

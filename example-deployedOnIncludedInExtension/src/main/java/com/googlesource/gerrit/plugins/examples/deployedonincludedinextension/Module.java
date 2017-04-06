@@ -14,14 +14,13 @@
 
 package com.googlesource.gerrit.plugins.examples.deployedonincludedinextension;
 
-import com.google.inject.AbstractModule;
-import com.google.gerrit.extensions.registration.DynamicSet;
 import com.google.gerrit.extensions.config.ExternalIncludedIn;
+import com.google.gerrit.extensions.registration.DynamicSet;
+import com.google.inject.AbstractModule;
 
 public class Module extends AbstractModule {
   @Override
   protected void configure() {
-    DynamicSet.bind(binder(),
-        ExternalIncludedIn.class).to(DeployedOnIncludedInExtension.class);
+    DynamicSet.bind(binder(), ExternalIncludedIn.class).to(DeployedOnIncludedInExtension.class);
   }
 }

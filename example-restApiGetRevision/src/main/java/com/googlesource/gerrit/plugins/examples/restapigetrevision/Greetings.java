@@ -17,7 +17,6 @@ package com.googlesource.gerrit.plugins.examples.restapigetrevision;
 import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.extensions.restapi.RestReadView;
 import com.google.gerrit.server.change.RevisionResource;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -26,12 +25,9 @@ class Greetings implements RestReadView<RevisionResource> {
   @Override
   public Response<Collection<GreetInfo>> apply(RevisionResource rev) {
     Collection<GreetInfo> l = new ArrayList<>(3);
-    l.add(new GreetInfo("Bonjour", "France",
-        "http://en.wikipedia.org/wiki/France"));
-    l.add(new GreetInfo("Hallo", "Germany",
-        "http://en.wikipedia.org/wiki/Germany"));
-    l.add(new GreetInfo("Hello", "USA",
-        "http://en.wikipedia.org/wiki/USA"));
+    l.add(new GreetInfo("Bonjour", "France", "http://en.wikipedia.org/wiki/France"));
+    l.add(new GreetInfo("Hallo", "Germany", "http://en.wikipedia.org/wiki/Germany"));
+    l.add(new GreetInfo("Hello", "USA", "http://en.wikipedia.org/wiki/USA"));
     return Response.ok(l);
   }
 
