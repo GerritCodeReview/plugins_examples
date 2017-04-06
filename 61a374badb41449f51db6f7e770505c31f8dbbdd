@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d42fe241_a18ed2fb",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-04-06T16:52:22Z",
+      "side": 1,
+      "message": "Missing restApiCommandOption?",
+      "range": {
+        "startLine": 16,
+        "startChar": 19,
+        "endLine": 16,
+        "endChar": 35
+      },
+      "revId": "61a374badb41449f51db6f7e770505c31f8dbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "137cc749_ae18fc50",
+        "filename": "example-restApiCommandOption/WORKSPACE",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-04-06T16:52:22Z",
+      "side": 1,
+      "message": "Needs snapshot, not release?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "61a374badb41449f51db6f7e770505c31f8dbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
