@@ -12,6 +12,7 @@ genrule(
         "//example-restApiPostRevision",
         "//example-servlet",
         "//example-simpleSshCommand",
+        "//example-sshChangeQueryAttributes",
         "//example-sshCommandAlias",
         "//example-topMenu",
         "//example-usageDataLogger",
