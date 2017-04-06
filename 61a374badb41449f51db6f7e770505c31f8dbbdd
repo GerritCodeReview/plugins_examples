@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6b62bb0e_f8db516d",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1033742
+      },
+      "writtenOn": "2017-04-06T17:14:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d42fe241_a18ed2fb",
+      "range": {
+        "startLine": 16,
+        "startChar": 19,
+        "endLine": 16,
+        "endChar": 35
+      },
+      "revId": "61a374badb41449f51db6f7e770505c31f8dbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "137cc749_ae18fc50",
         "filename": "example-restApiCommandOption/WORKSPACE",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-06T16:52:22Z",
       "side": 1,
       "message": "Needs snapshot, not release?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "61a374badb41449f51db6f7e770505c31f8dbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fbeeae04_e544fd4a",
+        "filename": "example-restApiCommandOption/WORKSPACE",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1033742
+      },
+      "writtenOn": "2017-04-06T17:14:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "137cc749_ae18fc50",
       "range": {
         "startLine": 14,
         "startChar": 0,
