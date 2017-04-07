@@ -21,9 +21,16 @@ import com.google.gerrit.sshd.SshCommand;
 @RequiresCapability(AdminExampleCapability.ADMIN_EXAMPLE)
 @CommandMetaData(name = "admin", description = "Administrate the example")
 public final class AdminExampleCommand extends SshCommand {
+  private int runCount = 1;
 
   @Override
   protected void run() {
-    stdout.print("Hello, example administrator\n");
+    while (runCount-- > 0) {
+      stdout.print("Hello, example administrator\n");
+    }
+  }
+
+  public void setRunCount(int runCount) {
+    this.runCount = runCount;
   }
 }
