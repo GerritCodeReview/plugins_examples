@@ -1,0 +1,1 @@
+../../../../../../../../../../example-adminSshCommand/src/main/java/com/googlesource/gerrit/plugins/examples/adminsshcommand/AdminExampleCommand.java
