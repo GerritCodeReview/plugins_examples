@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "420f789e_ac8b9b7a",
+        "filename": "example-sshCommandOptionBeanParseListener/src/main/java/com/googlesource/gerrit/plugins/examples/sshcommandoptionbeanparselistner/SshModule.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1028987
+      },
+      "writtenOn": "2017-04-07T18:45:53Z",
+      "side": 1,
+      "message": "(Sorry, PS4 updates the example, not PS3.)",
+      "parentUuid": "0369eb39_350092d4",
+      "range": {
+        "startLine": 25,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "e81d865e00c6ae951da6b9a883c32f46cde10ff6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6dc294dd_294f3955",
         "filename": "example-sshCommandOptionBeanParseListener/src/main/resources/Documentation/about.md",
         "patchSetId": 2
