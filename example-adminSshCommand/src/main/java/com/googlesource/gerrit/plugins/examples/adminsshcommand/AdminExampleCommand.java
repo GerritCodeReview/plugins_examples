@@ -17,13 +17,27 @@ package com.googlesource.gerrit.plugins.examples.adminsshcommand;
 import com.google.gerrit.extensions.annotations.RequiresCapability;
 import com.google.gerrit.sshd.CommandMetaData;
 import com.google.gerrit.sshd.SshCommand;
+import org.kohsuke.args4j.Option;
 
 @RequiresCapability(AdminExampleCapability.ADMIN_EXAMPLE)
 @CommandMetaData(name = "admin", description = "Administrate the example")
 public final class AdminExampleCommand extends SshCommand {
+  private int count = 1;
+
+  @Option(
+    name = "--count",
+    aliases = {"-c"},
+    metaVar = "COUNT",
+    usage = "Number of times to greet the administrator"
+  )
+  public void setCount(int count) {
+    this.count = count;
+  }
 
   @Override
   protected void run() {
-    stdout.print("Hello, example administrator\n");
+    while (count-- > 0) {
+      stdout.print("Hello, example administrator\n");
+    }
   }
 }
