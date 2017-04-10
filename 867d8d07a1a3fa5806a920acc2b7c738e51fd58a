@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d75f6ecf_9d05e49a",
+        "filename": "example-sshAndRestCommandOptionBeanParseListener/BUCK",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1028987
+      },
+      "writtenOn": "2017-04-10T17:14:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6e60f39_fb320cdb",
+      "range": {
+        "startLine": 11,
+        "startChar": 81,
+        "endLine": 11,
+        "endChar": 88
+      },
+      "revId": "867d8d07a1a3fa5806a920acc2b7c738e51fd58a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "64dee5a8_b31b7fac",
         "filename": "example-sshAndRestCommandOptionBeanParseListener/BUILD",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-07T21:54:44Z",
       "side": 1,
       "message": "Listener",
+      "range": {
+        "startLine": 10,
+        "startChar": 85,
+        "endLine": 10,
+        "endChar": 92
+      },
+      "revId": "867d8d07a1a3fa5806a920acc2b7c738e51fd58a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a654460_48721812",
+        "filename": "example-sshAndRestCommandOptionBeanParseListener/BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1028987
+      },
+      "writtenOn": "2017-04-10T17:14:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64dee5a8_b31b7fac",
       "range": {
         "startLine": 10,
         "startChar": 85,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "6f87e859_4e791567",
+        "filename": "example-sshAndRestCommandOptionBeanParseListener/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1028987
+      },
+      "writtenOn": "2017-04-10T17:14:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7df0332_592d23e8",
+      "range": {
+        "startLine": 47,
+        "startChar": 90,
+        "endLine": 47,
+        "endChar": 97
+      },
+      "revId": "867d8d07a1a3fa5806a920acc2b7c738e51fd58a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "707dd36d_729a3ceb",
         "filename": "example-sshAndRestCommandOptionBeanParseListener/src/main/java/com/googlesource/gerrit/plugins/examples/sshandrestcommandoptionbeanparselistner/QueryOptions.java",
         "patchSetId": 4
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "98106521_ece789f6",
+        "filename": "example-sshAndRestCommandOptionBeanParseListener/src/main/java/com/googlesource/gerrit/plugins/examples/sshandrestcommandoptionbeanparselistner/QueryOptions.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1028987
+      },
+      "writtenOn": "2017-04-10T17:14:12Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "707dd36d_729a3ceb",
+      "range": {
+        "startLine": 35,
+        "startChar": 45,
+        "endLine": 35,
+        "endChar": 46
+      },
+      "revId": "867d8d07a1a3fa5806a920acc2b7c738e51fd58a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef5889a9_86c3512a",
         "filename": "example-sshAndRestCommandOptionBeanParseListener/src/main/java/com/googlesource/gerrit/plugins/examples/sshandrestcommandoptionbeanparselistner/SshModule.java",
         "patchSetId": 4
@@ -105,6 +201,30 @@
       "writtenOn": "2017-04-07T21:54:44Z",
       "side": 1,
       "message": "Maybe we should be encouraging the use of a Modules file that contains both the Ssh and Http Modules?",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 22
+      },
+      "revId": "867d8d07a1a3fa5806a920acc2b7c738e51fd58a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1026e4cf_a5638732",
+        "filename": "example-sshAndRestCommandOptionBeanParseListener/src/main/java/com/googlesource/gerrit/plugins/examples/sshandrestcommandoptionbeanparselistner/SshModule.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1028987
+      },
+      "writtenOn": "2017-04-10T17:14:12Z",
+      "side": 1,
+      "message": "That would be my preference as well. To do so we need a solution to this:\n\n  1) Injecting into inner classes is not supported.  Please use a \u0027static\u0027 class (top-level or nested) instead of com.googlesource.gerrit.plugins.examples.sshandrestcommandoptionbeanparselistner.Modules$SshModule.",
+      "parentUuid": "ef5889a9_86c3512a",
       "range": {
         "startLine": 22,
         "startChar": 13,
