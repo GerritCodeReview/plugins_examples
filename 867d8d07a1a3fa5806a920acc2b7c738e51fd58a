@@ -234,6 +234,30 @@
       "revId": "867d8d07a1a3fa5806a920acc2b7c738e51fd58a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c096ef42_adafed0f",
+        "filename": "example-sshAndRestCommandOptionBeanParseListener/src/main/java/com/googlesource/gerrit/plugins/examples/sshandrestcommandoptionbeanparselistner/SshModule.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1028987
+      },
+      "writtenOn": "2017-04-10T18:06:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1026e4cf_a5638732",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 22
+      },
+      "revId": "867d8d07a1a3fa5806a920acc2b7c738e51fd58a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
