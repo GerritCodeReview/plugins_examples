@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e58ead0_7ad7c771",
+        "filename": "example-sshChangeQueryAttributes/src/main/java/com/googlesource/gerrit/plugins/examples/sshchangequeryattributes/Module.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-04-11T19:29:57Z",
+      "side": 1,
+      "message": "I don\u0027t believe this is actually ssh specific (a good thing, I think we just want to fix the naming).",
+      "range": {
+        "startLine": 25,
+        "startChar": 46,
+        "endLine": 25,
+        "endChar": 70
+      },
+      "revId": "d1fa42b17edfc8da2967a2d521a464bce472c42f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
