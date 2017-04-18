@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5dc25585_3a01cb87",
+        "filename": "example-sshCommandDelegateDynamicBean/BUCK",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-04-18T21:53:47Z",
+      "side": 1,
+      "message": "This should correlate better with the example name.",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 10,
+        "endChar": 52
+      },
+      "revId": "dcd72f8a0c63b60f372942bed285810c9b594a9d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c1ea13f_870efbbe",
+        "filename": "example-sshCommandDelegateDynamicBean/WORKSPACE",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2017-04-18T21:53:47Z",
+      "side": 1,
+      "message": "wrong name?",
+      "range": {
+        "startLine": 1,
+        "startChar": 18,
+        "endLine": 1,
+        "endChar": 33
+      },
+      "revId": "dcd72f8a0c63b60f372942bed285810c9b594a9d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
