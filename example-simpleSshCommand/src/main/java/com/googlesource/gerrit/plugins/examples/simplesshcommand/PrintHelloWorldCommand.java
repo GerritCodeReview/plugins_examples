@@ -28,11 +28,18 @@ public final class PrintHelloWorldCommand extends SshCommand {
   @Option(name = "--french", usage = "output in French?")
   private boolean french;
 
+  public String additionalInfo;
+
   @Override
   public void run() {
-    final String greeting = (french ? "Bonjour " : "Hello ");
+    String greeting = (french ? "Bonjour " : "Hello ") + name;
+
+    // if we have someone that is saying hello
+    // this comes from a different plugin
+    if (additionalInfo != null) greeting += additionalInfo;
+
     // Note the use of '\n' instead of println to keep platform-agnostic line
     // terminator.
-    stdout.print(greeting + name + "!\n");
+    stdout.print(greeting + "!\n");
   }
 }

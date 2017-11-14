@@ -1,0 +1,1 @@
+../../../../../../../../../../example-simpleSshCommand/src/main/java/com/googlesource/gerrit/plugins/examples/simplesshcommand/PrintHelloWorldCommand.java
