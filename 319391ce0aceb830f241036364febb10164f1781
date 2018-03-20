@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5497a562_d2284aba",
+        "filename": "example-pgUiAction/src/main/java/com/googlesource/gerrit/plugins/examples/pguiaction/PgUiAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2018-03-20T11:30:46Z",
+      "side": 1,
+      "message": "A COMMENT",
+      "range": {
+        "startLine": 30,
+        "startChar": 24,
+        "endLine": 30,
+        "endChar": 35
+      },
+      "revId": "319391ce0aceb830f241036364febb10164f1781",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
