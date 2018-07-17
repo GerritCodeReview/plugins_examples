@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b992efd_aecf92a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2018-07-17T18:39:24Z",
+      "side": 1,
+      "message": "Can you give a justification for this change?  What problem does the existence of the buck support cause?",
+      "revId": "975b14d53fa8e9e977af1da3b65ceb3d7aded9f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
