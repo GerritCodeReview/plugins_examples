@@ -34,6 +34,24 @@
       "revId": "975b14d53fa8e9e977af1da3b65ceb3d7aded9f2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efad14fa_b3fb405f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2018-07-17T19:20:36Z",
+      "side": 1,
+      "message": "Isen\u0027t buck dependant on the version of gerrit you use? If so then won\u0027t this plugin break for buck users when we update it due to api changes in the core?",
+      "parentUuid": "a0f599c8_5ce545ab",
+      "revId": "975b14d53fa8e9e977af1da3b65ceb3d7aded9f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
