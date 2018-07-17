@@ -52,6 +52,24 @@
       "revId": "975b14d53fa8e9e977af1da3b65ceb3d7aded9f2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6ed6924_9f2d33de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2018-07-17T19:32:10Z",
+      "side": 1,
+      "message": "\u003e No problem, except that we have moved to BUILD (bazel). \n\nAs the examples are effectively docs that are not tied to any one version of gerrit, I think it makes sense to keep support for buck as long as the example can be used with a version of gerrit that uses buck.  If that criteria is not true for certain examples, then I would support removing it for those examples.\n\n\u003e Users may get confused which one to use.\n\nI would support notes explaining which one to use depending on the version of gerrit being targeted.\n\n\n\u003e Also we have been removing BUCK from other plugins too\n\nI think that there is no general rule for this that can be applied across all plugins.\n\n\n\u003e Isen\u0027t buck dependant on the version of gerrit you use? If so then won\u0027t this plugin break for buck users when we update it due to api changes in the core?\n\nI\u0027m sorry, I don\u0027t understand this question.",
+      "parentUuid": "efad14fa_b3fb405f",
+      "revId": "975b14d53fa8e9e977af1da3b65ceb3d7aded9f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
