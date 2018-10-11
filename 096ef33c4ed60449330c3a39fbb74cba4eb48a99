@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aefddf55_1ab01965",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2018-10-11T23:38:57Z",
+      "side": 1,
+      "message": "This also changes the release API from 2.13.2 to 2.15.5, and the snapshot API from 2.15-SNAPSHOT to 2.16-SNAPHOT.\n\nDo all of the examples build with that API? Should we create stable branches on this project?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "096ef33c4ed60449330c3a39fbb74cba4eb48a99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2840cd1d_ecdad08b",
+        "filename": "WORKSPACE",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2018-10-11T23:38:57Z",
+      "side": 1,
+      "message": "This revision of bazlets is broken.  It needs the fix that was done in [1]. That is brought to the master branch by [2].\n\n[1] https://gerrit-review.googlesource.com/c/bazlets/+/197953\n[2] https://gerrit-review.googlesource.com/c/bazlets/+/199774",
+      "range": {
+        "startLine": 6,
+        "startChar": 14,
+        "endLine": 6,
+        "endChar": 54
+      },
+      "revId": "096ef33c4ed60449330c3a39fbb74cba4eb48a99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
