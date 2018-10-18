@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ce110fce_479340f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1012697
+      },
+      "writtenOn": "2018-10-18T11:06:56Z",
+      "side": 1,
+      "message": "Without this change, no examples build successfully because the previous used bazlets version uses the set keyword which doesn\u0027t exist in current bazel. The fix for that was submitted in: e57da7c1ddde1389c15c86154a2ac4019099b050\n\nBut pointing to that commit id makes bazel complain about the api not being available (I guess there\u0027s a way to workaround that, but I don\u0027t know enough to do that).\n\nWith this change as it is right now (pointing to the stable-2.15 branch), some examples build successfully, and some don\u0027t (because they need to be adapted to 2.15.  I\u0027d be willing to do that work, as I\u0027m trying to get familiar with gerrit\u0027s code, but probably on a separate change.\n\nI\u0027m not sure if the other comment was meant for me to change something in this commit or more as a wish for the future.\n\nThe problem that I see here is that the breakage was introduced by an external dependency (bazel) so I guess that\u0027s hard to track.  Anyway, I guess that once I get all the examples building with 2.15 I could tag that stable-2.15...",
+      "parentUuid": "17b53f80_7d3a4a95",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "096ef33c4ed60449330c3a39fbb74cba4eb48a99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2840cd1d_ecdad08b",
         "filename": "WORKSPACE",
         "patchSetId": 1
@@ -69,6 +93,30 @@
       "revId": "096ef33c4ed60449330c3a39fbb74cba4eb48a99",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e67b27b_468d873c",
+        "filename": "WORKSPACE",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1012697
+      },
+      "writtenOn": "2018-10-18T11:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2840cd1d_ecdad08b",
+      "range": {
+        "startLine": 6,
+        "startChar": 14,
+        "endLine": 6,
+        "endChar": 54
+      },
+      "revId": "096ef33c4ed60449330c3a39fbb74cba4eb48a99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
