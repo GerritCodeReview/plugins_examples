@@ -42,24 +42,14 @@ class HelloProjectAction
     return s == null || s.isEmpty();
   }
 
-  private Object firstNonNull(String first, String second) {
-    if (first != null) {
-      return first;
-    }
-    if (second != null) {
-      return second;
-    }
-    throw new NullPointerException();
-  }
-
-  @Override
+   @Override
   public String apply(ProjectResource rsrc, Input input) {
     final String greeting = input.french ? "Bonjour" : "Hello";
     return String.format(
         "%s %s from project %s!",
         greeting,
         isNullOrEmpty(input.message)
-            ? firstNonNull(user.get().getUserName(), "world")
+            ? user.get().getUserName().orElse("world")
             : input.message,
         rsrc.getName());
   }

@@ -17,7 +17,7 @@ package com.googlesource.gerrit.plugins.examples.restapicommandoption;
 import com.google.gerrit.extensions.annotations.Exports;
 import com.google.gerrit.httpd.plugins.HttpPluginModule;
 import com.google.gerrit.server.DynamicOptions;
-import com.google.gerrit.server.query.change.QueryChanges;
+import com.google.gerrit.server.restapi.change.QueryChanges;
 import org.kohsuke.args4j.Option;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

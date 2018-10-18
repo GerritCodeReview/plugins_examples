@@ -19,17 +19,26 @@ import com.google.gerrit.reviewdb.client.RefNames;
 import com.google.gerrit.server.events.RefReceivedEvent;
 import com.google.gerrit.server.git.validators.RefOperationValidationListener;
 import com.google.gerrit.server.git.validators.ValidationMessage;
+import com.google.gerrit.server.permissions.GlobalPermission;
+import com.google.gerrit.server.permissions.PermissionBackend;
 import com.google.gerrit.server.validators.ValidationException;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.inject.Inject;
 
 public class RefOperationValidationExample implements RefOperationValidationListener {
+
+  private PermissionBackend permissionBackend;
+  @Inject
+  RefOperationValidationExample(PermissionBackend permissionBackend) {
+    this.permissionBackend = permissionBackend;
+  }
 
   @Override
   public List<ValidationMessage> onRefOperation(RefReceivedEvent event) throws ValidationException {
     ArrayList<ValidationMessage> messages = Lists.newArrayList();
     if (event.command.getRefName().startsWith(RefNames.REFS_HEADS + "protected-")
-        && !event.user.getCapabilities().canAdministrateServer()) {
+        && !permissionBackend.user(event.user).testOrFalse(GlobalPermission.ADMINISTRATE_SERVER)) {
       throw new ValidationException(
           String.format(
               "Operation %s on %s branch in project %s is not valid!",
