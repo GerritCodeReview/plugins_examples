@@ -1,0 +1,18 @@
+include_defs('//bucklets/gerrit_plugin.bucklet')
+
+gerrit_plugin(
+  name = 'example-patchSetEventListener',
+  srcs = glob(['src/main/java/**/*.java']),
+  resources = glob(['src/main/**/*']),
+  manifest_entries = [
+    'Gerrit-PluginName: example-patchSetEventListener',
+    'Gerrit-Module: com.googlesource.gerrit.plugins.examples.patchseteventlistener.Module',
+    'Implementation-Title: Example PatchSet EventListener',
+    'Implementation-URL: https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples',
+  ],
+)
+
+java_library(
+  name = 'classpath',
+  deps = [':example-patchseteventlistener__plugin'],
+)
