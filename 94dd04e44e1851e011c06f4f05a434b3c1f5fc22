@@ -46,6 +46,30 @@
       "revId": "94dd04e44e1851e011c06f4f05a434b3c1f5fc22",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfa97dab_00cb4b5a",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-04T23:58:01Z",
+      "side": 1,
+      "message": "Im not sure when there\u0027s a date. But many users @ wmf have been asking. Since some want the new project dashboard, some want the inline editor and some want the new comment thread. :)\n\n(though i have a task opened downstream https://phabricator.wikimedia.org/T200739)\n\nIm also looking for us to get rid of ReviewDB too (re https://phabricator.wikimedia.org/T211139 which will fix https://phabricator.wikimedia.org/T176532)",
+      "parentUuid": "7ddf71fe_aeb2afc5",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 6
+      },
+      "revId": "94dd04e44e1851e011c06f4f05a434b3c1f5fc22",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
