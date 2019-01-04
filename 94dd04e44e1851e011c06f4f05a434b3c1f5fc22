@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc9cb3c3_0dfc3446",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-04T23:46:16Z",
+      "side": 1,
+      "message": "make this:\n\n     .gr-main-header-0 .linksTitle.gr-main-header,\n     .gr-main-header-0 .bigTitle.gr-main-header,\n     .gr-main-header-0 .loginButton.gr-main-header,\n     .gr-main-header-0 .registerButton.gr-main-header,\n     .gr-main-header-0 .gr-account-dropdown {\n       color: rgb(255,255,255);\n     }\n\n(it puts it onto a new line for easier reading and also it makes the username white (if you doin\u0027t have a avatar set))\n\nFrom https://gerrit.wikimedia.org/r/#/c/operations/puppet/+/482379/7/modules/gerrit/files/homedir/review_site/static/gerrit-theme.html",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 6
+      },
+      "revId": "94dd04e44e1851e011c06f4f05a434b3c1f5fc22",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
