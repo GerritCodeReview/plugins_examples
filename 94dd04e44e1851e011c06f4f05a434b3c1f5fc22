@@ -22,6 +22,30 @@
       "revId": "94dd04e44e1851e011c06f4f05a434b3c1f5fc22",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ddf71fe_aeb2afc5",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2019-01-04T23:52:00Z",
+      "side": 1,
+      "message": "\u003e make this:\n\u003e \n\u003e      .gr-main-header-0 .linksTitle.gr-main-header,\n\u003e      .gr-main-header-0 .bigTitle.gr-main-header,\n\u003e      .gr-main-header-0 .loginButton.gr-main-header,\n\u003e      .gr-main-header-0 .registerButton.gr-main-header,\n\u003e      .gr-main-header-0 .gr-account-dropdown {\n\u003e        color: rgb(255,255,255);\n\u003e      }\n\u003e \n\u003e (it puts it onto a new line for easier reading and also it makes the username white (if you doin\u0027t have a avatar set))\n\nAh, good catch :-)\n\n\u003e From https://gerrit.wikimedia.org/r/#/c/operations/puppet/+/482379/7/modules/gerrit/files/homedir/review_site/static/gerrit-theme.html\n\nAre you guys upgrading to v2.16.2 anytime soon? We got rid 100% of ReviewDb and thus went fully multi-site :-)",
+      "parentUuid": "dc9cb3c3_0dfc3446",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 6
+      },
+      "revId": "94dd04e44e1851e011c06f4f05a434b3c1f5fc22",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
