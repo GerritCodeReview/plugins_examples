@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c74043c9_80a4cb7c",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-06T20:29:25Z",
+      "side": 1,
+      "message": "Make this:\n\n     .gr-app-0 gr-main-header.gr-app {\n       background-color: rgb(59,120,231);\n     }\n\n     .gr-app-0 gr-main-header.gr-app,\n     .gr-app-1 gr-main-header.gr-app {\n       box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);\n       padding: 0.5em;\n       border-bottom: 0px;\n     }",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 6
+      },
+      "revId": "bbdd8f22018b62383ae54810b662546a7c861fb2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a098b24_ec48c575",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-06T20:29:25Z",
+      "side": 1,
+      "message": "Do:\n\ndo\n     .gr-main-header-0 .titleText.gr-main-header,\n     .gr-main-header-1 .titleText.gr-main-header {\n       font-size: 1.1em;",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 6
+      },
+      "revId": "bbdd8f22018b62383ae54810b662546a7c861fb2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67b71f0e_e078ba0e",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-06T20:29:25Z",
+      "side": 1,
+      "message": "do\n     .gr-main-header-0 .titleText.gr-main-header::after,\n     .gr-main-header-1 .titleText.gr-main-header::after {\n       content: \u0027Gerrit\u0027;\n     }",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 6
+      },
+      "revId": "bbdd8f22018b62383ae54810b662546a7c861fb2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f391639_a6bcb9bc",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-06T20:29:25Z",
+      "side": 1,
+      "message": "I\u0027ve just discovered that to support dark mode too (as long as your not changing the colour) you do:\n\n.gr-main-header-0 .titleText.gr-main-header::before,\n.gr-main-header-1 .titleText.gr-main-header::before {",
+      "revId": "bbdd8f22018b62383ae54810b662546a7c861fb2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
