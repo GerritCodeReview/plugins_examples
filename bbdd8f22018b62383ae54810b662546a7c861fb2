@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "e4d7b022_957ecb12",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2019-01-22T18:55:01Z",
+      "side": 1,
+      "message": "To support dark mode too :).",
+      "parentUuid": "1043ef51_82e23514",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 6
+      },
+      "revId": "bbdd8f22018b62383ae54810b662546a7c861fb2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5a098b24_ec48c575",
         "filename": "example-polyCssStyle/gerrit-bluestyle.html",
         "patchSetId": 4
