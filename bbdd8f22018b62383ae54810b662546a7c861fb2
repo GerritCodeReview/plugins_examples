@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1043ef51_82e23514",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2019-01-22T07:40:16Z",
+      "side": 1,
+      "message": "What\u0027s the intended purpose of that?",
+      "parentUuid": "c74043c9_80a4cb7c",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 6
+      },
+      "revId": "bbdd8f22018b62383ae54810b662546a7c861fb2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5a098b24_ec48c575",
         "filename": "example-polyCssStyle/gerrit-bluestyle.html",
         "patchSetId": 4
