@@ -1,0 +1,173 @@
+// Creates action button that opens a custom popup on button click.
+
+/////////////////////////////////////////////////////////////////////////////
+// Custom action popup
+/////////////////////////////////////////////////////////////////////////////
+
+<dom-module id="custom-button-popup">
+    <template>
+        <style>
+            .custom-popup-dialog {
+                padding: 2em;
+                line-height: 1.7em;
+            }
+            checkbox.custom-popup-dialog {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                height: 2em;
+                padding: 0.3em;
+                padding-left: 0.6em;
+                padding-right: 0.6em;
+                font-size: 1rem;
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+        </style>
+        <gr-dialog
+                id="customActionDialog"
+                class="custom-popup-dialog"
+                confirm-label="Continue"
+                confirm-on-enter
+                cancel-label="Cancel"
+                on-cancel="_handleCancel"
+                on-confirm="_handleConfirm">
+            <div class="header" slot="header">
+                Perform custom action on &nbsp; <strong>[[number]] - "[[subject]]"</strong><br/>
+            </div>
+            <div class="main" slot="main">
+                &nbsp;<input type="checkbox" id="custombox" class="custom-popup-dialog style-scope gr-settings-view" value="false"> Run custom action with checkbox checked
+            </div>
+        </gr-dialog>
+    </template>
+    <script>
+        'use strict';
+         Polymer({
+            is: 'custom-button-popup',
+            properties: {
+                subject: {
+                    type: String,
+                    value: '',
+                    reflectToAttribute: true
+                },
+                changeId: {
+                    type: String,
+                    value: '',
+                    reflectToAttribute: true
+                },
+                number: {
+                    type: String,
+                    value: '',
+                    reflectToAttribute: true
+                },
+            },
+            ready() {
+                console.log(">>> Custom action popup ready");
+            },
+            _handleConfirm(e) {
+                e.preventDefault();
+                let plugin = this.plugin
+                // 2 kinds of custom action - with and without box checked
+                if (this.$.custombox.checked == true) {
+                    // NOTE: REST API command checkbox-checked should be implemented to run this
+                    let url = '/changes/' + this.get('changeId') + '/revisions/current/' + plugin.getPluginName() + '~checkbox-checked';
+                    plugin.restApi().post(url).then(function(ok_resp) {
+                        plugin.custom_popup_promise.close();
+                        plugin.custom_popup_promise = null;
+                        if (ok_resp.return_code == 0) {
+                            plugin.changeActions()._el.dispatchEvent(new CustomEvent('show-alert', {detail: {message: ok_resp.msg}, bubbles: true}));
+                        } else {
+                            alert(ok_resp.msg);
+                        }
+                    }).catch(function(err_resp) {
+                        // console.log(">>> ERROR: Custom action: " + err_resp);
+                        plugin.custom_popup_promise.close();
+                        plugin.custom_popup_promise = null;
+                        alert('Error performing custom action: ' + err_resp);
+                    });
+                } else {
+                    // If checkbox not checked - simply add a predefined comment to change
+                    let url = '/changes/' + this.get('changeId') + '/revisions/current/review';
+                    let data = { message: 'Custom message in Gerrit change comments' };
+                    plugin.restApi().post(url, data).then(function(ok_resp) {
+                        // console.log('>>> return_code = ' + ok_resp);
+                        plugin.custom_popup_promise.close();
+                        plugin.custom_popup_promise = null;
+                        plugin.changeActions()._el.dispatchEvent(new CustomEvent('show-alert', {detail: {message: "A new comment added to change"}, bubbles: true}));
+                    }).catch(function(err_resp) {
+                        // console.log(">>> ERROR: Custom action: " + err_resp);
+                        plugin.custom_popup_promise.close();
+                        plugin.custom_popup_promise = null;
+                        alert('Error performing custom action: ' + err_resp);
+                    });
+                }
+            },
+            _handleCancel(e) {
+                e.preventDefault();
+                this.plugin.custom_popup_promise.close();
+                this.plugin.custom_popup_promise = null;
+            },
+            attached: function() {
+                this.plugin.custom_popup = this;
+            },
+        });
+    </script>
+</dom-module>
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Custom button
+/////////////////////////////////////////////////////////////////////////////
+
+<dom-module id="custom-button-button">
+    <script>
+        let CUSTOM_BTN_KEY = null;
+        const CUSTOM_BTN_LABEL = "Custom Action"
+        const CUSTOM_BTN_COLOR = '#6db11d';
+
+        const installCustomButton = async function(change) {
+            let changeActions = PLUGIN.changeActions();
+
+            // Remove custom button if any
+            if (CUSTOM_BTN_KEY != null) {
+                changeActions.removeTapListener(CUSTOM_BTN_KEY, (param) => {} );
+                changeActions.remove(CUSTOM_BTN_KEY);
+                CUSTOM_BTN_KEY = null;
+            }
+
+            CUSTOM_BTN_KEY = changeActions.add(changeActions.ActionType.CHANGE, CUSTOM_BTN_LABEL);
+            changeActions.setEnabled(CUSTOM_BTN_KEY, true);
+            changeActions.setActionPriority(changeActions.ActionType.CHANGE, CUSTOM_BTN_KEY, -4);
+            changeActions.addTapListener(CUSTOM_BTN_KEY, customButtonHandler(changeActions, change));
+            let customButtons = Array.prototype.slice.call(changeActions._el.getElementsByTagName('paper-button')).filter(el => el.parentElement.getAttribute("data-action-key") === CUSTOM_BTN_KEY);
+            customButtons[0].style.color = CUSTOM_BTN_COLOR;
+        };
+
+        const customButtonHandler = function(changeActions, change) {
+            return () => {
+                PLUGIN.popup('custom-button-popup').then( (param) => {
+                    // console.log('>>> Popup created for custom action');
+                    PLUGIN.custom_popup_promise = param;
+                    PLUGIN.custom_popup.set('subject', change.subject);
+                    PLUGIN.custom_popup.set('number', change._number);
+                    PLUGIN.custom_popup.set('changeId', change.id);
+                    // console.log(">>> Change: " + change);
+                }).catch( (param) => { console.log('ERROR: unexpected error:' + param);});
+            };
+        };
+    </script>
+</dom-module>
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Install button
+/////////////////////////////////////////////////////////////////////////////
+
+<dom-module id="install">
+    <script>
+        Gerrit.install(plugin => {
+            PLUGIN = plugin;
+            pluginName = PLUGIN.getPluginName();
+            PLUGIN.on('showchange', installCustomButton);
+        });
+    </script>
+</dom-module>
+
