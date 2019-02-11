@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5edf46b6_4d1692f5",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "// Creates action button that opens a custom popup on button click.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a735f3f5_6d91f1c5",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to save plugin here, I believe it\u0027s already global to the plugin context.\nOtherwise you should be able to pass it to the onchange event handler.",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 26
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89f93c25_e2013ff0",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "This is always available from plugin.getPluginName();",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 30
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25f90703_53aaa021",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "No need for these global variables, they are only used in installCustomButton.",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eae545e7_61bc1581",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "Set plugin-context as a Property instead.",
+      "range": {
+        "startLine": 84,
+        "startChar": 24,
+        "endLine": 84,
+        "endChar": 30
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b91a066_b9e0810f",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "One suggestion is to have these functions in Gerrit.install() below.",
+      "range": {
+        "startLine": 132,
+        "startChar": 5,
+        "endLine": 132,
+        "endChar": 11
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0aee4f9e_448e00dd",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "Not used.",
+      "range": {
+        "startLine": 135,
+        "startChar": 11,
+        "endLine": 135,
+        "endChar": 50
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07bb1730_8a7b6d9f",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2019-02-11T09:21:50Z",
+      "side": 1,
+      "message": "A more \"well-defined\" filter would be (pseudo code):\n\n    el.parent[\"data-action-key\"] \u003d\u003d\u003d CUSTOM_BTN_KEY",
+      "range": {
+        "startLine": 148,
+        "startChar": 122,
+        "endLine": 148,
+        "endChar": 170
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
