@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c71b8435_875fdc95",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5edf46b6_4d1692f5",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a735f3f5_6d91f1c5",
         "filename": "example-polygerritCustomButton/custom-button.html",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b165a4d6_f08920d9",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a735f3f5_6d91f1c5",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 26
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "60e9d343_088ecebf",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89f93c25_e2013ff0",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 30
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25f90703_53aaa021",
         "filename": "example-polygerritCustomButton/custom-button.html",
         "patchSetId": 1
@@ -91,6 +163,30 @@
       "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1af6b80_3e6c32f2",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25f90703_53aaa021",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "bbb7cd01_d807ab72",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eae545e7_61bc1581",
+      "range": {
+        "startLine": 84,
+        "startChar": 24,
+        "endLine": 84,
+        "endChar": 30
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9b91a066_b9e0810f",
         "filename": "example-polygerritCustomButton/custom-button.html",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2019-02-11T09:21:50Z",
       "side": 1,
       "message": "One suggestion is to have these functions in Gerrit.install() below.",
+      "range": {
+        "startLine": 132,
+        "startChar": 5,
+        "endLine": 132,
+        "endChar": 11
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbd31dd0_f74a3c4b",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "I think the code will be more structured if keeping button definitions in separate module in case of multiple custom buttons.",
+      "parentUuid": "9b91a066_b9e0810f",
       "range": {
         "startLine": 132,
         "startChar": 5,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "e5146f90_068ee7c2",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0aee4f9e_448e00dd",
+      "range": {
+        "startLine": 135,
+        "startChar": 11,
+        "endLine": 135,
+        "endChar": 50
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07bb1730_8a7b6d9f",
         "filename": "example-polygerritCustomButton/custom-button.html",
         "patchSetId": 1
@@ -183,6 +351,30 @@
       "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c44fe59b_49f9556b",
+        "filename": "example-polygerritCustomButton/custom-button.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1020477
+      },
+      "writtenOn": "2019-02-16T08:02:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07bb1730_8a7b6d9f",
+      "range": {
+        "startLine": 148,
+        "startChar": 122,
+        "endLine": 148,
+        "endChar": 170
+      },
+      "revId": "6130fb7f52024d37bafe0b522c148840dc7a0df3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
