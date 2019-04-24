@@ -70,6 +70,86 @@
       "revId": "c89771d9baa2a89a04c52e5b38ab53dc9c8341a2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca6b4051_5de3e3aa",
+        "filename": "WORKSPACE",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-04-24T06:49:34Z",
+      "side": 1,
+      "message": "This is no longer the latest revision on stable-2.15 and doesn\u0027t work with the latest bazel.",
+      "range": {
+        "startLine": 6,
+        "startChar": 14,
+        "endLine": 6,
+        "endChar": 54
+      },
+      "revId": "c89771d9baa2a89a04c52e5b38ab53dc9c8341a2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1ff427d_e585c37c",
+        "filename": "WORKSPACE",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-04-24T06:49:34Z",
+      "side": 1,
+      "message": "This should be un-commented.  The block below that uses the snapshot API should be commented out.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 2
+      },
+      "revId": "c89771d9baa2a89a04c52e5b38ab53dc9c8341a2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eaf1895a_908c1e3f",
+        "filename": "WORKSPACE",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-04-24T06:49:34Z",
+      "side": 1,
+      "message": "Uncomment this",
+      "revId": "c89771d9baa2a89a04c52e5b38ab53dc9c8341a2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3565cfe1_6c687d0e",
+        "filename": "WORKSPACE",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2019-04-24T06:49:34Z",
+      "side": 1,
+      "message": "Comment this out",
+      "revId": "c89771d9baa2a89a04c52e5b38ab53dc9c8341a2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
