@@ -14,15 +14,17 @@
 
 package com.googlesource.gerrit.plugins.examples.validationlistenerassignee;
 
+import com.google.gerrit.index.query.QueryParseException;
 import com.google.gerrit.reviewdb.client.Account;
 import com.google.gerrit.reviewdb.client.Change;
-import com.google.gerrit.server.query.QueryParseException;
 import com.google.gerrit.server.query.change.ChangeQueryBuilder;
 import com.google.gerrit.server.query.change.ChangeQueryProcessor;
 import com.google.gerrit.server.validators.AssigneeValidationListener;
 import com.google.gerrit.server.validators.ValidationException;
 import com.google.gwtorm.server.OrmException;
 import com.google.inject.Inject;
+import java.io.IOException;
+import org.eclipse.jgit.errors.ConfigInvalidException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,7 +48,7 @@ public class AssigneeValidator implements AssigneeValidationListener {
         throw new ValidationException(
             "Cannot assign user to more than " + MAX_ASSIGNED_CHANGES + " changes");
       }
-    } catch (OrmException | QueryParseException e) {
+    } catch (OrmException | IOException | ConfigInvalidException | QueryParseException e) {
       log.error("Failed to validate assignee for change " + change.getId(), e);
       // Allow assignee.
     }

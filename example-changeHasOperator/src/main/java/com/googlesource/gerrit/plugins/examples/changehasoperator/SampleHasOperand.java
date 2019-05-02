@@ -14,8 +14,8 @@
 
 package com.googlesource.gerrit.plugins.examples.changehasoperator;
 
-import com.google.gerrit.server.query.Predicate;
-import com.google.gerrit.server.query.QueryParseException;
+import com.google.gerrit.index.query.Predicate;
+import com.google.gerrit.index.query.QueryParseException;
 import com.google.gerrit.server.query.change.ChangeData;
 import com.google.gerrit.server.query.change.ChangeOperatorPredicate;
 import com.google.gerrit.server.query.change.ChangeQueryBuilder;
