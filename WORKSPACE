@@ -3,7 +3,7 @@ workspace(name = "examples")
 load("//:bazlets.bzl", "load_bazlets")
 
 load_bazlets(
-    commit = "0f87babe07a555425d829c6e7951e296e9e24579",
+    commit = "39310fb43f4eaaad2e338b3bcbf393a2f4e11293",
     #    local_path = "/home/<user>/projects/bazlets",
 )
 
@@ -19,8 +19,15 @@ load(
 #    "gerrit_api_maven_local",
 #)
 
+load(
+    "@com_googlesource_gerrit_bazlets//:gerrit_gwt.bzl",
+    "gerrit_gwt",
+)
+
 # Load release Plugin API
 gerrit_api()
 
 # Load snapshot Plugin API
 #gerrit_api_maven_local()
+
+gerrit_gwt()
