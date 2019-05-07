@@ -22,11 +22,11 @@ limitations under the License.
   <groupId>com.googlesource.gerrit.plugins</groupId>
   <artifactId>example-wuiChangeScreenHeaderRightOfButtons</artifactId>
   <packaging>jar</packaging>
-  <version>2.14-SNAPSHOT</version>
+  <version>2.14.20</version>
   <properties>
     <Gerrit-ApiType>plugin</Gerrit-ApiType>
     <Gerrit-ApiVersion>${project.version}</Gerrit-ApiVersion>
-    <GWT-Version>2.8.0</GWT-Version>
+    <GWT-Version>2.8.2</GWT-Version>
   </properties>
 
   <build>
