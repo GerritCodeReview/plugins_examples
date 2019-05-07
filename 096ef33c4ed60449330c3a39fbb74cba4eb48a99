@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "16e375c2_e8e3d9b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2019-05-07T00:45:37Z",
+      "side": 1,
+      "message": "I think this is solved now. I have https://gerrit-review.googlesource.com/c/plugins/examples/+/223382 uploaded onto a new stable-2.14 branch and this change now fixes all the examples for stable-2.15. Next I\u0027ll get 2.16 working (and a stable-2.15 branch created), then 3.0, and finally I\u0027ll see about what works with the current master.\n\nI think the process with bazlets is clearer now (though maybe I should to try a \"plugin maintenance\" doc and have you (David P) review it to see if I\u0027ve got it right) and can be something we follow in the future.",
+      "parentUuid": "ce110fce_479340f2",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "096ef33c4ed60449330c3a39fbb74cba4eb48a99",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2840cd1d_ecdad08b",
         "filename": "WORKSPACE",
         "patchSetId": 1
