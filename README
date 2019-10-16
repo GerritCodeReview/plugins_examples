@@ -16,7 +16,7 @@ To build all the example plugins, issue the following command:
 The output for all the example plugins is created in
 
 
-  bazel-genfiles/all.zip
+  bazel-bin/all.zip
 
 
 To build a specific example plugin, issue one of the following commands:
@@ -33,14 +33,14 @@ If the build command is run from the top-level example directory,
 the output for the example is created in
 
 
-  bazel-genfiles/example-<example>/example-<example>.jar
+  bazel-bin/example-<example>/example-<example>.jar
 
 
 If the build command is run from inside a specific example directory,
 the output for the example is created in
 
 
-  example-<example>/bazel-genfiles/example-<example>.jar
+  example-<example>/bazel-bin/example-<example>.jar
 
 
 
