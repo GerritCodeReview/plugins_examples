@@ -19,7 +19,6 @@ import com.google.gerrit.server.query.change.ChangeData;
 import com.google.gerrit.server.query.change.ChangeQueryProcessor;
 import com.google.gerrit.server.query.change.ChangeQueryProcessor.ChangeAttributeFactory;
 
-
 public class AttributeFactory implements ChangeAttributeFactory {
 
   public class PluginAttribute extends PluginDefinedInfo {

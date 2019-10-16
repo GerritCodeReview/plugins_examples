@@ -34,10 +34,9 @@ public class SshModule extends AbstractModule {
 
   public static class BanOptions implements DynamicOptions.DynamicBean {
     @Option(
-      name = "--log",
-      aliases = {"-l"},
-      usage = "Say Hello in the Log"
-    )
+        name = "--log",
+        aliases = {"-l"},
+        usage = "Say Hello in the Log")
     private void parse(String arg) {
       log.error("Say Hello in the Log " + arg);
     }

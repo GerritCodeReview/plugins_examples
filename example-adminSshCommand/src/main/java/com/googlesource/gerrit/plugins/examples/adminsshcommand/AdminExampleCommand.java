@@ -25,11 +25,10 @@ public final class AdminExampleCommand extends SshCommand {
   private int count = 1;
 
   @Option(
-    name = "--count",
-    aliases = {"-c"},
-    metaVar = "COUNT",
-    usage = "Number of times to greet the administrator"
-  )
+      name = "--count",
+      aliases = {"-c"},
+      metaVar = "COUNT",
+      usage = "Number of times to greet the administrator")
   public void setCount(int count) {
     this.count = count;
   }

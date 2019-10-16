@@ -28,10 +28,9 @@ public class AdminExampleOptions
   private boolean countSet = false;
 
   @Option(
-    name = "--repeat",
-    aliases = {"-r"},
-    usage = "Run the command multiple times"
-  )
+      name = "--repeat",
+      aliases = {"-r"},
+      usage = "Run the command multiple times")
   private void parse(String arg) {
     count = Integer.parseInt(arg);
     countSet = true;

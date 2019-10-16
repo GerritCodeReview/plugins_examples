@@ -22,13 +22,14 @@ import com.google.gerrit.server.git.validators.ValidationMessage;
 import com.google.gerrit.server.permissions.GlobalPermission;
 import com.google.gerrit.server.permissions.PermissionBackend;
 import com.google.gerrit.server.validators.ValidationException;
+import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
-import com.google.inject.Inject;
 
 public class RefOperationValidationExample implements RefOperationValidationListener {
 
   private PermissionBackend permissionBackend;
+
   @Inject
   RefOperationValidationExample(PermissionBackend permissionBackend) {
     this.permissionBackend = permissionBackend;

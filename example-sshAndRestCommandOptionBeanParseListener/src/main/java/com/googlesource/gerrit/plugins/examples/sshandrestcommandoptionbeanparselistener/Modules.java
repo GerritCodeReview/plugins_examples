@@ -51,10 +51,9 @@ public class Modules {
     private Object bean;
 
     @Option(
-      name = "--log",
-      aliases = {"-l"},
-      usage = "Say Hello in the Log a few times"
-    )
+        name = "--log",
+        aliases = {"-l"},
+        usage = "Say Hello in the Log a few times")
     private void parse(String arg) {
       String msg = "Hellow unknown api query user: " + arg;
       if (bean instanceof Query) {

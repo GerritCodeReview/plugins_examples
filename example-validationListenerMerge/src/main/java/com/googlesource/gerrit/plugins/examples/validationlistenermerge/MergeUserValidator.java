@@ -31,11 +31,12 @@ import org.eclipse.jgit.lib.Repository;
 // there, however, if you are using this as a base for your own
 // plugin, you can simply comment out the 'Listen' annotation and
 // it will work as expected.
-//@Listen
+// @Listen
 @Singleton
 public class MergeUserValidator implements MergeValidationListener {
 
   private PermissionBackend permissionBackend;
+
   @Inject
   MergeUserValidator(PermissionBackend permissionBackend) {
     this.permissionBackend = permissionBackend;
