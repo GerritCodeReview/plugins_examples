@@ -14,8 +14,8 @@
 
 package com.googlesource.gerrit.plugins.examples.validationlistenermerge;
 
-import com.google.gerrit.reviewdb.client.Branch;
-import com.google.gerrit.reviewdb.client.PatchSet;
+import com.google.gerrit.entities.Branch;
+import com.google.gerrit.entities.PatchSet;
 import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.git.CodeReviewCommit;
 import com.google.gerrit.server.git.validators.MergeValidationException;

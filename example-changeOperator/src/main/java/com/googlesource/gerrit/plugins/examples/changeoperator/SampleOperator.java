@@ -14,9 +14,9 @@
 
 package com.googlesource.gerrit.plugins.examples.changeoperator;
 
+import com.google.gerrit.entities.Change;
 import com.google.gerrit.index.query.Predicate;
 import com.google.gerrit.index.query.QueryParseException;
-import com.google.gerrit.reviewdb.client.Change;
 import com.google.gerrit.server.query.change.ChangeData;
 import com.google.gerrit.server.query.change.ChangeOperatorPredicate;
 import com.google.gerrit.server.query.change.ChangeQueryBuilder;

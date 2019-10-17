@@ -14,7 +14,7 @@
 
 package com.googlesource.gerrit.plugins.examples.validationlistenerhashtag;
 
-import com.google.gerrit.reviewdb.client.Change;
+import com.google.gerrit.entities.Change;
 import com.google.gerrit.server.validators.HashtagValidationListener;
 import com.google.gerrit.server.validators.ValidationException;
 import java.util.Set;
