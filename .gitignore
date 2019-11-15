@@ -3,3 +3,4 @@ bazel-example*
 bazel-out
 bazel-testlogs
 *.idea
+*/target
