@@ -3,7 +3,7 @@ workspace(name = "restApiCommandOption")
 load("//:bazlets.bzl", "load_bazlets")
 
 load_bazlets(
-    commit = "1650318289e9981c01e9122c62679b814c7d7a48",
+    commit = "ec949feac1b9dae6cc2c8c25d254f34924c54296",
     #    local_path = "/home/<user>/projects/bazlets",
 )
 
