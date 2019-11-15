@@ -14,17 +14,17 @@
 
 package com.googlesource.gerrit.plugins.examples.changeoperator;
 
+import com.google.gerrit.index.query.PostFilterPredicate;
 import com.google.gerrit.index.query.Predicate;
 import com.google.gerrit.index.query.QueryParseException;
 import com.google.gerrit.reviewdb.client.Change;
 import com.google.gerrit.server.query.change.ChangeData;
-import com.google.gerrit.server.query.change.ChangeOperatorPredicate;
 import com.google.gerrit.server.query.change.ChangeQueryBuilder;
 import com.google.inject.Singleton;
 
 @Singleton
 public class SampleOperator implements ChangeQueryBuilder.ChangeOperatorFactory {
-  public static class MyPredicate extends ChangeOperatorPredicate {
+  public static class MyPredicate extends PostFilterPredicate<ChangeData> {
     private final Change.Id id;
 
     MyPredicate(Change.Id id) {

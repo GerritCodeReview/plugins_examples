@@ -14,16 +14,16 @@
 
 package com.googlesource.gerrit.plugins.examples.changehasoperator;
 
+import com.google.gerrit.index.query.PostFilterPredicate;
 import com.google.gerrit.index.query.Predicate;
 import com.google.gerrit.index.query.QueryParseException;
 import com.google.gerrit.server.query.change.ChangeData;
-import com.google.gerrit.server.query.change.ChangeOperatorPredicate;
 import com.google.gerrit.server.query.change.ChangeQueryBuilder;
 import com.google.inject.Singleton;
 
 @Singleton
 public class SampleHasOperand implements ChangeQueryBuilder.ChangeHasOperandFactory {
-  public static class MyOddPredicate extends ChangeOperatorPredicate {
+  public static class MyOddPredicate extends PostFilterPredicate<ChangeData> {
 
     MyOddPredicate() {
       super("has", "odd");

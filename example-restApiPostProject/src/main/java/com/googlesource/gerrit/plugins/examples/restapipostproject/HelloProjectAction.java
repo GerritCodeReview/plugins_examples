@@ -59,7 +59,7 @@ class HelloProjectAction
         "%s %s from project %s!",
         greeting,
         isNullOrEmpty(input.message)
-            ? firstNonNull(user.get().getUserName(), "world")
+            ? firstNonNull(user.get().getUserName().get(), "world")
             : input.message,
         rsrc.getName());
   }
