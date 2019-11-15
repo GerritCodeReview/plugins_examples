@@ -15,7 +15,7 @@
 package com.googlesource.gerrit.plugins.examples.validationlistenerrefoperation;
 
 import com.google.common.collect.Lists;
-import com.google.gerrit.reviewdb.client.RefNames;
+import com.google.gerrit.entities.RefNames;
 import com.google.gerrit.server.events.RefReceivedEvent;
 import com.google.gerrit.server.git.validators.RefOperationValidationListener;
 import com.google.gerrit.server.git.validators.ValidationMessage;

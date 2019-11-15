@@ -16,6 +16,7 @@ package com.googlesource.gerrit.plugins.examples.restapipostrevision;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
+import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.extensions.restapi.RestModifyView;
 import com.google.gerrit.extensions.webui.UiAction;
 import com.google.gerrit.server.CurrentUser;
@@ -41,16 +42,17 @@ class HelloRevisionAction
   }
 
   @Override
-  public String apply(RevisionResource rev, Input input) {
+  public Response<String> apply(RevisionResource rev, Input input) {
     final String greeting = input.french ? "Bonjour" : "Hello";
-    return String.format(
-        "%s %s from change %s, patch set %d!",
-        greeting,
-        Strings.isNullOrEmpty(input.message)
-            ? MoreObjects.firstNonNull(user.get().getUserName(), "world")
-            : input.message,
-        rev.getChange().getId().toString(),
-        rev.getPatchSet().getPatchSetId());
+    return Response.ok(
+        String.format(
+            "%s %s from change %s, patch set %d!",
+            greeting,
+            Strings.isNullOrEmpty(input.message)
+                ? MoreObjects.firstNonNull(user.get().getUserName(), "world")
+                : input.message,
+            rev.getChange().getId().toString(),
+            rev.getPatchSet().number()));
   }
 
   @Override
