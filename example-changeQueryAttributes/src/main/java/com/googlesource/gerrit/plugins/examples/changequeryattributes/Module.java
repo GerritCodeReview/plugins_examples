@@ -15,7 +15,7 @@
 package com.googlesource.gerrit.plugins.examples.changequeryattributes;
 
 import com.google.gerrit.extensions.annotations.Exports;
-import com.google.gerrit.server.query.change.ChangeQueryProcessor.ChangeAttributeFactory;
+import com.google.gerrit.server.change.ChangeAttributeFactory;
 import com.google.inject.AbstractModule;
 
 public class Module extends AbstractModule {
