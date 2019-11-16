@@ -15,9 +15,9 @@
 package com.googlesource.gerrit.plugins.examples.changequeryattributes;
 
 import com.google.gerrit.extensions.common.PluginDefinedInfo;
+import com.google.gerrit.server.DynamicOptions.BeanProvider;
+import com.google.gerrit.server.change.ChangeAttributeFactory;
 import com.google.gerrit.server.query.change.ChangeData;
-import com.google.gerrit.server.query.change.ChangeQueryProcessor;
-import com.google.gerrit.server.query.change.ChangeQueryProcessor.ChangeAttributeFactory;
 
 public class AttributeFactory implements ChangeAttributeFactory {
 
@@ -32,7 +32,7 @@ public class AttributeFactory implements ChangeAttributeFactory {
   }
 
   @Override
-  public PluginDefinedInfo create(ChangeData c, ChangeQueryProcessor qp, String plugin) {
+  public PluginDefinedInfo create(ChangeData c, BeanProvider bp, String plugin) {
     return new PluginAttribute(c);
   }
 }

@@ -14,7 +14,7 @@
 
 package com.googlesource.gerrit.plugins.examples.validationlistenermerge;
 
-import com.google.gerrit.entities.Branch;
+import com.google.gerrit.entities.BranchNameKey;
 import com.google.gerrit.entities.PatchSet;
 import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.git.CodeReviewCommit;
@@ -48,7 +48,7 @@ public class MergeUserValidator implements MergeValidationListener {
       Repository repo,
       CodeReviewCommit commit,
       ProjectState destProject,
-      Branch.NameKey destBranch,
+      BranchNameKey destBranch,
       PatchSet.Id patchSetId,
       IdentifiedUser caller)
       throws MergeValidationException {

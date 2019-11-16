@@ -14,6 +14,7 @@
 
 package com.googlesource.gerrit.plugins.examples.restapipostproject;
 
+import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.extensions.restapi.RestModifyView;
 import com.google.gerrit.extensions.webui.UiAction;
 import com.google.gerrit.server.CurrentUser;
@@ -53,15 +54,16 @@ class HelloProjectAction
   }
 
   @Override
-  public String apply(ProjectResource rsrc, Input input) {
+  public Response<String> apply(ProjectResource rsrc, Input input) {
     final String greeting = input.french ? "Bonjour" : "Hello";
-    return String.format(
-        "%s %s from project %s!",
-        greeting,
-        isNullOrEmpty(input.message)
-            ? firstNonNull(user.get().getUserName(), "world")
-            : input.message,
-        rsrc.getName());
+    return Response.ok(
+        String.format(
+            "%s %s from project %s!",
+            greeting,
+            isNullOrEmpty(input.message)
+                ? firstNonNull(user.get().getUserName().get(), "world")
+                : input.message,
+            rsrc.getName()));
   }
 
   @Override
