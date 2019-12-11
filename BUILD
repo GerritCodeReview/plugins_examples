@@ -17,6 +17,7 @@ genrule(
         "//example-sshAndRestCommandOptionBeanParseListener",
         "//example-sshCommandAlias",
         "//example-sshCommandOption",
+        "//example-taskListener",
         "//example-topMenu",
         "//example-usageDataLogger",
         "//example-validationListenerAssignee",
