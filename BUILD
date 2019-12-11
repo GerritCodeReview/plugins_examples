@@ -18,6 +18,7 @@ genrule(
         "//example-sshCommandAlias",
         "//example-sshCommandOption",
         "//example-taskListener",
+        "//example-taskThrottle",
         "//example-topMenu",
         "//example-usageDataLogger",
         "//example-validationListenerAssignee",
