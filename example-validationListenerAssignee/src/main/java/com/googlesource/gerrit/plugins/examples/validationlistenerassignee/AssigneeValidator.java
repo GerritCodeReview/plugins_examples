@@ -14,10 +14,10 @@
 
 package com.googlesource.gerrit.plugins.examples.validationlistenerassignee;
 
-import com.google.gerrit.exceptions.StorageException;
-import com.google.gerrit.index.query.QueryParseException;
 import com.google.gerrit.entities.Account;
 import com.google.gerrit.entities.Change;
+import com.google.gerrit.exceptions.StorageException;
+import com.google.gerrit.index.query.QueryParseException;
 import com.google.gerrit.server.query.change.ChangeQueryBuilder;
 import com.google.gerrit.server.query.change.ChangeQueryProcessor;
 import com.google.gerrit.server.validators.AssigneeValidationListener;
@@ -40,10 +40,7 @@ public class AssigneeValidator implements AssigneeValidationListener {
   @Override
   public void validateAssignee(Change change, Account assignee) throws ValidationException {
     try {
-      if (queryProcessor
-              .query(queryBuilder.assignee(assignee.preferredEmail()))
-              .entities()
-              .size()
+      if (queryProcessor.query(queryBuilder.assignee(assignee.preferredEmail())).entities().size()
           > MAX_ASSIGNED_CHANGES) {
         throw new ValidationException(
             "Cannot assign user to more than " + MAX_ASSIGNED_CHANGES + " changes");

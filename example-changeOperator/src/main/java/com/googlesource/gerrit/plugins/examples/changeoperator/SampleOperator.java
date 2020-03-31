@@ -14,10 +14,10 @@
 
 package com.googlesource.gerrit.plugins.examples.changeoperator;
 
+import com.google.gerrit.entities.Change;
 import com.google.gerrit.index.query.PostFilterPredicate;
 import com.google.gerrit.index.query.Predicate;
 import com.google.gerrit.index.query.QueryParseException;
-import com.google.gerrit.entities.Change;
 import com.google.gerrit.server.query.change.ChangeData;
 import com.google.gerrit.server.query.change.ChangeQueryBuilder;
 import com.google.inject.Singleton;
