@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "f36c8f5a_1bcca723",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-06-19T09:55:31Z",
+      "side": 1,
+      "message": "+1 to migrate it to Polymer 3 and target Gerrit release 3.2.",
+      "parentUuid": "35217805_c0841b6a",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "122c9c86_99dc9f1e",
         "filename": "example-polyCssStyle/gerrit-bluestyle.html",
         "patchSetId": 5
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "\u003e hmm i think these `.gr-main-header-0` are from shadyCSS before shadow dom enabled for gerrit, these styles probably won\u0027t work after shadow DOM changes.\n\nExactly: the example for v3.1 and v3.2 are different.",
       "parentUuid": "122c9c86_99dc9f1e",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee42c228_f74ffc3d",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-06-19T09:55:31Z",
+      "side": 1,
+      "message": "But it works, see: [1], and Gerrit version is: 3.2.1-15-g2d1e2f9354.\n\n[1] https://review.gerrithub.io/q/status:open",
+      "parentUuid": "6330c563_cbad8dcb",
       "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
