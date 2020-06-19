@@ -159,6 +159,24 @@
       "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10fba786_bd8732a4",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-06-19T09:58:52Z",
+      "side": 1,
+      "message": "\u003e hmm actually I don\u0027t see this style showing up any where on that page ?\n\nGerritHub.io is definitely styled :-) \n- Logo\n- Text\n- Background colour\n- Rounded corners on the search bar",
+      "parentUuid": "097596c5_2b04c0c2",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
