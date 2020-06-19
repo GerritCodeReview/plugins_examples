@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "35217805_c0841b6a",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-06-19T09:52:58Z",
+      "side": 1,
+      "message": "\u003e do we have a gerrit version this example is targeting for ? Since we moved to polymer 3, it would be better to use js instead html from there. For css, you can use style-modules like the one following:\n\u003e \n\u003e https://polymer-library.polymer-project.org/3.0/docs/devguide/style-shadow-dom#style-modules\n\nThat\u0027s a good point :-) This change was done back in January 2019 where we did not have Polymer 3 yet.\n\nWe should create stable branches in the examples repo and move this change to the stable-3.0.\n\nFor v3.1 and v3.2 it is gonna be different, I agree.",
+      "parentUuid": "f9c3c7e3_5d0d40ad",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "122c9c86_99dc9f1e",
         "filename": "example-polyCssStyle/gerrit-bluestyle.html",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2020-06-19T09:48:29Z",
       "side": 1,
       "message": "hmm i think these `.gr-main-header-0` are from shadyCSS before shadow dom enabled for gerrit, these styles probably won\u0027t work after shadow DOM changes.",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6330c563_cbad8dcb",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-06-19T09:52:58Z",
+      "side": 1,
+      "message": "\u003e hmm i think these `.gr-main-header-0` are from shadyCSS before shadow dom enabled for gerrit, these styles probably won\u0027t work after shadow DOM changes.\n\nExactly: the example for v3.1 and v3.2 are different.",
+      "parentUuid": "122c9c86_99dc9f1e",
       "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
