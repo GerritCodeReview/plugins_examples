@@ -177,6 +177,24 @@
       "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1163d49d_2568e4ff",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-06-19T11:41:34Z",
+      "side": 1,
+      "message": "If you remove the plugin from stand-by instance, an clean the browser cache, do you see a difference?",
+      "parentUuid": "10fba786_bd8732a4",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
