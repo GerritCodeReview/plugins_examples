@@ -141,6 +141,24 @@
       "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "097596c5_2b04c0c2",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1086906
+      },
+      "writtenOn": "2020-06-19T09:57:22Z",
+      "side": 1,
+      "message": "hmm actually I don\u0027t see this style showing up any where on that page ?",
+      "parentUuid": "ee42c228_f74ffc3d",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
