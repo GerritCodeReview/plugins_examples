@@ -195,6 +195,24 @@
       "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f67793e9_8596f785",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-06-19T12:04:02Z",
+      "side": 1,
+      "message": "\u003e If you remove the plugin from stand-by instance, an clean the browser cache, do you see a difference?\n\nStandby? All the sites are active :-) we don\u0027t do standbys.\n\nI can do on the EU site (review-3):\n- with customisation (https://imgur.com/pGqqBQ1)\n- without customisation (https://imgur.com/b8IsL36)\n\nI\u0027ve now reverted back to the branded header.\n\nP.S. In production we have the v3.1/v3.2 version of the branding. This change is about the v3.0 version of the branding, which is a different implementation.",
+      "parentUuid": "1163d49d_2568e4ff",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
