@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9c3c7e3_5d0d40ad",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1086906
+      },
+      "writtenOn": "2020-06-19T09:48:29Z",
+      "side": 1,
+      "message": "do we have a gerrit version this example is targeting for ? Since we moved to polymer 3, it would be better to use js instead html from there. For css, you can use style-modules like the one following:\n\nhttps://polymer-library.polymer-project.org/3.0/docs/devguide/style-shadow-dom#style-modules",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "122c9c86_99dc9f1e",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1086906
+      },
+      "writtenOn": "2020-06-19T09:48:29Z",
+      "side": 1,
+      "message": "hmm i think these `.gr-main-header-0` are from shadyCSS before shadow dom enabled for gerrit, these styles probably won\u0027t work after shadow DOM changes.",
+      "revId": "9d37af61ed024ef38204d85f43be203751eaca21",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
