@@ -16,6 +16,24 @@
       "revId": "723dd867b4996bf002775fbea0b5a7d4c15644fb",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51861e06_325dc064",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-06-29T16:25:04Z",
+      "side": 1,
+      "message": "For testing PolyGerrit-related stuff you should always use an incognito window, as all the assets are typically cached.\n\nI ran the Gerrit v3.0.11 Docker image with the gerrit-bluestyle.html in the plugins and, from an incognito window, I see:\nhttps://imgur.com/Jao7S0K\n\nCan you repeat the same test and confirm?",
+      "parentUuid": "a8520baf_87fed51d",
+      "revId": "723dd867b4996bf002775fbea0b5a7d4c15644fb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
