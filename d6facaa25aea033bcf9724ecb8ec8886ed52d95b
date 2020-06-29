@@ -16,6 +16,23 @@
       "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa9e7295_47aa2044",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2020-06-29T18:37:08Z",
+      "side": 1,
+      "message": "Luca, can you set V+1 when you confirm this works as explained in the README?",
+      "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
