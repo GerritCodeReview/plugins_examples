@@ -34,6 +34,24 @@
       "revId": "723dd867b4996bf002775fbea0b5a7d4c15644fb",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71721560_a8649dec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2020-06-29T16:36:40Z",
+      "side": 1,
+      "message": "I was too impatient, after waiting a little longer the styling was picked up :-)",
+      "parentUuid": "a8520baf_87fed51d",
+      "revId": "723dd867b4996bf002775fbea0b5a7d4c15644fb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
