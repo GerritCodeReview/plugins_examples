@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "3ff7353f_6fd0377b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2020-06-29T23:14:57Z",
+      "side": 1,
+      "message": "Ben could you comment on my questions ?",
+      "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4670ed2b_00bbfc6c",
         "filename": "example-polyCssStyle/gerrit-bluestyle.html",
         "patchSetId": 2
