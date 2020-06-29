@@ -33,6 +33,23 @@
       "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "43c0d88a_a2aa780a",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2020-06-29T22:58:02Z",
+      "side": 1,
+      "message": "This works nicely with a square icon like diffy used here.\n\nI am wondering if there is a way to use a rectangular icon like the Eclipse Foundation\u0027s icon [1] which I need to style the Eclipse Gerrit instance ?\nIf I increase header-icon-size to 4em needed as appropriate width for [1] the vertical extent of the header is increased to the same size which looks ugly and wastes a lot of vertical screen estate.\n\n[1] https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg",
+      "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
