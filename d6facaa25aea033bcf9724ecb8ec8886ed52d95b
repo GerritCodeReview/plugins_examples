@@ -84,6 +84,24 @@
       "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5d98ac8_0bfa594e",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2020-06-29T23:19:51Z",
+      "side": 1,
+      "message": "I am aiming for styling like [1] which is possible based on the 3.0 example [2]\n\n[1] https://imgur.com/a/XouLxas\n[2] https://gerrit-review.googlesource.com/c/plugins/examples/+/272852",
+      "parentUuid": "43c0d88a_a2aa780a",
+      "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
