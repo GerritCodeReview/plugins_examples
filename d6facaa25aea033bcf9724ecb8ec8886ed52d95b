@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "4670ed2b_00bbfc6c",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2020-06-29T23:07:45Z",
+      "side": 1,
+      "message": "is there a way to use a different text color for the menus in the headers than for the header-title-content ? I\u0027d want to use white text color for menus but orange for the header-title-content.",
+      "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43c0d88a_a2aa780a",
         "filename": "example-polyCssStyle/gerrit-bluestyle.html",
         "patchSetId": 2
