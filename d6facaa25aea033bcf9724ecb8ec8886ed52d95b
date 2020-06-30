@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "90a4e082_296a574b",
+        "filename": "example-polyCssStyle/gerrit-bluestyle.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1013302
+      },
+      "writtenOn": "2020-06-30T06:37:57Z",
+      "side": 1,
+      "message": "We could change this line\n\nhttps://gerrit.googlesource.com/gerrit/+/3164e069abf81fb125e62965f55c91f02b5bde95/polygerrit-ui/app/elements/core/gr-main-header/gr-main-header_html.js#29\n\nfrom\n\n  color: var(--header-text-color);\n\nto\n\n  color: var(--header-title-text-color, var(--header-text-color));\n\nAlternatively you could hook into the \u0027header-title\u0027 endpoint and do whatever you want with it:\n\n  https://gerrit.googlesource.com/gerrit/+/3164e069abf81fb125e62965f55c91f02b5bde95/polygerrit-ui/app/elements/core/gr-main-header/gr-main-header_html.js#175",
+      "parentUuid": "4670ed2b_00bbfc6c",
+      "revId": "d6facaa25aea033bcf9724ecb8ec8886ed52d95b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43c0d88a_a2aa780a",
         "filename": "example-polyCssStyle/gerrit-bluestyle.html",
         "patchSetId": 2
