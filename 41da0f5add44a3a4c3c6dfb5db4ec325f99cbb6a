@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "d6c39896_c0dc0513",
+        "filename": "example-polyCssStyle/gerrit-bluestyle-rectangular-icon.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-07-01T08:35:06Z",
+      "side": 1,
+      "message": "No beauty, but now no external logo is used.",
+      "parentUuid": "615973f7_3828bdc3",
+      "revId": "41da0f5add44a3a4c3c6dfb5db4ec325f99cbb6a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d92b344c_6cf67e60",
         "filename": "example-polyCssStyle/gerrit-bluestyle-rectangular-icon.html",
         "patchSetId": 1
@@ -67,6 +85,24 @@
       "revId": "41da0f5add44a3a4c3c6dfb5db4ec325f99cbb6a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b254464e_a2da1542",
+        "filename": "example-polyCssStyle/gerrit-bluestyle-rectangular-icon.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-07-01T08:35:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d92b344c_6cf67e60",
+      "revId": "41da0f5add44a3a4c3c6dfb5db4ec325f99cbb6a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
