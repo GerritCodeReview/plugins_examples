@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f247478_e3a19f37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013302
+      },
+      "writtenOn": "2020-07-02T10:38:16Z",
+      "side": 1,
+      "message": "adding Thomas to the attention set",
+      "revId": "53b6be4039bc73169c49b4b7764f3b1ed845fcb7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f828ff49_4d6647ac",
         "filename": "example-polyCssStyle/gerrit-bluestyle-rectangular-icon.html",
         "patchSetId": 2
