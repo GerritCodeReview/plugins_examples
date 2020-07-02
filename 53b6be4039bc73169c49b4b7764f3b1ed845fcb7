@@ -39,6 +39,30 @@
       "revId": "53b6be4039bc73169c49b4b7764f3b1ed845fcb7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0dcdcf68_ee6dc167",
+        "filename": "example-polyCssStyle/gerrit-bluestyle-rectangular-icon.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-07-02T14:26:26Z",
+      "side": 1,
+      "message": "Then the color is basically not discernible from white. I tried to take a similar color as for the \"logo\". However, this was anyway only done to show, where to use CSS for the title.",
+      "parentUuid": "f828ff49_4d6647ac",
+      "range": {
+        "startLine": 28,
+        "startChar": 42,
+        "endLine": 28,
+        "endChar": 57
+      },
+      "revId": "53b6be4039bc73169c49b4b7764f3b1ed845fcb7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
