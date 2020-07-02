@@ -63,6 +63,30 @@
       "revId": "53b6be4039bc73169c49b4b7764f3b1ed845fcb7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "516108b0_ec86ef6c",
+        "filename": "example-polyCssStyle/gerrit-bluestyle-rectangular-icon.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2020-07-02T16:04:24Z",
+      "side": 1,
+      "message": "seems this depends on the used monitor, on my monitor this looked ok and different from white",
+      "parentUuid": "0dcdcf68_ee6dc167",
+      "range": {
+        "startLine": 28,
+        "startChar": 42,
+        "endLine": 28,
+        "endChar": 57
+      },
+      "revId": "53b6be4039bc73169c49b4b7764f3b1ed845fcb7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
