@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1c0e5cc_e2fb3a63",
+        "filename": "example-adminSshCommand/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2020-10-14T23:14:55Z",
+      "side": 1,
+      "message": "Do we still have to repeat the version in every pom?",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 30
+      },
+      "revId": "ec7fc219f70b6a84809cdabf163a0bb7a25e783a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
