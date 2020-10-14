@@ -15,14 +15,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.googlesource.gerrit.plugins</groupId>
+  <parent>
+    <groupId>com.googlesource.gerrit.plugins</groupId>
+    <artifactId>examples-all</artifactId>
+    <version>2.16.22</version>
+  </parent>
+
   <artifactId>example-validationListenerNewProjectCreated</artifactId>
   <packaging>jar</packaging>
-  <version>2.16.22</version>
   <properties>
     <Gerrit-ApiType>plugin</Gerrit-ApiType>
     <Gerrit-ApiVersion>${project.version}</Gerrit-ApiVersion>
@@ -43,7 +47,8 @@ limitations under the License.
               <Implementation-Vendor>Gerrit Code Review</Implementation-Vendor>
               <Implementation-URL>https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples</Implementation-URL>
 
-              <Implementation-Title>Example Validation Listener NewProjectCreated</Implementation-Title>
+              <Implementation-Title>Example Validation Listener
+                NewProjectCreated</Implementation-Title>
               <Implementation-Version>${project.version}</Implementation-Version>
 
               <Gerrit-ApiType>${Gerrit-ApiType}</Gerrit-ApiType>
@@ -64,7 +69,6 @@ limitations under the License.
         </configuration>
       </plugin>
     </plugins>
-
   </build>
 
   <dependencies>
@@ -75,11 +79,4 @@ limitations under the License.
       <scope>provided</scope>
     </dependency>
   </dependencies>
-
-  <repositories>
-    <repository>
-      <id>maven.org</id>
-      <url>http://repo1.maven.org/maven2</url>
-    </repository>
-  </repositories>
 </project>

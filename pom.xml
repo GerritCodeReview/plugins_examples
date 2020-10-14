@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013 The Android Open Source Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.googlesource.gerrit.plugins</groupId>
+  <artifactId>examples-all</artifactId>
+  <packaging>pom</packaging>
+  <version>2.16.22</version>
+
+  <modules>
+    <module>example-adminSshCommand</module>
+    <module>example-changeHasOperator</module>
+    <module>example-changeOperator</module>
+    <module>example-changeQueryAttributes</module>
+    <module>example-commitValidator</module>
+    <module>example-consoleMetricReporter</module>
+    <module>example-deployedOnIncludedInExtension</module>
+    <module>example-restApiCommandOption</module>
+    <module>example-restApiGetRevision</module>
+    <module>example-restApiPostProject</module>
+    <module>example-restApiPostRevision</module>
+    <module>example-servlet</module>
+    <module>example-simpleSshCommand</module>
+    <module>example-sshAndRestCommandOptionBeanParseListener</module>
+    <module>example-sshCommandAlias</module>
+    <module>example-sshCommandDelegateDynamicBean</module>
+    <module>example-sshCommandOption</module>
+    <module>example-topMenu</module>
+    <module>example-usageDataLogger</module>
+    <module>example-validationListenerAssignee</module>
+    <module>example-validationListenerCommit</module>
+    <module>example-validationListenerHashtag</module>
+    <module>example-validationListenerMerge</module>
+    <module>example-validationListenerNewProjectCreated</module>
+    <module>example-validationListenerRefOperation</module>
+    <module>example-validationListenerUpload</module>
+    <module>example-webLinkBranch</module>
+    <module>example-webLinkFileHistory</module>
+    <module>example-webLinkPatchSet</module>
+    <module>example-webLinkProject</module>
+    <module>example-wuiChangeScreenBelowChangeInfoBlock-GWT</module>
+    <module>example-wuiChangeScreenHeader-GWT</module>
+    <module>example-wuiChangeScreenHeaderRightOfButtons-GWT</module>
+    <module>example-wuiChangeScreenHeaderRightOfPopDowns-GWT</module>
+    <module>example-wuiPluginScreen-GWT</module>
+    <module>example-wuiPreferenceScreenBottom-GWT</module>
+    <module>example-wuiProfileExtensionBottom-GWT</module>
+    <module>example-wuiSettingsScreen-GWT</module>
+  </modules>
+</project>
+
