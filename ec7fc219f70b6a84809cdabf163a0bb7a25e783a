@@ -22,6 +22,30 @@
       },
       "revId": "ec7fc219f70b6a84809cdabf163a0bb7a25e783a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45f1e80b_bf262134",
+        "filename": "example-adminSshCommand/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2020-10-15T14:53:00Z",
+      "side": 1,
+      "message": "This line relates to which version of parent pom they are linked to. If you see line 25 in the base version, I have removed that.",
+      "parentUuid": "c1c0e5cc_e2fb3a63",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 30
+      },
+      "revId": "ec7fc219f70b6a84809cdabf163a0bb7a25e783a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
