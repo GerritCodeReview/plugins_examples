@@ -14,12 +14,19 @@
 
 package com.googlesource.gerrit.plugins.examples.changequeryattributes;
 
+import com.google.common.collect.ImmutableMap;
+import com.google.gerrit.entities.Change;
 import com.google.gerrit.extensions.common.PluginDefinedInfo;
-import com.google.gerrit.server.DynamicOptions.BeanProvider;
-import com.google.gerrit.server.change.ChangeAttributeFactory;
+import com.google.gerrit.server.DynamicOptions;
+import com.google.gerrit.server.change.ChangePluginDefinedInfoFactory;
 import com.google.gerrit.server.query.change.ChangeData;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import org.kohsuke.args4j.Option;
 
-public class AttributeFactory implements ChangeAttributeFactory {
+public class AttributeFactory implements ChangePluginDefinedInfoFactory {
+  protected MyChangeOptions options;
 
   public class PluginAttribute extends PluginDefinedInfo {
     public String exampleName;
@@ -32,7 +39,20 @@ public class AttributeFactory implements ChangeAttributeFactory {
   }
 
   @Override
-  public PluginDefinedInfo create(ChangeData c, BeanProvider bp, String plugin) {
-    return new PluginAttribute(c);
+  public Map<Change.Id, PluginDefinedInfo> createPluginDefinedInfos(
+      Collection<ChangeData> cds, DynamicOptions.BeanProvider bp, String plugin) {
+    Map<Change.Id, PluginDefinedInfo> out = new HashMap<>();
+    if (options == null) {
+      options = (MyChangeOptions) bp.getDynamicBean(plugin);
+    }
+    if (options.all) {
+      cds.forEach(cd -> out.put(cd.getId(), new PluginAttribute(cd)));
+    }
+    return out;
+  }
+
+  public class MyChangeOptions implements DynamicOptions.DynamicBean {
+    @Option(name = "--all", usage = "Include plugin output")
+    public boolean all = false;
   }
 }
