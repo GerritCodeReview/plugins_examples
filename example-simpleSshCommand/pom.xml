@@ -22,7 +22,7 @@ limitations under the License.
   <parent>
     <groupId>com.googlesource.gerrit.plugins</groupId>
     <artifactId>examples-all</artifactId>
-    <version>3.2.3</version>
+    <version>3.3.0</version>
   </parent>
 
   <artifactId>example-simpleSshCommand</artifactId>

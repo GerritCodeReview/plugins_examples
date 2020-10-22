@@ -46,6 +46,7 @@ public class MergeUserValidator implements MergeValidationListener {
   @Override
   public void onPreMerge(
       Repository repo,
+      CodeReviewCommit.CodeReviewRevWalk revWalk,
       CodeReviewCommit commit,
       ProjectState destProject,
       BranchNameKey destBranch,
