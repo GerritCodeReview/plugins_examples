@@ -16,6 +16,24 @@
       "message": "unused?",
       "revId": "2005b0158fbd9d0c7647cae9acc807978ec89a52",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c61eccce_8a11a02f",
+        "filename": "example-changeQueryAttributes/src/main/java/com/googlesource/gerrit/plugins/examples/changequeryattributes/AttributeFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2020-12-08T17:48:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c957f27_6cc98aec",
+      "revId": "2005b0158fbd9d0c7647cae9acc807978ec89a52",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
