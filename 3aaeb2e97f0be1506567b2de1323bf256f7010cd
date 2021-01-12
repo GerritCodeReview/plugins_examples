@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29f1b0d6_47faea8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2021-01-12T18:44:09Z",
+      "side": 1,
+      "message": "maybe reword like: Example to add section of metadata to the left change view panel ?\n\nJust wanted to consistent as explained in docs..",
+      "range": {
+        "startLine": 7,
+        "startChar": 36,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e027165f_71536879",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2021-01-12T18:44:09Z",
+      "side": 1,
+      "message": "Add description. May be refer this: https://gerrit-review.googlesource.com/Documentation/pg-plugin-endpoints.html#_change_metadata_item ?",
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec997cd4_a58989ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2021-01-12T18:44:09Z",
+      "side": 1,
+      "message": "Can you also set verified to +1 ?\n",
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "997727f6_92d483f6",
+        "filename": "example-polyChangeMetadataItem/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2021-01-12T18:44:09Z",
+      "side": 1,
+      "message": "s /There is nothing to build/To install ?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 25
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec2abf33_3c8b37be",
+        "filename": "example-polyChangeMetadataItem/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2021-01-12T18:44:09Z",
+      "side": 1,
+      "message": "Not needed ? next sentence already explains there is no need of restart.",
+      "range": {
+        "startLine": 6,
+        "startChar": 33,
+        "endLine": 6,
+        "endChar": 69
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
