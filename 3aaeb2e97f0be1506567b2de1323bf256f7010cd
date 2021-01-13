@@ -106,6 +106,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5a8ef8e7_e488bebf",
+        "filename": "example-polyChangeMetadataItem/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-13T12:37:15Z",
+      "side": 1,
+      "message": "how about\n\nAdd section of metadata to change view left panel",
+      "parentUuid": "b3be22aa_9f86505d",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "997727f6_92d483f6",
         "filename": "example-polyChangeMetadataItem/README.md",
         "patchSetId": 1
@@ -175,6 +199,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bb9f0435_47d24ec3",
+        "filename": "example-polyChangeMetadataItem/gerrit-change-metadataItem.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-13T12:37:15Z",
+      "side": 1,
+      "message": "i think maybe we can simply say \"example\"",
+      "parentUuid": "925eeebe_e8438877",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 42
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5a22a7c2_5fe36016",
         "filename": "example-polyChangeMetadataItem/gerrit-change-metadataItem.html",
         "patchSetId": 1
@@ -186,6 +234,24 @@
       "writtenOn": "2021-01-13T05:18:42Z",
       "side": 1,
       "message": "Also name this file to something different (like my-left-view-panel-widget.html)... so that the user will know that the file name need not be related to endpoint name change-metadata-item.",
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50db7ddd_72b1d586",
+        "filename": "example-polyChangeMetadataItem/gerrit-change-metadataItem.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-13T12:37:15Z",
+      "side": 1,
+      "message": "how about \nadd-change-metadata-item.html",
+      "parentUuid": "5a22a7c2_5fe36016",
       "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
