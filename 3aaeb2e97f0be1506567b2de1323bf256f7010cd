@@ -102,6 +102,46 @@
       },
       "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "925eeebe_e8438877",
+        "filename": "example-polyChangeMetadataItem/gerrit-change-metadataItem.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-01-13T05:18:42Z",
+      "side": 1,
+      "message": "can you name this id to something else... so that the user will know that this id need not be related to change-metadata-item and they can name it whatever they want..",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 42
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a22a7c2_5fe36016",
+        "filename": "example-polyChangeMetadataItem/gerrit-change-metadataItem.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-01-13T05:18:42Z",
+      "side": 1,
+      "message": "Also name this file to something different (like my-left-view-panel-widget.html)... so that the user will know that the file name need not be related to endpoint name change-metadata-item.",
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
