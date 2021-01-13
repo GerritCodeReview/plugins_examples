@@ -151,6 +151,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "29915661_0fc13159",
+        "filename": "example-polyChangeMetadataItem/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2021-01-13T17:07:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "997727f6_92d483f6",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 25
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec2abf33_3c8b37be",
@@ -188,6 +212,30 @@
       "side": 1,
       "message": "i referred this readme \n\nhttps://gerrit-review.googlesource.com/c/plugins/examples/+/209081/5/example-polyCssStyle/README.md\n\ndo you still feel we should change it ?",
       "parentUuid": "ec2abf33_3c8b37be",
+      "range": {
+        "startLine": 6,
+        "startChar": 33,
+        "endLine": 6,
+        "endChar": 69
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5c8e8d7_eb3247bc",
+        "filename": "example-polyChangeMetadataItem/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1105741
+      },
+      "writtenOn": "2021-01-13T17:07:46Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f252f007_d7868de5",
       "range": {
         "startLine": 6,
         "startChar": 33,
