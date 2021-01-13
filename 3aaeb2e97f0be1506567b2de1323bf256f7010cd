@@ -47,6 +47,54 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be0d4a04_1e43225c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-13T17:32:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf96a9e2_3c07cf53",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c8d07d1_f4df27b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-13T17:32:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29f1b0d6_47faea8f",
+      "range": {
+        "startLine": 7,
+        "startChar": 36,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e027165f_71536879",
@@ -60,6 +108,24 @@
       "writtenOn": "2021-01-12T18:44:09Z",
       "side": 1,
       "message": "Add description. May be refer this: https://gerrit-review.googlesource.com/Documentation/pg-plugin-endpoints.html#_change_metadata_item ?",
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02acd3bd_dc33d0d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-13T17:32:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e027165f_71536879",
       "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -366,6 +432,24 @@
       "side": 1,
       "message": "I believe this should be good: change-metadata-item-example.html",
       "parentUuid": "50db7ddd_72b1d586",
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d586c435_c3045b02",
+        "filename": "example-polyChangeMetadataItem/gerrit-change-metadataItem.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-13T17:32:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "795d2360_eb57ed1e",
       "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
