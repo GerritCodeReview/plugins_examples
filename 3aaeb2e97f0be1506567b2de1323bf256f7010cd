@@ -194,6 +194,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45456e72_42b45eb1",
+        "filename": "example-polyChangeMetadataItem/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-15T08:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8ef8e7_e488bebf",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "997727f6_92d483f6",
@@ -373,6 +397,30 @@
       "side": 1,
       "message": "sure.",
       "parentUuid": "bb9f0435_47d24ec3",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 42
+      },
+      "revId": "3aaeb2e97f0be1506567b2de1323bf256f7010cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "113c0a26_41d0db04",
+        "filename": "example-polyChangeMetadataItem/gerrit-change-metadataItem.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-15T08:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cadbe79a_4c08ffb2",
       "range": {
         "startLine": 1,
         "startChar": 16,
