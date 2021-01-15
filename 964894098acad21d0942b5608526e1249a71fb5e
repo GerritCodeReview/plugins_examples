@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "381951c8_040df64e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-01-15T09:19:58Z",
+      "side": 1,
+      "message": "can you remove polygerrit from the subject and description and possibly readme. Martin pointed out that the html does not have any polymer UI... so does not make sense to call it ploygerrit.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "964894098acad21d0942b5608526e1249a71fb5e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
