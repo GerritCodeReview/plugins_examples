@@ -22,6 +22,30 @@
       },
       "revId": "964894098acad21d0942b5608526e1249a71fb5e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bdb7db3_7042db54",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1117824
+      },
+      "writtenOn": "2021-01-15T11:18:00Z",
+      "side": 1,
+      "message": "i have added polygerrit in the subject by referring to following document\n\n\nhttps://gerrit-review.googlesource.com/Documentation/pg-plugin-endpoints.html#_change_metadata_item",
+      "parentUuid": "381951c8_040df64e",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "964894098acad21d0942b5608526e1249a71fb5e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
