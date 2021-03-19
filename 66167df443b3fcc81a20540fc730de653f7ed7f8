@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bb06299_e08c6896",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-19T18:24:52Z",
+      "side": 1,
+      "message": "Thanks a lot for the example: it is now very clear to me how it works and is supposed to be used.\nI\u0027ll play with it tonight :-)",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6cb7853_99b6c9db",
+        "filename": "example-depends-on/src/main/java/com/googlesource/gerrit/plugins/examples/dependson/extensions/DependencyResolver.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-19T18:24:52Z",
+      "side": 1,
+      "message": "This interface is duplicated between the two plugins (examples-depends-on and examples-pd): is this by design?",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ee8e081_a5f82ef1",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-19T18:24:52Z",
+      "side": 1,
+      "message": "I see: you have the com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory Class in the plugin class loader, however, it isn\u0027t loaded with the dependency on the other plugin and therefore isn\u0027t usable as-is.\n\nBy passing the class name as a String (instead of a Class) you then create a merged class loader and ask to reload the class *again* so that it can be resolved against the two plugins class loaders.\n\nAt the end you cast the result onto an interface known to Gerrit that is parent of both classes (the original PdAttributeFactory and the reloaded PdAttributeFactory from the merged class loader).\n\nIs my understanding correct on why you specify a class by name and not by passing the actual Class object?",
+      "range": {
+        "startLine": 69,
+        "startChar": 33,
+        "endLine": 69,
+        "endChar": 97
+      },
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9b035e5_38f9a608",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-19T18:24:52Z",
+      "side": 1,
+      "message": "This is the graceful failure if the other plugin doesn\u0027t exist or the class is not there, correct?",
+      "range": {
+        "startLine": 72,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 34
+      },
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
