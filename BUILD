@@ -8,6 +8,8 @@ genrule(
         "//example-commitValidator",
         "//example-consoleMetricReporter",
         "//example-deployedOnIncludedInExtension",
+        "//example-depends-on",
+        "//example-pd",
         "//example-restApiCommandOption",
         "//example-restApiGetRevision",
         "//example-restApiPostProject",

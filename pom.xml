@@ -31,7 +31,9 @@ limitations under the License.
     <module>example-changeQueryAttributes</module>
     <module>example-commitValidator</module>
     <module>example-consoleMetricReporter</module>
+    <module>example-pd</module>
     <module>example-deployedOnIncludedInExtension</module>
+    <module>example-depends-on</module>
     <module>example-restApiCommandOption</module>
     <module>example-restApiGetRevision</module>
     <module>example-restApiPostProject</module>
