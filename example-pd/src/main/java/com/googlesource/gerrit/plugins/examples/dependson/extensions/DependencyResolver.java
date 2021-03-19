@@ -1,0 +1,1 @@
+../../../../../../../../../../../example-depends-on/src/main/java/com/googlesource/gerrit/plugins/examples/dependson/extensions/DependencyResolver.java
