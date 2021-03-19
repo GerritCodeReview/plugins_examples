@@ -18,6 +18,23 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f92d8ba6_72c01f3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-19T21:51:58Z",
+      "side": 1,
+      "message": "@Prudhvi: I tried hard to make it work locally, but it fails for me. Does it work on your environment?\n\nI get:\n1) No implementation for com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory (with no qualifier annotation) was bound, and could not find an injectable constructor. Injectable classes must have either one (and only one) constructor annotated with @Inject or a zero-argument constructor that is not private.\n  at com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory.class(Unknown Source)\n  while locating com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory\n\n1 error\n\tat com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1120)\n\tat com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1078)\n\tat com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1131)\n\tat com.google.gerrit.server.plugins.SharedPluginEnv.instantiate(SharedPluginEnv.java:123)\n\tat com.googlesource.gerrit.plugins.examples.pd.Modules$PdFactory.createPluginDefinedInfos(Modules.java:70)\n",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cb7853_99b6c9db",
@@ -48,6 +65,30 @@
       "writtenOn": "2021-03-19T18:24:52Z",
       "side": 1,
       "message": "I see: you have the com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory Class in the plugin class loader, however, it isn\u0027t loaded with the dependency on the other plugin and therefore isn\u0027t usable as-is.\n\nBy passing the class name as a String (instead of a Class) you then create a merged class loader and ask to reload the class *again* so that it can be resolved against the two plugins class loaders.\n\nAt the end you cast the result onto an interface known to Gerrit that is parent of both classes (the original PdAttributeFactory and the reloaded PdAttributeFactory from the merged class loader).\n\nIs my understanding correct on why you specify a class by name and not by passing the actual Class object?",
+      "range": {
+        "startLine": 69,
+        "startChar": 33,
+        "endLine": 69,
+        "endChar": 97
+      },
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b42d7391_97f746de",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-19T21:51:58Z",
+      "side": 1,
+      "message": "There is a dangerous side-effect in instantiating the object in this way: every method invocation would result in creating a brand-new class in memory.\n\nI tried printing them out:\n- id of PdAttributeFactory (from the plugin\u0027s class loader)\n  Class PdAttributeFactory \u003d 1257474952\n- id of PdAttributesFactory (for 2 different instantiations)\n  Class PdAttributeFactory \u003d 775894354\n  Class PdAttributeFactory \u003d 1220390123\n\nHave you checked that you won\u0027t risk to overflow the meta-space in this way?\nThat is actually one of the problems we faced when I introduced the Gerrit plugin loader: we got so much used to its dynamic loading/reloading mechanism, that we were quickly breaking the Gerrit meta-space (PermGen at that time, we were on Java 7 back in 2012).",
+      "parentUuid": "2ee8e081_a5f82ef1",
       "range": {
         "startLine": 69,
         "startChar": 33,
