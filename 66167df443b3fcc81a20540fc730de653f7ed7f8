@@ -35,6 +35,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "365f13c7_48a9c868",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-20T12:20:13Z",
+      "side": 1,
+      "message": "\u003e Does it work on your environment?\nYes, it is working on my local test site. I have debugged it and verified. I\u0027m also printing a statement in DependencyResolverImpl.java which is showing up in the logs without any errors.. \n\n[2021-03-20T17:07:21.193+05:30] [SSH gerrit query --example-pd--resolve-depends-on change:27 (prudhvi)] ERROR com.googlesource.gerrit.plugins.examples.dependson.DependencyResolverImpl : Inside resolveDependencies, change: 27, 1 deliverables size: 0\n\n\u003e I tried hard to make it work locally, but it fails for me.\nSorry to hear that... I have built the example jars with Java 11 and with \"mvn clean package\" instead of bazel. (this may not help if you are already building it with mvn). I\u0027m running test site with java 11 and I did not test this setup with higher java versions.\n\n\u003e I get:\n\u003e 1) No implementation for com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory (with no qualifier annotation) was bound, and could not find an injectable constructor. Injectable classes must have either one (and only one) constructor annotated with @Inject or a zero-argument constructor that is not private.\n\nLooking at the error, I think it was able to load the class from the merged class loader, since it is trying to instantiate the loaded class from the injector. Looks like the injector was not able to find a valid constructor for PdAttributeFactory, \n\nI think the injector which is trying to instantiate the class is not example-pd\u0027s injector .? (which is not possible if you are using the code as is)\n\nNot sure what it means by \"(with no qualifier annotation) was bound\" in this situation. \n\n\"and could not find an injectable constructor\" which is *not* true, we do have an injectable constructor which is public.\n\nCan you share your environment info..? (java version, how the jars are built)\nCan you kindly let me know if any of this explanation helped you run this setup without errors..?",
+      "parentUuid": "f92d8ba6_72c01f3b",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cb7853_99b6c9db",
@@ -48,6 +66,24 @@
       "writtenOn": "2021-03-19T18:24:52Z",
       "side": 1,
       "message": "This interface is duplicated between the two plugins (examples-depends-on and examples-pd): is this by design?",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57318e40_34cef7a0",
+        "filename": "example-depends-on/src/main/java/com/googlesource/gerrit/plugins/examples/dependson/extensions/DependencyResolver.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-20T12:20:13Z",
+      "side": 1,
+      "message": "Yes, the interface needs to be shared between two plugins, so that the API consuming plugin can type cast to it and access respective APIs. Also it is being shared through a symbolic link in this example.",
+      "parentUuid": "d6cb7853_99b6c9db",
       "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -112,6 +148,30 @@
       "writtenOn": "2021-03-19T18:24:52Z",
       "side": 1,
       "message": "This is the graceful failure if the other plugin doesn\u0027t exist or the class is not there, correct?",
+      "range": {
+        "startLine": 72,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 34
+      },
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9317494f_6f0f4b82",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-20T12:20:13Z",
+      "side": 1,
+      "message": "Yes, I believe the user can decide on how he wants to handle these exceptions based on the severity of the operation he is performing.\n\nAlso the user can perform error handling while he is trying to fetch the respective API from the other plugin (i.e., when pluginProvidedApis.get(Modules.DEPENDS_ON_PLUGIN, \"DependencyResolver\")).",
+      "parentUuid": "a9b035e5_38f9a608",
       "range": {
         "startLine": 72,
         "startChar": 8,
