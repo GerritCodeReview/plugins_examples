@@ -53,6 +53,23 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "481fc955_5407b745",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-20T12:28:52Z",
+      "side": 1,
+      "message": "Working on my local setup.\n\nTest performed: \nrun ssh command, ssh -x -p 29418 localhost gerrit query --example-pd--resolve-depends-on change:27\n\nyou will see the following log entry in the error_log without any errors,\n[2021-03-20T17:07:21.193+05:30] [SSH gerrit query --example-pd--resolve-depends-on change:27 (prudhvi)] ERROR com.googlesource.gerrit.plugins.examples.dependson.DependencyResolverImpl : Inside resolveDependencies, change: 27, 1 deliverables size: 0\n\nAlso, example-pd plugin will output below message in respective plugin section,\n\nplugins:\n    name: example-pd\n    message: Ran dependency resolver\n\nTest site setup:\nJava version: 11\nWar version: https://gerrit-review.googlesource.com/c/gerrit/+/300363\nWar build command: bazel build gerrit\nexample plugins build command: mvn clean package\nSystem OS: macOS Big Sur 11.2.2\nPlugins installed: example-depends-on.jar, example-pd.jar\n\n\n",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cb7853_99b6c9db",
