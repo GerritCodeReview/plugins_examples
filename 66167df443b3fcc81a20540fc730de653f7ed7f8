@@ -70,6 +70,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96869be0_f775e112",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-20T22:11:35Z",
+      "side": 1,
+      "message": "\u003e Working on my local setup.\n\nCan you also try from Eclipse?\nI found out that the problems happens ONLY when you run Gerrit from Eclipse, but if I run it from gerrit.sh it works.\n\nWhen you run from Eclipse the class loaders are slightly different, and possibly the magic done for the request-based reloading of the class isn\u0027t working quite right.",
+      "parentUuid": "481fc955_5407b745",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cb7853_99b6c9db",
