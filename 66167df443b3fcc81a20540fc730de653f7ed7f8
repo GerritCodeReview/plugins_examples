@@ -88,6 +88,23 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9c7ba06_860b0c56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-21T23:41:46Z",
+      "side": 1,
+      "message": "I keep of finding bad surprises :-(\nCan you check if you get the same results?",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cb7853_99b6c9db",
@@ -119,6 +136,29 @@
       "side": 1,
       "message": "Yes, the interface needs to be shared between two plugins, so that the API consuming plugin can type cast to it and access respective APIs. Also it is being shared through a symbolic link in this example.",
       "parentUuid": "d6cb7853_99b6c9db",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dabf3710_2f3dbf1d",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-21T23:41:46Z",
+      "side": 1,
+      "message": "There is a type-safety warning here, as you don\u0027t have a compiler type checking that what is returned by the instantiate method *is actually* of a subtype of ChangePluginDefinedInfoFactory.\n\nWhat is really surprising is that casting to com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory would even generate a class cast exception :-O\n\nSee below what happens if you do it:\n\njava.lang.ClassCastException: class com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory cannot be cast to class com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory (com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory is in unnamed module of loader com.google.gerrit.server.plugins.DelegatingClassLoader @48267c67; com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory is in unnamed module of loader java.net.FactoryURLClassLoader @7f0b2bf1)\n\nI believe that is a symptom that what we are doing here is still quite fragile.",
+      "range": {
+        "startLine": 64,
+        "startChar": 8,
+        "endLine": 65,
+        "endChar": 44
+      },
       "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
