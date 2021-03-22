@@ -124,6 +124,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9e8de804_625bd329",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-22T00:40:47Z",
+      "side": 1,
+      "message": "After having played with it, I believe I grasped the overall logic of the approach, but *please* correct me if I am wrong or have misunderstood anything.\n\n1. The two plugins are loaded *independently* with two different injectors and independent class loaders.\n\n2. If example-pd wants to invoke a method of example-depends-on, needs to *reload itself* by mixing its class-loader with the one of example-depends-on, resulting in a \"temporary new plugin\" with other classes obtained with the mixing of the two plugins context.\n\n3. The point 2. creates the paradox that PdAttributeFactory (new plugin\u0027s classes loaded with the mixed class-loader) cannot be casted to PdAttributeFactory (the current plugin with independent class-loader).\n\n4. The two classes (PdAttributeFactory-mixed and PdAttributeFactory-independent) can still be used together when they are casted to a super-class that is contained in Gerrit core.\n\n5. The new mixed class-loader plugin exists only for the duration of the API call and then is left to the JVM to be garbage collected.\n\n6. Every invocation creates a mixed class-loader and a new definition of PdAttributeFactory-mixed class.\n\n7. The meta-space would eventually collapse as the PdAttributeFactory classes will be created and loaded over and over again.\n\nIs any of the above incorrect? Can you provide your view on them?",
+      "parentUuid": "81a9fb99_c7b8d6e3",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d6cb7853_99b6c9db",
         "filename": "example-depends-on/src/main/java/com/googlesource/gerrit/plugins/examples/dependson/extensions/DependencyResolver.java",
         "patchSetId": 1
