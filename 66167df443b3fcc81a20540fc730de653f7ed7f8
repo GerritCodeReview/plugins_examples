@@ -140,6 +140,42 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf6b231b_0a24d856",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-23T06:10:55Z",
+      "side": 1,
+      "message": "\u003e 1. The two plugins are loaded *independently* with two different injectors and independent class loaders.\nTrue.\n\n\u003e 2. If example-pd wants to invoke a method of example-depends-on, needs to *reload itself* by mixing its class-loader with the one of example-depends-on, resulting in a \"temporary new plugin\" with other classes obtained with the mixing of the two plugins context.\nYes, but the part where you mentioned \"needs to *reload itself*\", might not be true as the class PdAttributeFactory is never loaded in example-pd plugin since it is not mentioned anywhere in the example-pd module.\n\n\u003e 3. The point 2. creates the paradox that PdAttributeFactory (new plugin\u0027s classes loaded with the mixed class-loader) cannot be casted to PdAttributeFactory (the current plugin with independent class-loader).\nI believe that is the intent of the design that PdAttributeFactory is never loaded by example-pd plugin and always gets loaded in a temporary shared plugin environment.\n\n\u003e 4. The two classes (PdAttributeFactory-mixed and PdAttributeFactory-independent) can still be used together when they are casted to a super-class that is contained in Gerrit core.\nTrue, but we believe there could be potential miss understanding here. The reason why we are using ChangePluginDefinedInfoFactory is to have a common interface between the current plugin and the temporary plugin, and the common interface *need not* be known to core. In other words we could potentially have an interface which is known to the current plugin and the temporary plugin and the whole setup would still work.\n\n\n\u003e 5. The new mixed class-loader plugin exists only for the duration of the API call and then is left to the JVM to be garbage collected.\nTrue.\n\n\u003e 6. Every invocation creates a mixed class-loader and a new definition of PdAttributeFactory-mixed class.\nNot true. We have a caching mechanism in place which would cache the mixed class loader and returns that class loader unless it is garbage collected. A new definition of the PdAttributeFactory-mixed class is not created always, since the cached mixed class loader would already have the class loaded so it won\u0027t try to load it again.\n\n\u003e 7. The meta-space would eventually collapse as the PdAttributeFactory classes will be created and loaded over and over again.\nNot true. We don\u0027t see a reason why this will happen if we handle the leaks in the right manner. Adding to that, we have similar \"weak reference caching\" of mixed class loaders in production and is working without any issues.",
+      "parentUuid": "9e8de804_625bd329",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "854e18ae_d63af777",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-23T06:10:55Z",
+      "side": 1,
+      "message": "\u003e Can you also try from Eclipse?\nI\u0027m not sure how to run Gerrit with Eclipse. Need to check on that. Do we have a document which formally supports running Gerrit server from Eclipse.?",
+      "parentUuid": "96869be0_f775e112",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cb7853_99b6c9db",
@@ -198,6 +234,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9203b05_4e55030e",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-23T06:10:55Z",
+      "side": 1,
+      "message": "\u003e What is really surprising is that casting to com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory would even generate a class cast exception :-O\nYes, we expect that to happen, as the PdAttributeFactory class loaded by temporary plugin and the current plugin are different as their class loaders are different. Thus we expect the casting to fail.",
+      "parentUuid": "dabf3710_2f3dbf1d",
+      "range": {
+        "startLine": 64,
+        "startChar": 8,
+        "endLine": 65,
+        "endChar": 44
+      },
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ee8e081_a5f82ef1",
@@ -235,6 +295,30 @@
       "side": 1,
       "message": "There is a dangerous side-effect in instantiating the object in this way: every method invocation would result in creating a brand-new class in memory.\n\nI tried printing them out:\n- id of PdAttributeFactory (from the plugin\u0027s class loader)\n  Class PdAttributeFactory \u003d 1257474952\n- id of PdAttributesFactory (for 2 different instantiations)\n  Class PdAttributeFactory \u003d 775894354\n  Class PdAttributeFactory \u003d 1220390123\n\nHave you checked that you won\u0027t risk to overflow the meta-space in this way?\nThat is actually one of the problems we faced when I introduced the Gerrit plugin loader: we got so much used to its dynamic loading/reloading mechanism, that we were quickly breaking the Gerrit meta-space (PermGen at that time, we were on Java 7 back in 2012).",
       "parentUuid": "2ee8e081_a5f82ef1",
+      "range": {
+        "startLine": 69,
+        "startChar": 33,
+        "endLine": 69,
+        "endChar": 97
+      },
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67971844_7bbdc117",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2021-03-23T06:10:55Z",
+      "side": 1,
+      "message": "\u003e every method invocation would result in creating a brand-new class in memory.\nWe believe that caching should have taken care of this scenario, if it is not, it might be a bug or the mixed class loader got garbage collected.\n\n\u003e Have you checked that you won\u0027t risk to overflow the meta-space in this way?\nNeed to test it for this code. But we believe this should not happen if we code the caching right and without any leaks. We have similar \"weak reference caching\" of mixed class loaders in production and is working without any issues.",
+      "parentUuid": "b42d7391_97f746de",
       "range": {
         "startLine": 69,
         "startChar": 33,
