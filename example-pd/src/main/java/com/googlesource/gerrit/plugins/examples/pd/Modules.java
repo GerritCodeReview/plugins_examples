@@ -24,6 +24,7 @@ import com.google.gerrit.server.query.change.ChangeData;
 import com.google.gerrit.sshd.commands.Query;
 import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
