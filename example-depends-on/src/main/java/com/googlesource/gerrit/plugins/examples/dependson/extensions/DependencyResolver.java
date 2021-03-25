@@ -16,9 +16,9 @@ package com.googlesource.gerrit.plugins.examples.dependson.extensions;
 
 import com.google.gerrit.entities.BranchNameKey;
 import com.google.gerrit.entities.PatchSet;
-import com.google.gerrit.extensions.registration.PluginProvidedApi;
 import com.google.gerrit.server.project.InvalidChangeOperationException;
 import com.google.gerrit.server.project.NoSuchChangeException;
+import com.googlesource.gerrit.plugins.sharedenvironment.PluginProvidedApi;
 import java.util.Set;
 
 public interface DependencyResolver extends PluginProvidedApi {
