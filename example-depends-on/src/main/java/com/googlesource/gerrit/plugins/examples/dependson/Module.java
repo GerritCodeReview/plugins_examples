@@ -15,8 +15,8 @@
 package com.googlesource.gerrit.plugins.examples.dependson;
 
 import com.google.gerrit.extensions.annotations.Exports;
-import com.google.gerrit.extensions.registration.PluginProvidedApi;
 import com.google.inject.AbstractModule;
+import com.googlesource.gerrit.plugins.sharedenvironment.PluginProvidedApi;
 
 public class Module extends AbstractModule {
   @Override
