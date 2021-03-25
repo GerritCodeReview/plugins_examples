@@ -19,20 +19,15 @@ import com.google.gerrit.extensions.annotations.Exports;
 import com.google.gerrit.extensions.common.PluginDefinedInfo;
 import com.google.gerrit.server.DynamicOptions;
 import com.google.gerrit.server.change.ChangePluginDefinedInfoFactory;
-import com.google.gerrit.server.plugins.SharedPluginEnv;
 import com.google.gerrit.server.query.change.ChangeData;
 import com.google.gerrit.sshd.commands.Query;
 import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import org.kohsuke.args4j.Option;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class Modules {
-  private static final Logger log = LoggerFactory.getLogger(Modules.class);
   protected static final String DEPENDS_ON_PLUGIN = "example-depends-on";
   protected static final String PD_PLUGIN = "example-pd";
 
@@ -50,28 +45,17 @@ public class Modules {
   }
 
   public static class PdFactory implements ChangePluginDefinedInfoFactory {
-    protected final SharedPluginEnv sharedPluginEnv;
+    protected final PdAttributeFactory pdAttributeFactory;
 
     @Inject
-    public PdFactory(SharedPluginEnv sharedPluginEnv) {
-      this.sharedPluginEnv = sharedPluginEnv;
+    public PdFactory(PdAttributeFactory pdAttributeFactory) {
+      this.pdAttributeFactory = pdAttributeFactory;
     }
 
     @Override
     public Map<Change.Id, PluginDefinedInfo> createPluginDefinedInfos(
         Collection<ChangeData> cds, DynamicOptions.BeanProvider beanProvider, String plugin) {
-      try {
-        ChangePluginDefinedInfoFactory c =
-            (ChangePluginDefinedInfoFactory)
-                sharedPluginEnv
-                    .setTargetPluginName(PD_PLUGIN)
-                    .addDependentPlugin(DEPENDS_ON_PLUGIN)
-                    .instantiate("com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory");
-        return c.createPluginDefinedInfos(cds, beanProvider, plugin);
-      } catch (ClassNotFoundException | SharedPluginEnv.NoSuchPluginException e) {
-        log.error("Exception", e);
-      }
-      return new HashMap<>();
+      return pdAttributeFactory.createPluginDefinedInfos(cds, beanProvider, plugin);
     }
   }
 

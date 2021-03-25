@@ -18,14 +18,15 @@ import com.google.gerrit.entities.BranchNameKey;
 import com.google.gerrit.entities.Change;
 import com.google.gerrit.extensions.common.PluginDefinedInfo;
 import com.google.gerrit.extensions.registration.DynamicMap;
-import com.google.gerrit.extensions.registration.PluginProvidedApi;
 import com.google.gerrit.server.DynamicOptions;
 import com.google.gerrit.server.change.ChangePluginDefinedInfoFactory;
 import com.google.gerrit.server.project.InvalidChangeOperationException;
 import com.google.gerrit.server.query.change.ChangeData;
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import com.googlesource.gerrit.plugins.examples.dependson.extensions.DependencyResolver;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -33,15 +34,16 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Singleton
 public class PdAttributeFactory implements ChangePluginDefinedInfoFactory {
   private static final Logger log = LoggerFactory.getLogger(PdAttributeFactory.class);
 
-  protected DynamicMap<PluginProvidedApi> pluginProvidedApis;
+  protected DynamicMap<DependencyResolver> pluginProvidedApis;
   protected Modules.MyQueryOptions options;
   protected DependencyResolver dependencyResolver;
 
   @Inject
-  public PdAttributeFactory(DynamicMap<PluginProvidedApi> pluginProvidedApis) {
+  public PdAttributeFactory(DynamicMap<DependencyResolver> pluginProvidedApis) {
     this.pluginProvidedApis = pluginProvidedApis;
   }
 
@@ -51,9 +53,11 @@ public class PdAttributeFactory implements ChangePluginDefinedInfoFactory {
     if (options == null) {
       options = (Modules.MyQueryOptions) beanProvider.getDynamicBean(plugin);
     }
-    dependencyResolver =
-        (DependencyResolver)
-            pluginProvidedApis.get(Modules.DEPENDS_ON_PLUGIN, "DependencyResolver");
+    dependencyResolver = pluginProvidedApis.get(Modules.DEPENDS_ON_PLUGIN, "DependencyResolver");
+    if (dependencyResolver == null) {
+      log.warn("No dependency resolver has been found for plugin {}", Modules.DEPENDS_ON_PLUGIN);
+      return Collections.emptyMap();
+    }
 
     Map<Change.Id, PluginDefinedInfo> pluginInfosByChange = new HashMap<>();
     for (ChangeData c : cds) {

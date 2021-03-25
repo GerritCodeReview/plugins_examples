@@ -3,22 +3,15 @@ load("//tools/bzl:junit.bzl", "junit_tests")
 load("//tools/bzl:plugin.bzl", "PLUGIN_DEPS", "PLUGIN_TEST_DEPS", "gerrit_plugin")
 
 gerrit_plugin(
-    name = "example-pd",
+    name = "example-depends-on-api",
     srcs = glob(["src/main/java/**/*.java"]),
     manifest_entries = [
-        "Gerrit-PluginName: example-pd",
-        "Gerrit-Module: com.googlesource.gerrit.plugins.examples.pd.Modules$Module",
-        "Implementation-Title: Example pd",
+        "Gerrit-PluginName: example-depends-on-api",
+        "Gerrit-ApiModule: com.googlesource.gerrit.plugins.examples.dependson.ApiModule",
+        "Implementation-Title: Example depends on API",
     ],
     resources = glob(["src/main/resources/**/*"]),
     deps = [
-        ":example-depends-on-api-neverlink",
         "//lib/auto:auto-value-gson",
     ],
-)
-
-java_library(
-    name = "example-depends-on-api-neverlink",
-    neverlink = 1,
-    exports = ["//plugins/example-depends-on-api"],
 )
