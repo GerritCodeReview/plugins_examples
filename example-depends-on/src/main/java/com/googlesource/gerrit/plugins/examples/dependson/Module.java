@@ -15,13 +15,13 @@
 package com.googlesource.gerrit.plugins.examples.dependson;
 
 import com.google.gerrit.extensions.annotations.Exports;
-import com.google.gerrit.extensions.registration.PluginProvidedApi;
 import com.google.inject.AbstractModule;
+import com.googlesource.gerrit.plugins.examples.dependson.extensions.DependencyResolver;
 
 public class Module extends AbstractModule {
   @Override
   protected void configure() {
-    bind(PluginProvidedApi.class)
+    bind(DependencyResolver.class)
         .annotatedWith(Exports.named("DependencyResolver"))
         .to(DependencyResolverImpl.class);
   }
