@@ -19,11 +19,11 @@ import com.google.gerrit.extensions.annotations.Exports;
 import com.google.gerrit.extensions.common.PluginDefinedInfo;
 import com.google.gerrit.server.DynamicOptions;
 import com.google.gerrit.server.change.ChangePluginDefinedInfoFactory;
-import com.google.gerrit.server.plugins.SharedPluginEnv;
 import com.google.gerrit.server.query.change.ChangeData;
 import com.google.gerrit.sshd.commands.Query;
 import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
+import com.googlesource.gerrit.plugins.sharedenvironment.SharedPluginEnv;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -61,13 +61,24 @@ public class Modules {
     public Map<Change.Id, PluginDefinedInfo> createPluginDefinedInfos(
         Collection<ChangeData> cds, DynamicOptions.BeanProvider beanProvider, String plugin) {
       try {
-        ChangePluginDefinedInfoFactory c =
+        System.out.println(
+            "Class "
+                + PdAttributeFactory.class.getName()
+                + " loaded into "
+                + System.identityHashCode(PdAttributeFactory.class));
+        ChangePluginDefinedInfoFactory attributeFactory =
             (ChangePluginDefinedInfoFactory)
                 sharedPluginEnv
                     .setTargetPluginName(PD_PLUGIN)
                     .addDependentPlugin(DEPENDS_ON_PLUGIN)
                     .instantiate("com.googlesource.gerrit.plugins.examples.pd.PdAttributeFactory");
-        return c.createPluginDefinedInfos(cds, beanProvider, plugin);
+        System.out.println(
+            "Class "
+                + attributeFactory.getClass()
+                + " if instance is "
+                + System.identityHashCode(attributeFactory.getClass()));
+
+        return attributeFactory.createPluginDefinedInfos(cds, beanProvider, plugin);
       } catch (ClassNotFoundException | SharedPluginEnv.NoSuchPluginException e) {
         log.error("Exception", e);
       }
