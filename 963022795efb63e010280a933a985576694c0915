@@ -16,6 +16,23 @@
       "message": "@Prudhvi I\u0027ve addressed the comments on your parent change here, leveraging my x-plugin PoC. I did also a cross-check with the design document requirements and it looks like it ticks all the boxes.\n\nThis change, however, does not use the request-time class-loading, because it is simply not needed IMHO. Please check if there is any use-case you can think of that won\u0027t be possible with this change.",
       "revId": "963022795efb63e010280a933a985576694c0915",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6002c26c_9c6fbfdf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-26T12:20:44Z",
+      "side": 1,
+      "message": "This is working E2E for me, inside or outside Eclipse.\n@Prudhvi can you also build locally and verify from your side that satisfy your requirements?",
+      "revId": "963022795efb63e010280a933a985576694c0915",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
