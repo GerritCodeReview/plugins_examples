@@ -248,6 +248,41 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcb4b6d0_e38e78b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-26T12:25:57Z",
+      "side": 1,
+      "message": "Fails on this one in Eclipse but works in the follow-up change Change-Id: I6f1136023",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e2b4f6f_738300aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-26T12:25:57Z",
+      "side": 1,
+      "message": "The Change-Id: I6f1136023 example works E2E in Eclipse as well, because it relies on a standard plugin loading mechanism that is designed to work also in environments where the class loading is done in a slightly different way like in your IDE.",
+      "parentUuid": "90d982b5_b0ec16a6",
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6cb7853_99b6c9db",
@@ -439,6 +474,30 @@
       "side": 1,
       "message": "\u003e \u003e \u003e every method invocation would result in creating a brand-new class in memory.\n\u003e \u003e We believe that caching should have taken care of this scenario, if it is not, it might be a bug or the mixed class loader got garbage collected.\n\u003e \n\u003e Are you possibly running a different code in production? Can you give me a pointer to it so that I can check?\n\n[1] https://gerrit.googlesource.com/gerrit/+/refs/heads/master/java/com/google/gerrit/server/DynamicOptions.java\n\n[2] https://gerrit-review.googlesource.com/Documentation/dev-plugins.html#command_options (Last paragraph)\n\n\u003e \n\u003e \u003e \u003e Have you checked that you won\u0027t risk to overflow the meta-space in this way?\n\u003e \u003e Need to test it for this code. But we believe this should not happen if we code the caching right and without any leaks. We have similar \"weak reference caching\" of mixed class loaders in production and is working without any issues.\n\u003e \n\u003e I believe it would still be sensible to test.\n\nYes, I\u0027ll test it.",
       "parentUuid": "9afef258_6918d87c",
+      "range": {
+        "startLine": 69,
+        "startChar": 33,
+        "endLine": 69,
+        "endChar": 97
+      },
+      "revId": "66167df443b3fcc81a20540fc730de653f7ed7f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "826c1ab4_80841f4c",
+        "filename": "example-pd/src/main/java/com/googlesource/gerrit/plugins/examples/pd/Modules.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-26T12:25:57Z",
+      "side": 1,
+      "message": "If you look at Change-Id: I6f1136023 the problem is resolved, because the class loading is left to the plugin loader and therefore all invocations would use the same class, unless the plugin gets reloaded.\n\nAlso, this part of code because a lot simpler and more natural for a plugin developer, as there is no need to explicitly instantiate anything: just inject and it works.",
+      "parentUuid": "f072163a_4e1c3bf7",
       "range": {
         "startLine": 69,
         "startChar": 33,
