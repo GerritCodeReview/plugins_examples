@@ -18,6 +18,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a39f48c8_1295cf12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "Thanks for taking the time to review it 👍",
+      "parentUuid": "3ae1b555_c2703012",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1182c24_855decf3",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-03-27T00:36:18Z",
       "side": 1,
       "message": "Have you tried reinstalling the Plugin-A after unloading it to see if Plugib-B then starts using Plugin-A again? \n\nI suspect this won\u0027t work as Plugin-B should still be using the old mixed class loader version of the API and thus will no longer match to the newer version bound by the reloaded Plugin-A (even if Plugin-A never changed, even the same jar).\n\nIt suspect the api split is probably the only realistic way to use this approach as the combine approach will probably lead to issues.",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23d9ce6c_a80d6bc3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "\u003e Have you tried reinstalling the Plugin-A after unloading it to see if Plugib-B then starts using Plugin-A again? \n\nYou would need to isolate the API definition (only the Interface) into a separate plugin, and then Plugin-A and Plugin-B can be loaded/unloaded/reloaded at any times and independently.\n\n\u003e I suspect this won\u0027t work as Plugin-B should still be using the old mixed class loader version of the API and thus will no longer match to the newer version bound by the reloaded Plugin-A (even if Plugin-A never changed, even the same jar).\n\nYes, if you don\u0027t extract the API.\n\n\u003e It suspect the api split is probably the only realistic way to use this approach as the combine approach will probably lead to issues.\n\nExactly.",
+      "parentUuid": "c1182c24_855decf3",
       "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -52,6 +88,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "deb9b133_be757559",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "Yes, it should be also allowed, but with the caveat that you would have to reload and adapt the other plugins that are using the API definition if that has changed.",
+      "parentUuid": "3c9c933c_09ed2791",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cda55468_e633fba9",
@@ -65,6 +119,24 @@
       "writtenOn": "2021-03-27T00:36:18Z",
       "side": 1,
       "message": "This is a BIG improvement of libmodules. The main improvement is that it no longer requires filesystem and admin access to the server. This is likely our highest priority requirement.",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebbedbff_679a5fcf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "cda55468_e633fba9",
       "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -86,6 +158,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c13ebe5_a41b89f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "\u003e Unless the bug is in the interface? :(\n\nYes, in that case of course you also need to amend and reload:\n- API implementation\n- API consumer\n\nExample:\nAPI v0: interface Foo { int sum(long value); }\nAPI v1: interface Foo { long sum(long value); }\n\nAPI v0 and v1 are different, you can reload it but also the implementation and consumption of the API needs to be amended and reloaded.",
+      "parentUuid": "7a7dc615_12827929",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f33d8c68_969a7a33",
@@ -99,6 +189,24 @@
       "writtenOn": "2021-03-27T00:36:18Z",
       "side": 1,
       "message": "Is this possible without interrupting the service of those plugins?",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40056fff_235bbf0f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "Yes, assuming they support the reloading. It is already implemented in the PluginLoader and it works quite well.",
+      "parentUuid": "f33d8c68_969a7a33",
       "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -120,6 +228,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "907f2009_a3b6f03c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "108d2a92_28440a12",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f19b64b_5fc4e21c",
@@ -133,6 +259,24 @@
       "writtenOn": "2021-03-27T00:36:18Z",
       "side": 1,
       "message": "This is likely a great benefit.",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2572202_340a8f12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:51:50Z",
+      "side": 1,
+      "message": "Indeed: I found quite frustrating not being able to debug and troubleshoot on the IDE.",
+      "parentUuid": "3f19b64b_5fc4e21c",
       "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
