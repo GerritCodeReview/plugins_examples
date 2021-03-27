@@ -1,6 +1,159 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ae1b555_c2703012",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "This is really cool Luca, thank you for doing this. This really helps.",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1182c24_855decf3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "Have you tried reinstalling the Plugin-A after unloading it to see if Plugib-B then starts using Plugin-A again? \n\nI suspect this won\u0027t work as Plugin-B should still be using the old mixed class loader version of the API and thus will no longer match to the newer version bound by the reloaded Plugin-A (even if Plugin-A never changed, even the same jar).\n\nIt suspect the api split is probably the only realistic way to use this approach as the combine approach will probably lead to issues.",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c9c933c_09ed2791",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "I don\u0027t think it would allow the reloading of the depends-on-api, would it?",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cda55468_e633fba9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "This is a BIG improvement of libmodules. The main improvement is that it no longer requires filesystem and admin access to the server. This is likely our highest priority requirement.",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a7dc615_12827929",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "Unless the bug is in the interface? :(",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f33d8c68_969a7a33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "Is this possible without interrupting the service of those plugins?",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "108d2a92_28440a12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "This is neat, nice to know how to avoid the link!",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f19b64b_5fc4e21c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "This is likely a great benefit.",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf18776c_7ee0cce6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2021-03-27T00:36:18Z",
+      "side": 1,
+      "message": "I don\u0027t think the API is swappable?",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "3d1de0de_c4fcca22",
