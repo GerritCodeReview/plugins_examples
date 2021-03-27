@@ -154,6 +154,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b4350ca_9841fd65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-03-27T00:44:36Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t think the API is swappable?\n\nThe \"Yes\" assumes you are splitting the \u0027depends-on\u0027 to:\n- \u0027depends-on-api\u0027\n- \u0027depends-on\u0027 (without the API)\n\nIf you amend the API and reload it, it is then a different class that cannot be casted anymore with the old expected one. However, there is in that case the graceful failure that you were expecting. If you then adapt the consumer to use the new API and reload the consumer as well, it should work again.\n\nI\u0027ll try that scenario on Monday, if that doesn\u0027t work it must be a bug in my PoC. I have zero tests in the change so I am sure I\u0027ve got lots of bugs.\n\nEverything should be \u0027hot swappable\u0027 without restarts.",
+      "parentUuid": "bf18776c_7ee0cce6",
+      "revId": "03f388d94e78a9c49c510f5fec21580cad0b86b8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "3d1de0de_c4fcca22",
