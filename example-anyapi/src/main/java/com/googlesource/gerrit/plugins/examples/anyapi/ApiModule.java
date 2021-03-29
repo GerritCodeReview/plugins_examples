@@ -12,16 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.googlesource.gerrit.plugins.examples.dependson;
+package com.googlesource.gerrit.plugins.examples.anyapi;
 
 import com.google.gerrit.extensions.registration.DynamicMap;
 import com.google.inject.AbstractModule;
-import com.googlesource.gerrit.plugins.examples.dependson.extensions.DependencyResolver;
 
 public class ApiModule extends AbstractModule {
 
   @Override
   protected void configure() {
-    DynamicMap.mapOf(binder(), DependencyResolver.class);
+    DynamicMap.mapOf(binder(), Object.class);
   }
 }

@@ -16,15 +16,15 @@ package com.googlesource.gerrit.plugins.examples.pd;
 
 import com.google.gerrit.entities.BranchNameKey;
 import com.google.gerrit.entities.Change;
+import com.google.gerrit.entities.PatchSet;
 import com.google.gerrit.extensions.common.PluginDefinedInfo;
 import com.google.gerrit.extensions.registration.DynamicMap;
 import com.google.gerrit.server.DynamicOptions;
 import com.google.gerrit.server.change.ChangePluginDefinedInfoFactory;
-import com.google.gerrit.server.project.InvalidChangeOperationException;
 import com.google.gerrit.server.query.change.ChangeData;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.googlesource.gerrit.plugins.examples.dependson.extensions.DependencyResolver;
+import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,12 +38,12 @@ import org.slf4j.LoggerFactory;
 public class PdAttributeFactory implements ChangePluginDefinedInfoFactory {
   private static final Logger log = LoggerFactory.getLogger(PdAttributeFactory.class);
 
-  protected DynamicMap<DependencyResolver> pluginProvidedApis;
+  protected DynamicMap<Object> pluginProvidedApis;
   protected Modules.MyQueryOptions options;
-  protected DependencyResolver dependencyResolver;
+  protected Object dependencyResolver;
 
   @Inject
-  public PdAttributeFactory(DynamicMap<DependencyResolver> pluginProvidedApis) {
+  public PdAttributeFactory(DynamicMap<Object> pluginProvidedApis) {
     this.pluginProvidedApis = pluginProvidedApis;
   }
 
@@ -76,8 +76,12 @@ public class PdAttributeFactory implements ChangePluginDefinedInfoFactory {
       Set<Set<BranchNameKey>> deliverables = new HashSet<>();
 
       try {
-        dependencyResolver.resolveDependencies(c.change().currentPatchSetId(), deliverables);
-      } catch (InvalidChangeOperationException e) {
+        Method resolveDeps =
+            dependencyResolver
+                .getClass()
+                .getMethod("resolveDependencies", PatchSet.Id.class, Set.class);
+        resolveDeps.invoke(dependencyResolver, c.change().currentPatchSetId(), deliverables);
+      } catch (Exception e) {
         pluginDefinedInfo.message = "Error while running dependency resolver";
         log.error("Exception", e);
       }

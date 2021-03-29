@@ -18,6 +18,7 @@ import com.google.gerrit.entities.BranchNameKey;
 import com.google.gerrit.entities.PatchSet;
 import com.google.gerrit.server.project.InvalidChangeOperationException;
 import com.google.gerrit.server.project.NoSuchChangeException;
+
 import java.util.Set;
 
 public interface DependencyResolver {
