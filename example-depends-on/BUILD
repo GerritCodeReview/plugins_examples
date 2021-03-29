@@ -12,13 +12,6 @@ gerrit_plugin(
     ],
     resources = glob(["src/main/resources/**/*"]),
     deps = [
-        ":example-depends-on-api-neverlink",
         "//lib/auto:auto-value-gson",
     ],
-)
-
-java_library(
-    name = "example-depends-on-api-neverlink",
-    neverlink = 1,
-    exports = ["//plugins/example-depends-on-api"],
 )
