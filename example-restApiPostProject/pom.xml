@@ -42,7 +42,7 @@ limitations under the License.
           <archive>
             <manifestEntries>
               <Gerrit-PluginName>example-restApiPostProject</Gerrit-PluginName>
-              <Gerrit-SshModule>com.googlesource.gerrit.plugins.examples.restapipostproject.SshModule</Gerrit-SshModule>
+              <Gerrit-Module>com.googlesource.gerrit.plugins.examples.restapipostproject.Module</Gerrit-Module>
 
               <Implementation-Vendor>Gerrit Code Review</Implementation-Vendor>
               <Implementation-URL>https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples</Implementation-URL>

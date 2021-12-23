@@ -42,7 +42,7 @@ limitations under the License.
           <archive>
             <manifestEntries>
               <Gerrit-PluginName>example-restApiGetRevision</Gerrit-PluginName>
-              <Gerrit-SshModule>com.googlesource.gerrit.plugins.examples.restapigetrevision.SshModule</Gerrit-SshModule>
+              <Gerrit-Module>com.googlesource.gerrit.plugins.examples.restapigetrevision.Module</Gerrit-Module>
 
               <Implementation-Vendor>Gerrit Code Review</Implementation-Vendor>
               <Implementation-URL>https://gerrit-review.googlesource.com/#/admin/projects/plugins/examples</Implementation-URL>
