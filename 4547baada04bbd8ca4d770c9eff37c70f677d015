@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3af7bbe5_65637052",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-06-30T11:50:53Z",
+      "side": 1,
+      "message": "For a real world plugin I have used com.google.gerrit.httpd.plugins.HttpPluginModule which is rather straightforward but misses a lot of logic from RestApiServlet.  This is an attempt to provide an example plugin for it.\n\nI have passed the java files through google-java-format, it does build locally.\n\nWhen loading the plugin with a Gerrit 3.4.4 the daemon does not start and the console says:\n\n Guice configuration errors:\n \n 1) [Guice/MissingImplementation]: No implementation for DynamicMap\u003cRestView\u003cHelloResource\u003e\u003e was bound.\n \n Requested by:\n 1  : HelloWorldCollection.\u003cinit\u003e(HelloWorldCollection.java:32)\n       \\_ for 1st parameter views\n      at HelloWorldRestApiServlet.\u003cinit\u003e(HelloWorldRestApiServlet.java:31)\n       \\_ for 2nd parameter hellos\n      while locating HelloWorldRestApiServlet\n \n Learn more:\n   https://github.com/google/guice/wiki/MISSING_IMPLEMENTATION\n \n 1 error\n \n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n Full classname legend:\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n DynamicMap:               \"com.google.gerrit.extensions.registration.DynamicMap\"\n HelloResource:            \"com.googlesource.gerrit.plugins.examples.restapiservlet.HelloResource\"\n HelloWorldCollection:     \"com.googlesource.gerrit.plugins.examples.restapiservlet.HelloWorldCollection\"\n HelloWorldRestApiServlet: \"com.googlesource.gerrit.plugins.examples.restapiservlet.HelloWorldRestApiServlet\"\nRestView:                 \"com.google.gerrit.extensions.restapi.RestView\"\n\nThe RestCollection javadoc has some explanations to do the binding at https://cs.opensource.google/gerrit/gerrit/gerrit/+/master:java/com/google/gerrit/extensions/restapi/RestCollection.java;l\u003d19?q\u003dRestCollection.java\u0026ss\u003dgerrit%2Fgerrit%2Fgerrit\n\nNotably there is a binding listed for the PluginModule:\n\n public class MyModule extends AbstractModule {\n   @Override\n   protected void configure() {\n     DynamicMap.mapOf(binder(), MyResource.MY_KIND);\n\n     get(MyResource.MY_KIND, \u0026quot;action\u0026quot;).to(MyAction.class);\n   }\n }\n\nI don\u0027t know what the MyAction.class is supposed to do or whether I need a binding in HttpModule.configureServlets() which only has:\n\n   protected void configureServlets() {\n    serve(\"/say-hello/*\").with(HelloWorldRestApiServlet.class);\n  }\n\n\nThe idea is to have a REST API /say-hello?pp\u003d1 (or maybe it would be /plugins/example-restApiServlet/say-hello?pp\u003d1) which would serve:\n\n Content-Type: application/json\n )]}\n {\n   \"english\": \"hello world\",\n   \"french\": \"bonjour tout monde\",\n   \"german\": \"Hallo Welt\"\n }\n\n\n",
+      "revId": "4547baada04bbd8ca4d770c9eff37c70f677d015",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
