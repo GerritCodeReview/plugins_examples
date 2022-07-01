@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "510df7e4_07820af7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-01T09:28:36Z",
+      "side": 1,
+      "message": "Progress I have managed to make the plugin load properly under Gerrit by adding a Gerrit-Module definition in BUILD and have it configure the Guice binding for my Collection.  I can\u0027t tell why it is not implicitly done.\n\nI need to implement HelloWorldCollection.parse() and probably list() as well.\n",
+      "revId": "ff1d67843d005f3facfbbc531d953a5e0e7b420e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3559ddf6_d8b63d1e",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/HelloWorldCollection.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-01T09:28:36Z",
+      "side": 1,
+      "message": "Doing http://127.0.0.1:8080/plugins/example-restApiServlet/say-hello/?trace\u003dissue  logs in error_log:\n\n TRACE com.google.gerrit.httpd.restapi.RestApiServlet : REST call failed: 404 [CONTEXT forced\u003dtrue TRACE_ID\u003d\"issue\" ]\ncom.google.gerrit.extensions.restapi.ResourceNotFoundException: Not found: \n\tat com.googlesource.gerrit.plugins.examples.restapiservlet.HelloWorldCollection.parse(HelloWorldCollection.java:43)\n\tat com.googlesource.gerrit.plugins.examples.restapiservlet.HelloWorldCollection.parse(HelloWorldCollection.java:26)\n\tat com.google.gerrit.httpd.restapi.RestApiServlet.lambda$parseResourceWithRetry$5(RestApiServlet.java:803)\n\n\nIt emits a 404 with payload \"Not found:\" and I need to do some implementation there.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 3
+      },
+      "revId": "ff1d67843d005f3facfbbc531d953a5e0e7b420e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c15688b_1e3b907d",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/HttpModule.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-01T09:28:36Z",
+      "side": 1,
+      "message": "I have changed the HttpModule from HttpPluginModule to ServletModule which is apparently what is used by other plugins.",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 45
+      },
+      "revId": "ff1d67843d005f3facfbbc531d953a5e0e7b420e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "333e18f1_bece5848",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/Module.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-01T09:28:36Z",
+      "side": 1,
+      "message": "Looking at Gerrit core, it looks like the collection has to be registered via a module and those lines at least let the plugin load.  Surely registering the http module should take care of those bindings?",
+      "range": {
+        "startLine": 14,
+        "startChar": 25,
+        "endLine": 18,
+        "endChar": 17
+      },
+      "revId": "ff1d67843d005f3facfbbc531d953a5e0e7b420e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
