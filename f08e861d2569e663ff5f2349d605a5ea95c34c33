@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9307e7df_3760022a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-01T14:12:07Z",
+      "side": 1,
+      "message": "I can now get messages and relies on Gerrit Rest API to inject the magic json first line and to support pretty printing by passing ?pp\u003d1:\n\n $ curl \u0027http://127.0.0.1:8080/plugins/example-restApiServlet/hello?pp\u003d1\u0027\n )]}\u0027\n {\n   \"german\": \"Hallo Welt\",\n   \"english\": \"hello world\",\n   \"french\": \"bonjour tout monde\"\n }\n\nWhat I would like next is add a list of languages such as:\n\n /hello?list\n \u003e german\n \u003e english\n \u003e french\n\nAnd say hello in a specific language\n\n /hello/english\n \u003e hello world\n \nOr maybe:\n\n /hello?lang\u003denglish\n \u003e hello world\n \n",
+      "revId": "f08e861d2569e663ff5f2349d605a5ea95c34c33",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77f802bf_b1ac708b",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/HttpModule.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-01T14:12:07Z",
+      "side": 1,
+      "message": "This were the binding I was doing in the Gerrit-Module. That made the plugin load successfully.   I still don\u0027t understand why they are required, I had high expectation they would be automatically discovered by inspecting the servlet class somehow.\n\nAnyway that solved it!",
+      "range": {
+        "startLine": 25,
+        "startChar": 38,
+        "endLine": 27,
+        "endChar": 40
+      },
+      "revId": "f08e861d2569e663ff5f2349d605a5ea95c34c33",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bb0e8ee_9ebe2fed",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/ListHelloMessages.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-01T14:12:07Z",
+      "side": 1,
+      "message": "Renamed HelloWorldRestReadView to ListHelloMessages. That seems to be the pattern used in other plugins or in Gerrit itself.",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 24,
+        "endChar": 30
+      },
+      "revId": "f08e861d2569e663ff5f2349d605a5ea95c34c33",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
