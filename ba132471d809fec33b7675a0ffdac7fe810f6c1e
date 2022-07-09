@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9032d878_897e6bc0",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/HelloWorldCollection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-09T21:05:44Z",
+      "side": 1,
+      "message": "Found it, I was using a get to /hello/message/french instead of /hello/french/message  *facepalm*.  Since the \"message\" is a bit redundant I have changed the binding from:\n\n get(HELLO_KIND, \"message\").to(GetHello.class);\n\nTo:\n\n get(HELLO_KIND).to(GetHello.class);\n \nAnd I can get the single message using /hello/french",
+      "parentUuid": "f48baac2_57cc1c9f",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 61
+      },
+      "revId": "ba132471d809fec33b7675a0ffdac7fe810f6c1e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4418c851_0f86048f",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-07-09T16:07:41Z",
       "side": 1,
       "message": "Does this handle /plugins/example-restApiServlet/hello/message/\u003cid\u003e  ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 5,
+        "endLine": 34,
+        "endChar": 51
+      },
+      "revId": "ba132471d809fec33b7675a0ffdac7fe810f6c1e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb8a38e1_216f9c14",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/HttpModule.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-09T21:05:44Z",
+      "side": 1,
+      "message": "I mixed up the way collections work, it handled /plugin/example-restApiServlet/hello/\u003cid\u003e/message\n\nI have changed it and dropped \"message\".\n\n\nI can\u0027t believe I have wasted so much time just cause I have mixed up the collection id and the action name :\\",
+      "parentUuid": "4418c851_0f86048f",
       "range": {
         "startLine": 34,
         "startChar": 5,
