@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de702691_72bda566",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-09T16:07:41Z",
+      "side": 1,
+      "message": "I gave it some more try, I now get a list of json messages on /plugins/example-restApiServlet/hello  but I can not figure out how to retrieve a single id from the collection :-\\",
+      "revId": "ba132471d809fec33b7675a0ffdac7fe810f6c1e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f48baac2_57cc1c9f",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/HelloWorldCollection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-09T16:07:41Z",
+      "side": 1,
+      "message": "My intent is:\n\n GET /plugins/example-restApiServlet/hello/message/french\n\nBut the IdString id is always empty.",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 61
+      },
+      "revId": "ba132471d809fec33b7675a0ffdac7fe810f6c1e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4418c851_0f86048f",
+        "filename": "example-restApiServlet/src/main/java/com/googlesource/gerrit/plugins/examples/restapiservlet/HttpModule.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-07-09T16:07:41Z",
+      "side": 1,
+      "message": "Does this handle /plugins/example-restApiServlet/hello/message/\u003cid\u003e  ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 5,
+        "endLine": 34,
+        "endChar": 51
+      },
+      "revId": "ba132471d809fec33b7675a0ffdac7fe810f6c1e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
