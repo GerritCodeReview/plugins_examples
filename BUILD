@@ -19,7 +19,6 @@ genrule(
         "//example-sshCommandOption",
         "//example-topMenu",
         "//example-usageDataLogger",
-        "//example-validationListenerAssignee",
         "//example-validationListenerCommit",
         "//example-validationListenerHashtag",
         "//example-validationListenerMerge",

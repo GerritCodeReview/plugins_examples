@@ -44,7 +44,6 @@ limitations under the License.
     <module>example-sshCommandOption</module>
     <module>example-topMenu</module>
     <module>example-usageDataLogger</module>
-    <module>example-validationListenerAssignee</module>
     <module>example-validationListenerCommit</module>
     <module>example-validationListenerHashtag</module>
     <module>example-validationListenerMerge</module>
