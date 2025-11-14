@@ -16,6 +16,23 @@
       "message": "281219",
       "revId": "ca96024ba8c78f8c708337fcff7a92587cfe587e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d06c76a_de930c4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4470496
+      },
+      "writtenOn": "2025-11-14T13:23:28Z",
+      "side": 1,
+      "message": "I need a permission to vote because it has been decreased",
+      "revId": "ca96024ba8c78f8c708337fcff7a92587cfe587e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
