@@ -7,16 +7,9 @@ import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.server.cache.PersistentCache;
 import com.google.gerrit.server.cache.PersistentCacheDef;
 import com.google.inject.Inject;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.atomic.LongAdder;
-import org.infinispan.AdvancedCache;
 import org.infinispan.Cache;
-import org.infinispan.context.Flag;
 import org.infinispan.stats.Stats;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -27,22 +20,18 @@ public class InfinispanCacheImpl<K, V> extends AbstractLoadingCache<K, V>
   private final Cache<byte[], byte[]> cache;
   private final CacheLoader<K, V> loader;
   private final PersistentCacheDef<K, V> def;
-
-  private final long diskLimit;
-  private final int maxVictimsPerRun;
+  private final RemoteStore remoteStore;
 
   @Inject
   public InfinispanCacheImpl(
       Cache<byte[], byte[]> cache,
       @Nullable CacheLoader<K, V> loader,
       PersistentCacheDef<K, V> def,
-      long diskLimit,
-      int maxVictimsPerRun) {
+      RemoteStore remoteStore) {
     this.cache = cache;
     this.loader = loader;
     this.def = def;
-    this.diskLimit = diskLimit;
-    this.maxVictimsPerRun = Math.max(1, maxVictimsPerRun);
+    this.remoteStore = remoteStore;
   }
 
   public String getCacheName() {
@@ -108,87 +97,12 @@ public class InfinispanCacheImpl<K, V> extends AbstractLoadingCache<K, V>
 
   @Override
   public DiskStats diskStats() {
-    Stats stats = cache.getAdvancedCache().getStats();
-    return new DiskStats(
-        stats.getApproximateEntries(),
-        stats.getDataMemoryUsed(),
-        stats.getHits(),
-        stats.getMisses(),
-        stats.getEvictions());
+    return remoteStore.getStats(cache);
   }
 
   public void stop() {
     cache.stop();
   }
-
-  public int prune() {
-    AdvancedCache<byte[], byte[]> cacheView =
-        cache
-            .getAdvancedCache()
-            .withFlags(
-                List.of(
-                    Flag.CACHE_MODE_LOCAL,
-                    Flag.IGNORE_RETURN_VALUES,
-                    Flag.SKIP_LISTENER_NOTIFICATION));
-
-    final LongAdder totalBytes = new LongAdder();
-    final PriorityQueue<Candidate> pruneCandidates =
-        new PriorityQueue<>(
-            maxVictimsPerRun + 1, Comparator.comparingLong((Candidate c) -> c.created).reversed());
-
-    cacheView
-        .cacheEntrySet()
-        .forEach(
-            entry -> {
-              byte[] k = entry.getKey();
-              byte[] v = entry.getValue();
-              if (v == null) {
-                return;
-              }
-              int sizeBytes = k.length + v.length;
-              totalBytes.add(sizeBytes);
-
-              long created = entry.getCreated();
-              if (created <= 0) {
-                created = Long.MIN_VALUE;
-              }
-
-              pruneCandidates.offer(new Candidate(k, sizeBytes, created));
-              if (pruneCandidates.size() > maxVictimsPerRun) {
-                pruneCandidates.poll();
-              }
-            });
-
-    long total = totalBytes.sum();
-    if (total <= diskLimit || pruneCandidates.isEmpty()) {
-      return 0;
-    }
-
-    List<Candidate> sorted = new ArrayList<>();
-    while (!pruneCandidates.isEmpty()) {
-      sorted.add(pruneCandidates.poll());
-    }
-
-    long bytesToShed = total - diskLimit;
-    int removed = 0;
-
-    // Heap polls in newest-first order; iterate in reverse to remove oldest entries first
-    for (int i = sorted.size() - 1; i >= 0; i--) {
-      Candidate c = sorted.get(i);
-      if (bytesToShed <= 0) {
-        break;
-      }
-      cacheView.remove(c.key);
-      bytesToShed -= c.sizeBytes;
-      removed++;
-    }
-    logger.atInfo().log(
-        "Pruned %d entries, freed %d bytes from cache %s",
-        removed, (total - diskLimit) - bytesToShed, cache.getName());
-    return removed;
-  }
-
-  private record Candidate(byte[] key, int sizeBytes, long created) {}
 
   private V getWithLoader(K key, @Nullable Callable<? extends V> valueLoader) {
     byte[] serializedKey = def.keySerializer().serialize(key);
@@ -208,6 +122,8 @@ public class InfinispanCacheImpl<K, V> extends AbstractLoadingCache<K, V>
             String.format("Could not load value for %s without any loader", key));
       }
     } catch (Exception e) {
+      logger.atSevere().withCause(e).log(
+          "Cache: %s, Failed to load value for key: %s", getCacheName(), key);
       throw new RuntimeException("Failed to load value for key: " + key, e);
     }
     cache.put(serializedKey, def.valueSerializer().serialize(value));

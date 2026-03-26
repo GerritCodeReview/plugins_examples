@@ -20,3 +20,11 @@ Infinispan provides a more suitable alternative to H2 due to the following reaso
   available, including file-based, RocksDB, and JDBC. Passivation allows
   evicted entries to be written to disk, and preload warms caches on restart,
   enabling true durability beyond simple recovery snapshots.
+
+## Limitations
+
+- **Configuration updates:** Changes to cache configuration in the Gerrit
+  config (such as maxAge, diskLimit) will not be automatically reflected on
+  the Infinispan server. Manual intervention is required: either drop and re-create
+  the cache programmatically, or use the Infinispan CLI/REST API to update the
+  configuration on the server side.

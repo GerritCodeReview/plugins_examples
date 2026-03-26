@@ -8,16 +8,11 @@ import com.google.gerrit.server.cache.CacheModule;
 import com.google.gerrit.server.cache.PersistentCacheFactory;
 import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.config.SitePaths;
-import com.google.gerrit.server.git.WorkQueue;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import com.google.inject.name.Named;
-import com.google.inject.name.Names;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.eclipse.jgit.lib.Config;
 
 @ModuleImpl(name = CacheModule.PERSISTENT_MODULE)
@@ -26,9 +21,6 @@ public class InfinispanCacheModule extends LifecycleModule {
 
   @Override
   protected void configure() {
-    bind(AtomicBoolean.class)
-        .annotatedWith(Names.named("DiskCacheReadOnly"))
-        .toInstance(new AtomicBoolean(false));
     bind(PersistentCacheFactory.class).to(InfinispanCacheFactory.class);
     listener().to(InfinispanCacheFactory.class);
   }
@@ -57,18 +49,5 @@ public class InfinispanCacheModule extends LifecycleModule {
     }
     logger.atInfo().log("Enabling disk cache %s", loc.toAbsolutePath());
     return loc;
-  }
-
-  @Provides
-  @Singleton
-  @Nullable
-  @Named("CacheCleanupExecutor")
-  ScheduledExecutorService createDiskCachePruneExecutor(
-      WorkQueue workQueue, @Nullable @InfinispanDir Path cacheDir) {
-    // TODO: Honor H2 CacheOptions?
-    if (cacheDir != null) {
-      return workQueue.createQueue(1, "Infinispan-DiskCache-Prune", true);
-    }
-    return null;
   }
 }

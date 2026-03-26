@@ -5,7 +5,6 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.events.LifecycleListener;
 import com.google.gerrit.extensions.registration.DynamicMap;
@@ -15,114 +14,60 @@ import com.google.gerrit.server.cache.PersistentCacheBaseFactory;
 import com.google.gerrit.server.cache.PersistentCacheDef;
 import com.google.gerrit.server.config.ConfigUtil;
 import com.google.gerrit.server.config.GerritServerConfig;
-import com.google.gerrit.server.config.ScheduleConfig;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
-import com.google.inject.name.Named;
 import java.nio.file.Path;
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.eclipse.jgit.lib.Config;
 import org.infinispan.commons.api.CacheContainerAdmin;
+import org.infinispan.commons.configuration.BasicConfiguration;
 import org.infinispan.commons.dataconversion.MediaType;
 import org.infinispan.commons.marshall.IdentityMarshaller;
 import org.infinispan.configuration.cache.CacheMode;
 import org.infinispan.configuration.cache.Configuration;
 import org.infinispan.configuration.cache.ConfigurationBuilder;
 import org.infinispan.configuration.global.GlobalConfigurationBuilder;
+import org.infinispan.configuration.parsing.ConfigurationBuilderHolder;
 import org.infinispan.eviction.EvictionStrategy;
 import org.infinispan.manager.DefaultCacheManager;
+import org.infinispan.manager.EmbeddedCacheManager;
+import org.infinispan.persistence.remote.configuration.RemoteStoreConfigurationBuilder;
+import org.infinispan.persistence.remote.configuration.global.RemoteContainersConfigurationBuilder;
 
 @Singleton
 public class InfinispanCacheFactory extends PersistentCacheBaseFactory
     implements LifecycleListener {
-  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
-
-  static class PeriodicCachePruner implements Runnable {
-    private final InfinispanCacheImpl<?, ?> cache;
-
-    PeriodicCachePruner(InfinispanCacheImpl<?, ?> cache) {
-      this.cache = cache;
-    }
-
-    @Override
-    public String toString() {
-      return "Infinispan Disk Cache Pruner (" + cache.getCacheName() + ")";
-    }
-
-    @Override
-    public void run() {
-      cache.prune();
-    }
-  }
-
-  private final DefaultCacheManager cacheManager;
+  private final EmbeddedCacheManager cacheManager;
   private final DynamicMap<Cache<?, ?>> cacheMap;
   private final List<InfinispanCacheImpl<?, ?>> caches;
-  private final ScheduleConfig.Schedule schedule;
-  private final ScheduledExecutorService cleanup;
-  private final boolean pruneOnStartup;
-  private final int perCacheOpenFilesLimit;
-  private final AtomicBoolean isDiskCacheReadOnly;
+  private final RemoteStore remoteStore;
 
   @Inject
   public InfinispanCacheFactory(
       MemoryCacheFactory memCacheFactory,
       @GerritServerConfig Config config,
       DynamicMap<Cache<?, ?>> cacheMap,
-      @Nullable @Named("CacheCleanupExecutor") ScheduledExecutorService cleanupExecutor,
       @Nullable @InfinispanDir Path infinispanDir,
-      @Named("DiskCacheReadOnly") AtomicBoolean isDiskCacheReadOnly) {
+      RemoteStore remoteStore) {
     super(memCacheFactory, config, infinispanDir);
     this.cacheManager = initCacheManager();
     this.cacheMap = cacheMap;
     this.caches = new LinkedList<>();
-    schedule =
-        ScheduleConfig.createSchedule(config, "cachePruning")
-            .orElseGet(
-                () -> ScheduleConfig.Schedule.createOrFail(Duration.ofDays(1).toMillis(), "01:00"));
-    logger.atInfo().log("Scheduling cache pruning with schedule %s", schedule);
-    this.cleanup = cleanupExecutor;
-    pruneOnStartup = config.getBoolean("cachePruning", null, "pruneOnStartup", true);
-    this.perCacheOpenFilesLimit = config.getInt("cache", "openFiles", 128) / 24;
-    this.isDiskCacheReadOnly = isDiskCacheReadOnly; // TODO: Use this
+    this.remoteStore = remoteStore;
   }
 
   @Override
-  public void start() {
-    for (InfinispanCacheImpl<?, ?> cache : caches) {
-      if (cleanup != null) {
-        if (pruneOnStartup) {
-          @SuppressWarnings("unused")
-          Future<?> possiblyIgnoredError =
-              cleanup.schedule(new PeriodicCachePruner(cache), 30, TimeUnit.SECONDS);
-        }
-
-        @SuppressWarnings("unused")
-        Future<?> possiblyIgnoredError =
-            cleanup.scheduleAtFixedRate(
-                new PeriodicCachePruner(cache),
-                schedule.initialDelay(),
-                schedule.interval(),
-                TimeUnit.MILLISECONDS);
-      }
-    }
-  }
+  public void start() {}
 
   @Override
   public void stop() {
-    if (cleanup != null) {
-      cleanup.shutdownNow();
-    }
     cacheManager.stop(); // Stops all caches
     caches.clear();
+    remoteStore.stop();
   }
 
   @Override
@@ -146,16 +91,18 @@ public class InfinispanCacheFactory extends PersistentCacheBaseFactory
   @Override
   protected <K, V> LoadingCache<K, V> buildImpl(
       PersistentCacheDef<K, V> def, CacheLoader<K, V> loader, long diskLimit) {
+    if (diskLimit > 0) {
+      remoteStore.initCacheIfNotPresent(def, getRemoteCacheConfiguration(diskLimit));
+    }
+
     org.infinispan.Cache<byte[], byte[]> cache =
         cacheManager
             .administration()
             .withFlags(CacheContainerAdmin.AdminFlag.VOLATILE)
             .getOrCreateCache(def.name(), getEmbeddedCacheConfiguration(def, diskLimit));
 
-    int maxVictimsPerRun = 50_000;
-
     InfinispanCacheImpl<K, V> infinispanCacheImpl =
-        new InfinispanCacheImpl<>(cache, loader, def, diskLimit, maxVictimsPerRun);
+        new InfinispanCacheImpl<>(cache, loader, def, remoteStore);
 
     synchronized (caches) {
       caches.add(infinispanCacheImpl);
@@ -164,7 +111,7 @@ public class InfinispanCacheFactory extends PersistentCacheBaseFactory
   }
 
   @Nullable
-  private DefaultCacheManager initCacheManager() {
+  private EmbeddedCacheManager initCacheManager() {
     if (cacheDir == null) {
       return null;
     }
@@ -172,7 +119,23 @@ public class InfinispanCacheFactory extends PersistentCacheBaseFactory
     gcb.cacheContainer().statistics(true);
     gcb.serialization().marshaller(IdentityMarshaller.INSTANCE);
     gcb.globalState().enable().persistentLocation(cacheDir.toAbsolutePath().toString());
-    return new DefaultCacheManager(gcb.build());
+    gcb.addModule(RemoteContainersConfigurationBuilder.class)
+        .addRemoteContainer("shared-remote-container")
+        .uri(
+            String.format(
+                "hotrod://%s:%s@%s:%s",
+                getUser(), getPassword(), getRemoteHost(), getRemotePort()));
+    return new DefaultCacheManager(
+        new ConfigurationBuilderHolder(gcb.build().classLoader(), gcb), true);
+  }
+
+  private BasicConfiguration getRemoteCacheConfiguration(long diskLimit) {
+    ConfigurationBuilder cb = new ConfigurationBuilder();
+    cb.clustering().cacheMode(CacheMode.DIST_ASYNC).statistics().enable();
+    cb.encoding().key().mediaType(MediaType.APPLICATION_OCTET_STREAM);
+    cb.encoding().value().mediaType(MediaType.APPLICATION_PROTOSTREAM);
+    cb.memory().maxSize(String.valueOf(diskLimit)).whenFull(EvictionStrategy.REMOVE);
+    return cb.build();
   }
 
   private <K, V> Configuration getEmbeddedCacheConfiguration(
@@ -195,11 +158,14 @@ public class InfinispanCacheFactory extends PersistentCacheBaseFactory
     }
 
     if (diskLimit > 0) {
-      cb.persistence()
-          .addSoftIndexFileStore()
-          .openFilesLimit(perCacheOpenFilesLimit)
-          .async()
-          .enable();
+      RemoteStoreConfigurationBuilder remoteStoreBuilder =
+          cb.persistence()
+              .addStore(RemoteStoreConfigurationBuilder.class)
+              .remoteCacheName(def.name())
+              .remoteCacheContainer("shared-remote-container");
+
+      remoteStoreBuilder.shared(true).segmented(false);
+      remoteStoreBuilder.async().enable();
     }
     return cb.build();
   }
@@ -218,5 +184,24 @@ public class InfinispanCacheFactory extends PersistentCacheBaseFactory
       return -1; // 0 in gerrit.config means never expire
     }
     return def.expireAfterWrite().toMillis();
+  }
+
+  private String getUser() {
+    String user = config.getString("cache", "infinispan", "user");
+    return user != null ? user : "admin";
+  }
+
+  private String getPassword() {
+    String password = config.getString("cache", "infinispan", "password");
+    return password != null ? password : "password";
+  }
+
+  private String getRemoteHost() {
+    String host = config.getString("cache", "infinispan", "remoteHost");
+    return host != null ? host : "localhost";
+  }
+
+  private int getRemotePort() {
+    return config.getInt("cache", "infinispan", "remotePort", 11222);
   }
 }

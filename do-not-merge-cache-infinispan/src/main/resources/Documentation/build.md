@@ -35,4 +35,3 @@ Example:
 ```sh
 bazelisk test plugins/cache-infinispan/...
 ```
-

@@ -80,22 +80,4 @@ public class InfinispanCacheIT extends AbstractDaemonTest {
     GroupInfo ignored = gApi.groups().create(input).get();
     assertThat(groupCache.get(AccountGroup.nameKey(input.name))).isPresent();
   }
-
-  @Test
-  public void shouldPruneAllEntriesWhenDiskLimitIsExceeded() {
-    final int diskLimit = 1;
-    Cache<String, String> cache =
-        persistentCacheFactory.build(
-            new TestPersistentCacheDef(testName.getMethodName(), diskLimit));
-    assertThat(cache).isInstanceOf(InfinispanCacheImpl.class);
-
-    int numEntries = 100;
-    for (int i = 0; i < numEntries; i++) {
-      cache.put("key" + i, "value" + i);
-    }
-    assertThat(cache.size()).isEqualTo(numEntries);
-
-    int pruned = ((InfinispanCacheImpl<?, ?>) cache).prune();
-    assertThat(pruned).isEqualTo(numEntries);
-  }
 }
